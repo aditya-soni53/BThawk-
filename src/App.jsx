@@ -1,19 +1,21 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './App.css'
-import Home from './component/Home'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Header from "./component/Header";
+import About from "./pages/About";
 
 function App() {
- 
   return (
-    <>
-    <Home/>
-    </>
-    
-  )
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
