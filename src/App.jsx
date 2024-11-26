@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import react from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -14,6 +15,13 @@ function App() {
     <Home/>
     </>
     
+=======
+
+function App() {
+
+  return (
+    <></>
+>>>>>>> ddfeb8c909b1937b158f8bc57af8ac2de792b8ba
   )
 }
 
