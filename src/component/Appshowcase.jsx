@@ -10,15 +10,15 @@ export default function Appshowcase() {
 
   return (
     <>
-      <div className="md:w-8/12 mx-auto text-center p-10">
+      <div className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 p-2 mt-8">
         <h1 className='text-3xl pb-3'><span className='text-[#22249B]'>BT</span><span className='text-[#E45325]'>HAWK</span> App Showcase</h1>
         <p className=''>In order to make the business less complicated, BTHAWK has introduced 3 applications </p>
       </div>
-      <div className='md:w-11/12 mx-auto grid md:grid-cols-3 mt-4'>
-        <div className='grid md:grid-cols-2 apps gap-4 place-content-center'>
+      <div className='w-11/12 mx-auto grid lg:grid-cols-3 mt-4'>
+        <div className='grid lg:grid-cols-2 grid-cols-3  apps gap-4 place-content-center'>
 
           <button
-            className={`app-1 col-span-2 p-4 border-b-2 rounded-t-lg ${activeTab === "admin"
+            className={`app-1 mx-auto lg:col-span-2 p-4 border-b-2 rounded-t-lg ${activeTab === "admin"
               ? "active"
               : "hover:text-gray-600  dark:hover:text-gray-300"
               }`}
@@ -59,17 +59,17 @@ export default function Appshowcase() {
             aria-selected={activeTab === "retailer"}
           >
             <div className='app-icon m-auto'><FontAwesomeIcon icon={faUserTie} /></div>
-            <b>RETAILER APP</b>
+            <b className='app-btn-1'>RETAILER APP</b>
           </button>
 
 
 
         </div>
-        <div className='col-span-2'>
+        <div className='lg:col-span-2'>
           {activeTab === "admin" && (
             <div className="grid md:grid-cols-2 md:w-11/12 mx-auto" role="tabpanel" aria-labelledby="admin-tab" >
               <div className="app-img text-center">
-                <img src={app1} alt="" className='mx-auto' width={280}/>
+                <img src={app1} alt="" className='mx-auto app-img' />
               </div>
               <div className="app-cards">
                 <div className="appcard-1">
@@ -86,43 +86,43 @@ export default function Appshowcase() {
             </div>
           )}
           {activeTab === "fse" && (
-             <div className="grid md:grid-cols-2 md:w-11/12 mx-auto" role="tabpanel" aria-labelledby="admin-tab" >
-             <div className="app-img text-center">
-               <img src={app1} alt="" className='mx-auto' width={280}/>
-             </div>
-             <div className="app-cards">
-               <div className="appcard-1">
-                 <h3 className='text-xl text-center text-[#22249B]'>FSE App</h3>
-                 <p className='text-center'>FSE app helps the FSEs to maintain a proper record of their tasks and provides them hastle free work.</p>
-                 <ul className='mt-2'>
-                   <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Invoice Generation</li>
-                   <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />DSR Management</li>
-                   <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Collection Management</li>
-                 </ul>
-                 <button className='primary-btn mt-3'>Schedule a Demo</button>
-               </div>
-             </div>
-           </div>
+            <div className="grid md:grid-cols-2 md:w-11/12 mx-auto" role="tabpanel" aria-labelledby="admin-tab" >
+              <div className="app-img text-center">
+                <img src={app1} alt="" className='mx-auto app-img' />
+              </div>
+              <div className="app-cards">
+                <div className="appcard-1">
+                  <h3 className='text-xl text-center text-[#22249B]'>FSE App</h3>
+                  <p className='text-center'>FSE app helps the FSEs to maintain a proper record of their tasks and provides them hastle free work.</p>
+                  <ul className='mt-2'>
+                    <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Invoice Generation</li>
+                    <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />DSR Management</li>
+                    <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Collection Management</li>
+                  </ul>
+                  <button className='primary-btn mt-3'>Schedule a Demo</button>
+                </div>
+              </div>
+            </div>
           )}
 
           {activeTab === "retailer" && (
-             <div className="grid md:grid-cols-2 md:w-11/12 mx-auto" role="tabpanel" aria-labelledby="admin-tab" >
-             <div className="app-img text-center">
-               <img src={app1} alt="" className='mx-auto' width={280}/>
-             </div>
-             <div className="app-cards">
-               <div className="appcard-1">
-                 <h3 className='text-xl text-center text-[#22249B]'>Retailer App</h3>
-                 <p className='text-center'>For our retailers we have made business less complicated by making everything being done automated.</p>
-                 <ul className='mt-2'>
-                   <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Forecasting of business plans.</li>
-                   <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Get complete details of credit bills of the customers.</li>
-                   <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Works as mini CRM for the retailers.</li>
-                 </ul>
-                 <button className='primary-btn mt-3'>Schedule a Demo</button>
-               </div>
-             </div>
-           </div>
+            <div className="grid md:grid-cols-2 md:w-11/12 mx-auto" role="tabpanel" aria-labelledby="admin-tab" >
+              <div className="app-img text-center">
+                <img src={app1} alt="" className='mx-auto app-img' />
+              </div>
+              <div className="app-cards">
+                <div className="appcard-1">
+                  <h3 className='text-xl text-center text-[#22249B]'>Retailer App</h3>
+                  <p className='text-center'>For our retailers we have made business less complicated by making everything being done automated.</p>
+                  <ul className='mt-2'>
+                    <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Forecasting of business plans.</li>
+                    <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Get complete details of credit bills of the customers.</li>
+                    <li className='mt-2 flex'> <img className='mr-2' src={Listicon} alt="" />Works as mini CRM for the retailers.</li>
+                  </ul>
+                  <button className='primary-btn mt-3'>Schedule a Demo</button>
+                </div>
+              </div>
+            </div>
           )}
 
         </div>

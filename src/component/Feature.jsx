@@ -16,7 +16,7 @@ export default function Feature() {
                         <p className='pt-2 text-gray-600'>Start Working with Finest GST Billing Software and stay ahead from your competitors with more focus on core Business. With advanced technology,<b className='text-black'> BTHAWK </b>provide you complete accounting solutions for your growing business.</p>
                     </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4 w-9/12 ml-auto col-span-2">
+                <div className="grid sm:grid-cols-2 gap-4 lg:w-9/12 mt-3 mb-4 ml-auto col-span-2">
                     <div className="feature-card">
                         <h1 className='px-[25px] text-xl text-center'>GST Compliance</h1>
                         <p className='px-[25px] text-center'>The cancer in disguise problem for a Businessman will be sorted. Our aim is to make our client satisfied and stress free from all the compliance complications.</p>
