@@ -80,15 +80,15 @@ export default function Testimonials() {
     return (
         <>
             <div className='bg-[#000] text-white'>
-                <div className='w-11/12 mx-auto grid lg:grid-cols-2 gap-4 mt-14 pb-12'>
-                    <div className="cient-review md:p-12 p-6 pt-12">
-                        <h1 className='text-2xl mb-5'>What Our Client Say About Us!</h1>
+                <div className='grid w-11/12 gap-4 pb-12 mx-auto lg:grid-cols-2 mt-14'>
+                    <div className="p-6 pt-12 cient-review md:p-12">
+                        <h1 className='mb-5 text-2xl'>What Our Client Say About Us!</h1>
                         <div className="slider-container">
                             <Slider {...settings}>
                                 {
                                     review.map((item) =>
-                                        <div>
-                                            <div className='review flex flex-row gap-4'>
+                                        <div key={item.id}>
+                                            <div className='flex flex-row gap-4 review'>
                                                 <img src={item.client_img} alt="review" />
                                                 <div>
                                                     <p className='review-data'>{item.review}</p>
@@ -100,10 +100,10 @@ export default function Testimonials() {
                                 }
                             </Slider>
                         </div>
-                        <p className='text-white mt-5 flex'>Visit our wall of love <img src={uparrow} alt="arrow" /></p>
+                        <p className='flex mt-5 text-white'>Visit our wall of love <img src={uparrow} alt="arrow" /></p>
 
                     </div>
-                    <div className="client-banner md:p-12 p-6 pt-12">
+                    <div className="p-6 pt-12 client-banner md:p-12">
                         <div className="slider-container">
                         <Slider {...banner}>
                             <div>

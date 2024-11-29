@@ -37,18 +37,18 @@ export default function Ourblog() {
     return (
         <>
             <div className='w-11/12 mx-auto mt-14'>
-                <div className='ourblog-heading py-3 flex justify-between'>
+                <div className='flex justify-between py-3 ourblog-heading'>
                     <h1 className='text-2xl'>Our Blogs</h1>
                     <p className='text-2xl text-[#22249B]'>View All</p>
                 </div>
-                <div className='md:py-14 py-8 grid md:grid-cols-2'>
+                <div className='grid py-8 md:py-14 md:grid-cols-2'>
                     {
                         blogs.slice(0, 4).map((item, index) =>
-                            <div key={index} className='review flex flex-row gap-4 md:w-11/12 mb-5'>
-                                <img className='rounded-xl border-2 blog-img' width={170} src={item.blog_img} alt="review" />
+                            <div key={index} className='flex flex-row gap-4 mb-5 review md:w-11/12'>
+                                <img className='border-2 rounded-xl blog-img' width={170} src={item.blog_img} alt="review" />
                                 <div>
-                                    <b className='text-xl mb-2'>{item.blog_heading}</b>
-                                    <p className='blog-detail mt-2'>{item.blog_des}</p>
+                                    <b className='mb-2 text-xl'>{item.blog_heading}</b>
+                                    <p className='mt-2 blog-detail'>{item.blog_des}</p>
                                 </div>
                             </div>
                         )

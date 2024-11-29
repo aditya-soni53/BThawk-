@@ -85,16 +85,16 @@ export default function Partnerslider() {
       ]
     return (
         <>
-            <div className='w-11/12 text-white rounded-2xl mx-auto mt-14 partner-slider py-12'>
-                <div className="lg:w-7/12 w-11/12 mx-auto text-center  mb-14">
-                    <h1 className='text-3xl pb-2 capitalize'>Our Trusted Clients</h1>
+            <div className='w-11/12 py-12 mx-auto text-white rounded-2xl mt-14 partner-slider'>
+                <div className="w-11/12 mx-auto text-center lg:w-7/12 mb-14">
+                    <h1 className='pb-2 text-3xl capitalize'>Our Trusted Clients</h1>
                     <p className=''>BTHAWK provide complete accounting solutions and pay utmost attention towards our client's satisfaction that is why we have 100% client retention till date.</p>
                 </div>
                 <div className='mx-auto md:w-10/12 w-12/12 partner-slider-main'>
                     <Slider {...settings}>
                         {
                             partnerimg.map((item)=>
-                            <div>
+                            <div key={item.id}>
                                 <img src={item.parnter_img} alt="partner-img" />
                             </div>
                             
