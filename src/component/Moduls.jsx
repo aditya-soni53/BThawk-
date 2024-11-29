@@ -7,7 +7,7 @@ export default function Moduls() {
     return (
         <>
             <div className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 md:mt-5 mt-14 mb-4">
-                <h1 className='text-3xl pb-3 capitalize'> Different modules of <span className='text-[#22249B]'>BT</span><span className='text-[#E45325]'>HAWK</span> as per your need</h1>
+                <h1 className='text-3xl pb-3'> Different modules of <span className='text-[#22249B]'>BT</span><span className='text-[#E45325]'>HAWK</span> as per your need</h1>
                 <p className=''>(With 100% customization) </p>
             </div>
             <div className='w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 md:gap-14 gap-6 mt-2'>

@@ -18,6 +18,9 @@ html {
   font-size: 100%;
   scroll-behavior: smooth
 }
+p b i {
+  font-family: var(--font-open-sans);
+}
 body {
   margin: 0;
   padding: 0;
@@ -39,6 +42,7 @@ h6 {
   font-family: var(--font-open-sans);
   font-weight: 700;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 input {
@@ -404,4 +408,10 @@ padding: 25px 0px;
   flex-direction: row;
   justify-content: space-between;
 
+}
+
+.blog-card{
+  border: 2px solid #E8E8EA;
+  border-radius: 11.27px;
+  padding: 10px;
 }

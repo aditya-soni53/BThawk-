@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link,NavLink } from 'react-router-dom'
 import logo from '../assets/image/logo.svg';
 import scrolledLogo from '../assets/image/white-logo.svg'; // Update with your scrolled logo path
 
@@ -24,19 +25,26 @@ export default function Header() {
           </a>
           <div className={`navbar-mobile ${isNavbarOpen ? 'flex' : 'none'}`}>
           <nav class="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4	flex flex-wrap items-center text-base justify-center lg:gap-5 gap-3 nav-links">
-            <a class="hover:text-gray-900">Home</a>
+            {/* <a class="hover:text-gray-900">Home</a>
             <a class="hover:text-gray-900">Accounting Service</a>
             <a class="hover:text-gray-900">Our Customer</a>
             <a class="hover:text-gray-900">Price</a>
             <a class="hover:text-gray-900">Blog</a>
-            <a class="hover:text-gray-900">Contact</a>
+            <a class="hover:text-gray-900">Contact</a> */}
+            <NavLink to="/" class="hover:text-gray-900">Home</NavLink>
+            <NavLink to="/" class="hover:text-gray-900">Accounting Service</NavLink>
+            <NavLink to="/" class="hover:text-gray-900">Our Customer</NavLink>
+            <NavLink to="/" class="hover:text-gray-900">Price</NavLink>
+            <NavLink to="/blogs" class="hover:text-gray-900">Blog</NavLink>
+            <NavLink to="/" class="hover:text-gray-900">Contact</NavLink>
+            {/* <NavLink to="/contact">Contact</NavLink> */}
           </nav>
-          <button class="secoundry-btn">Sign Up
+          <button className={`primary-btn lg:mb-0 mb-1 ${isScrolled ? 'scrolled' : ''}`}>Sign Up
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <button class="primary-btn ml-2">Schedule a Demo
+          <button class="primary-btn ml-2 ">Schedule a Demo
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
