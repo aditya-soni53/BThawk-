@@ -179,7 +179,7 @@ header {
 /* About Page */
 
 .about-hero_img {
-  background: url("./assets/image/about-hero_img.svg");
+  background: url("./assets/image/about-hero_img.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -214,3 +214,24 @@ header {
 }
 
 /* End About Page */
+
+/* Contact Page */
+
+.contact_us-details_left {
+  border-radius: 10px;
+  background-image: url('./assets/image/contact-info_bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.contact_us-container {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
+}
+
+.custom-input {
+  border-bottom: 1px solid #000;
+}
+
+
+/* End Contact Page */

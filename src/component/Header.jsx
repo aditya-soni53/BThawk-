@@ -58,7 +58,12 @@ export default function Header() {
             >
               About
             </NavLink>
-            <NavLink className="cursor-pointer hover:text-orange-400">
+            <NavLink to="/contact"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-orange-400 ${
+                isActive ? "text-orange-400" : ""
+              }`
+            }>
               Contact
             </NavLink>
           </nav>

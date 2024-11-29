@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { mentorsImg } from "../helper";
+import Hero from "../component/Hero";
 
 const features = [
   {
@@ -106,31 +107,22 @@ const mentors = [
   
 ]
 
+const HeroText = `Bell Technology’s
+              BTHAWK ensures a 360-degree focus on your financial and accounting
+              needs, just like a hawk watches its surroundings. With BTHAWK, you
+              don’t need an accountant or extensive accounting knowledge. We’re
+              your trusted support, freeing you to focus on growing your
+              business. Say goodbye to outdated systems—our modern solution is
+              designed for businesses across all industries, from telecom and
+              pharma to retail and more. Available in all Indian languages,
+              BTHAWK simplifies compliance and empowers businesses nationwide.
+              Stay ahead with BTHAWK—your partner for financial clarity and
+              business excellence.`
+
 const About = () => {
   return (
     <>
-      <section className="about-hero-section">
-        <div className="about-hero_img h-[9rem] lg:h-[33rem] md:h-[18rem]" />
-        <div className="about-hero_content">
-          <div className="container mx-auto md:-mt-16 bg-shadow">
-            <div className="w-10/12 mx-auto">
-              <p className="py-8 text-base text-center">
-                <span className="text-orange-500">BTHAWK:</span> Bell
-                Technology’s BTHAWK ensures a 360-degree focus on your financial
-                and accounting needs, just like a hawk watches its surroundings.
-                With BTHAWK, you don’t need an accountant or extensive
-                accounting knowledge. We’re your trusted support, freeing you to
-                focus on growing your business. Say goodbye to outdated
-                systems—our modern solution is designed for businesses across
-                all industries, from telecom and pharma to retail and more.
-                Available in all Indian languages, BTHAWK simplifies compliance
-                and empowers businesses nationwide. Stay ahead with BTHAWK—your
-                partner for financial clarity and business excellence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero text={HeroText} show={true}/>
       <section className="mt-10 mb-6 about-features-section">
         <div className="container mx-auto">
           <div className="text-center about-features_heading">
