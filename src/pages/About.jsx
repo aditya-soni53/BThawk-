@@ -148,7 +148,7 @@ const About = () => {
                       feature.margin_left ? "-ml-14" : ""
                     } features_box_text w-80`}
                   >
-                    <span className="py-1 pl-3 pr-6 text-lg text-[#252424] font-semibold">
+                    <span className="py-1 pl-3 pr-6 text-[10px] sm:text-base md:text-lg text-[#252424] font-semibold">
                       {feature.description}
                     </span>
                   </div>

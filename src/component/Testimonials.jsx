@@ -1,4 +1,3 @@
-import React from 'react'
 import clientbanner1 from '../assets/image/clientbanner-1.png'
 import clientbanner2 from '../assets/image/clientbanner-2.png'
 import clientbanner3 from '../assets/image/clientbanner-3.gif'
@@ -21,7 +20,6 @@ export default function Testimonials() {
         cssEase: "linear",
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 1,
         vertical: true,
         verticalSwiping: true,
         beforeChange: function (currentSlide, nextSlide) {
@@ -70,7 +68,6 @@ export default function Testimonials() {
         fade: true,
         infinite: true,
         autoplay: true,
-        speed: 10000,
         autoplaySpeed: 4000,
         speed: 500,
         slidesToShow: 1,
