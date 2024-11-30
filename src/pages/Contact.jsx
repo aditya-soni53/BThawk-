@@ -102,7 +102,7 @@ const Contact = () => {
     <>
       <section className="contact-section">
         <Hero text={HeroText} show={false} />
-        <div className="mt-14 contact_us-details mb-14">
+        <div className="mt-14 w-11/12 mx-auto contact_us-details mb-14">
           <div className="container flex flex-col p-2 mx-auto md:flex-row contact_us-container">
             <aside className="p-10 contact_us-details_left md:w-4/12">
               <div className="text-white contact_us-heading">
@@ -142,7 +142,7 @@ const Contact = () => {
                       <label
                         htmlFor="f_name"
                         className={`absolute text-[#8D8D8D] left-0 transition-all top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.f_name ? "text-xs -top-4 text-blue-700" : ""
+                          formData.f_name ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
                         First Name
@@ -166,7 +166,7 @@ const Contact = () => {
                       <label
                         htmlFor="l_name"
                         className={`absolute text-[#8D8D8D] left-0 transition-all top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.l_name ? "text-xs -top-4 text-blue-700" : ""
+                          formData.l_name ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
                         Last Name
@@ -190,7 +190,7 @@ const Contact = () => {
                       <label
                         htmlFor="email"
                         className={`absolute text-[#8D8D8D] left-0 transition-all top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.email ? "text-xs -top-4 text-blue-700" : ""
+                          formData.email ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
                         Email
@@ -214,7 +214,7 @@ const Contact = () => {
                       <label
                         htmlFor="phone"
                         className={`absolute text-[#8D8D8D] left-0 transition-all top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.phone ? "text-xs -top-4 text-blue-700" : ""
+                          formData.phone ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
                         Phone Number
@@ -238,7 +238,7 @@ const Contact = () => {
                       <label
                         htmlFor="subject"
                         className={`absolute text-[#8D8D8D] left-0 transition-all top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.subject ? "text-xs -top-4 text-blue-700" : ""
+                          formData.subject ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
                         Subject
@@ -262,7 +262,7 @@ const Contact = () => {
                       <label
                         htmlFor="message"
                         className={`absolute text-[#8D8D8D] left-0 transition-all top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.message ? "text-xs -top-4 text-blue-700" : ""
+                          formData.message ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
                         Message

@@ -1,11 +1,21 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/image/logo.svg";
 import scrolledLogo from "../assets/image/white-logo.svg"; // Update with your scrolled logo path
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const location = useLocation()
+
+   useEffect(() => {
+
+    window.scrollTo(0, 0);
+    if (isNavbarOpen) {
+      setIsNavbarOpen(false);
+    }
+     
+   },[location.pathname])
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerWidth >= 991) {

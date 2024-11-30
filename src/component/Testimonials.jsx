@@ -1,11 +1,8 @@
-import clientbanner1 from '../assets/image/clientbanner-1.png'
-import clientbanner2 from '../assets/image/clientbanner-2.png'
-import clientbanner3 from '../assets/image/clientbanner-3.gif'
-import clientbanner4 from '../assets/image/clientbanner-4.png'
-import clientbanner5 from '../assets/image/clientbanner-5.png'
+import React from 'react'
 import Slider from "react-slick";
 import reviewimg from '../assets/image/review-img.svg'
 import uparrow from '../assets/image/arrow-up-right.svg'
+import Heroslider from './Heroslider'
 // import faArrowUpRight from '@fortawesome/react-fontawesome'
 
 
@@ -22,12 +19,12 @@ export default function Testimonials() {
         slidesToShow: 3,
         vertical: true,
         verticalSwiping: true,
-        beforeChange: function (currentSlide, nextSlide) {
-            console.log("before change", currentSlide, nextSlide);
-        },
-        afterChange: function (currentSlide) {
-            console.log("after change", currentSlide);
-        }
+        // beforeChange: function (currentSlide, nextSlide) {
+        //     console.log("before change", currentSlide, nextSlide);
+        // },
+        // afterChange: function (currentSlide) {
+        //     console.log("after change", currentSlide);
+        // }
     };
     const review = [
         {
@@ -62,23 +59,12 @@ export default function Testimonials() {
         }
     ]
 
-    const banner = {
-        dots: false,
-        arrows:false,
-        fade: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        waitForAnimate: false
-      };
+   
     return (
         <>
             <div className='bg-[#000] text-white'>
-                <div className='grid w-11/12 gap-4 pb-12 mx-auto lg:grid-cols-2 mt-14'>
-                    <div className="p-6 pt-12 cient-review md:p-12">
+                <div className='grid w-11/12 gap-4 pb-12 mx-auto lg:grid-cols-2 grid-cols-1 mt-14'>
+                    <div className="pt-12 cient-review md:p-12 w-full">
                         <h1 className='mb-5 text-2xl'>What Our Client Say About Us!</h1>
                         <div className="slider-container">
                             <Slider {...settings}>
@@ -100,26 +86,10 @@ export default function Testimonials() {
                         <p className='flex mt-5 text-white'>Visit our wall of love <img src={uparrow} alt="arrow" /></p>
 
                     </div>
-                    <div className="p-6 pt-12 client-banner md:p-12">
-                        <div className="slider-container">
-                        <Slider {...banner}>
-                            <div>
-                            <img src={clientbanner1} className='mx-auto trust-img' alt="" />
-                            </div>
-                            <div>
-                            <img src={clientbanner2} className='mx-auto trust-img' alt="" />
-                            </div>
-                            <div>
-                            <img src={clientbanner3} className='mx-auto trust-img' alt="" />
-                            </div>
-                            <div>
-                            <img src={clientbanner4} className='mx-auto trust-img' alt="" />
-                            </div>
-                            <div>
-                            <img src={clientbanner5} className='mx-auto trust-img' alt="" />
-                            </div>
-                        </Slider>
-                    </div>
+                    <div className="md:p-12 lg:p-6 lg:pt-12 w-full">
+                       
+                        <Heroslider />
+                    
                     </div>
                     
                 </div>
