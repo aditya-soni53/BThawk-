@@ -62,7 +62,7 @@ export default function Bloglist() {
       <div className="w-11/12 mx-auto mt-12">
         <h1 className="text-2xl">Latest Blog</h1>
       </div>
-      <div className="w-11/12 mx-auto my-10 mb-16 grid lg:grid-cols-3 gap-4">
+      <div className="w-11/12 mx-auto my-10 mb-16 grid lg:grid-cols-3 grid-cols-1 gap-4">
         {
           data.slice(0, visibleBlogs).map((item, index) => (
             <div key={index} className="blog-card">
