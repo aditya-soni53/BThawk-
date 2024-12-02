@@ -2,15 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import Topbanner from '../component/Topbanner';
 import Blogbanner from '../assets/image/blog-banner.jpg'
-import clientbanner1 from '../assets/image/clientbanner-1.png'
-import clientbanner2 from '../assets/image/clientbanner-2.png'
-import clientbanner3 from '../assets/image/clientbanner-3.gif'
-import clientbanner4 from '../assets/image/clientbanner-4.png'
-import clientbanner5 from '../assets/image/clientbanner-5.png'
 import twitter from "../assets/image/twitter.png";
 import profileimg from '../assets/image/favicon.svg';
 import Slider from "react-slick";
 import Heroslider from '../component/Heroslider';
+import Relatedblogs from '../component/relatedblogs';
 
 export default function Blogdetail(props) {
   const { blogId } = useParams(); // Extract blog ID from URL
@@ -54,7 +50,32 @@ export default function Blogdetail(props) {
       }
     };
 
+    const fetchRelatedData = async () => {
+      try {
+        const response = await fetch("https://www.bthawk.com/api/blog_api", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ type: 'blogFetch' }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        setRelatedBlogs(result.data); // Ensure this matches your API's response structure
+        // console.log(result.data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchBlogData();
+    fetchRelatedData();
   }, [blogId]);
   
   if (loading) return <div className='w-full h-96 grid place-content-center'><span className="loader"></span></div>;
@@ -98,6 +119,17 @@ export default function Blogdetail(props) {
        </div>
        <div className='blog-content'>
          <p dangerouslySetInnerHTML={{ __html: blog.content }} />
+         <div>
+       <h2>Related Blogs</h2>
+       <div className="related-blogs">
+         {/* {relatedBlogs.map((related, index) => (
+           <div key={index}>
+             <h3>{related.blog_title}</h3>
+           </div>
+         ))} */}
+         <Relatedblogs data = {relatedBlogs} />
+       </div>
+     </div>
        </div>
         
        </div>
@@ -170,20 +202,13 @@ export default function Blogdetail(props) {
          <div>
 
          </div>
+         
        </div>
+       
 
      </div>
 
-     <div>
-       {/* <h2>Related Blogs</h2>
-       <div className="related-blogs">
-         {relatedBlogs.map((related, index) => (
-           <div key={index}>
-             <h3>{related.blog_title}</h3>
-           </div>
-         ))}
-       </div> */}
-     </div>
+     
    </>
   );
 }

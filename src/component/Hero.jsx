@@ -4,7 +4,7 @@ const Hero = ({text, show}) => {
     <section className="about-hero-section">
       <div className="about-hero_img h-[9rem] lg:h-[33rem] md:h-[18rem]" />
       <div className="about-hero_content">
-        <div className="container mx-auto md:-mt-16 bg-shadow">
+        <div className="lg:w-8/12 w-11/12 mx-auto md:-mt-16 bg-shadow">
           <div className={`${!show && "py-6"} w-10/12 mx-auto`}>
               {!show && <h2 className="mb-3 text-3xl text-center text-[#22249B]">Contact Us</h2>}
             <p className={`${show ? "py-8" : ""} text-base text-center`}>
