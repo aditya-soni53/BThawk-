@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unknown-property */
+import { useState } from "react";
 import logo from "../assets/image/logo.svg";
 import playstore from "../assets/image/play-store-1.svg";
 import appstore from "../assets/image/app-store-1.svg";
@@ -16,15 +18,15 @@ export default function Footer() {
     <footer className="text-white bg-black body-font">
       <div className="grid w-11/12 grid-cols-2 pb-6 mx-auto md:px-5 pt-14 lg:grid-cols-5 ">
         <div className="flex-shrink-0 col-span-2 mx-auto mb-8 text-center lg:mx-0 md:text-left">
-          <a className="flex items-center justify-center mb-4 font-medium text-gray-900 title-font md:justify-start md:mb-10">
+          <Link to="/" className="flex items-center justify-center mb-4 font-medium text-gray-900 title-font md:justify-start md:mb-10">
             <img src={logo} alt="" />
-          </a>
+          </Link>
           <p className="md:mt-2 md:mb-10 md-4 text-md ">
             Start working with BTHAWK that can provide everything you need to
             increase your business revenue.
           </p>
           <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0">
-            <a className="px-4 text-center border-r-2">
+            <Link to="https://www.facebook.com/Bell.BTHawk/" target="_blank" className="px-4 text-center border-r-2">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -35,11 +37,11 @@ export default function Footer() {
               >
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
               </svg>
-            </a>
-            <a className="px-4 text-center border-r-2">
+            </Link>
+            <Link to="https://www.twitter.com/bell_bthawk" target="_blank" className="px-4 text-center border-r-2">
               <img src={twitter} alt="twitter" width={17} />
-            </a>
-            <a className="px-4 text-center border-r-2">
+            </Link>
+            <Link to="https://www.instagram.com/bell.bthawk/?hl=en" target="_blank" className="px-4 text-center border-r-2">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -52,8 +54,8 @@ export default function Footer() {
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
               </svg>
-            </a>
-            <a className="px-4 text-center">
+            </Link>
+            <Link to="https://www.linkedin.com/company/bthawk2019/?viewAsMember=true" target="_blank" className="px-4 text-center">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -69,7 +71,7 @@ export default function Footer() {
                 ></path>
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
-            </a>
+            </Link>
           </span>
         </div>
         <div className="px-4">
@@ -103,13 +105,13 @@ export default function Footer() {
               <Link to="/about" className=" hover:text-[#FF553E]">About</Link>
             </li>
             <li>
-              <Link className=" hover:text-[#FF553E]">Privacy policy</Link>
+              <Link to="/privacy-policy" className=" hover:text-[#FF553E]">Privacy policy</Link>
             </li>
             <li>
               <Link className=" hover:text-[#FF553E]">FAQ</Link>
             </li>
             <li>
-              <Link className=" hover:text-[#FF553E]">Terms & Cond.</Link>
+              <Link to="/terms-conditions" className=" hover:text-[#FF553E]">Terms & Cond.</Link>
             </li>
             <li>
               <Link className=" hover:text-[#FF553E]">Career</Link>

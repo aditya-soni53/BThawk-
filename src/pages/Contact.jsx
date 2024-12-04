@@ -101,7 +101,7 @@ const Contact = () => {
   return (
     <>
       <section className="contact-section">
-        <Hero text={HeroText} show={false} />
+        <Hero text={HeroText} show={false} heading="Contact Us" />
         <div className="w-11/12 mx-auto mt-14 contact_us-details mb-14">
           <div className="container flex flex-col p-2 mx-auto md:flex-row contact_us-container">
             <aside className="p-10 contact_us-details_left md:w-4/12">

@@ -1,41 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useContext } from 'react';
 import profileimg from '../assets/image/favicon.svg';
 import Blogbanner from '../assets/image/blog-banner.jpg';
 import { Link } from 'react-router-dom';
+import { Context } from '../Context';
+
 
 export default function Bloglist() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [visibleBlogs, setVisibleBlogs] = useState(12); // Pagination control
+  const [visibleBlogs, setVisibleBlogs] = useState(12);
 
-  // Fetch blog data
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://www.bthawk.com/api/blog_api", {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ type: 'blogFetch' }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const result = await response.json();
-        setData(result.data); // Ensure this matches your API's response structure
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data, error, loading } = useContext(Context);
 
   // Format date strings
   const formatDate = (dateString) => {
@@ -54,7 +27,7 @@ export default function Bloglist() {
   };
 
   // Display loaders or error messages
-  if (loading) return <div className='w-full h-96 grid place-content-center'><span class="loader"></span></div>;
+  if (loading) return <div className='grid w-full h-96 place-content-center'><span className="loader"></span></div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -62,7 +35,7 @@ export default function Bloglist() {
       <div className="w-11/12 mx-auto mt-12">
         <h1 className="text-2xl">Latest Blog</h1>
       </div>
-      <div className="w-11/12 mx-auto my-10 mb-16 grid lg:grid-cols-3 grid-cols-1 gap-4">
+      <div className="grid w-11/12 grid-cols-1 gap-4 mx-auto my-10 mb-16 lg:grid-cols-3">
         {
           data.slice(0, visibleBlogs).map((item, index) => (
             <div key={index} className="blog-card">
@@ -78,10 +51,10 @@ export default function Bloglist() {
               />
 
               {/* Blog content */}
-              <div className="blog-card-content pt-3">
+              <div className="pt-3 blog-card-content">
               <Link to={`/Blogs/${item.title_slug}`}><b className="text-lg">{item.blog_title}</b></Link>
               <p className='mt-2 blog-detail' dangerouslySetInnerHTML={{ __html: item.content }} />
-                <div className="blog-card-footer grid grid-cols-2">
+                <div className="grid grid-cols-2 blog-card-footer">
                   <div className="flex p-2">
                     <img src={profileimg} alt="Profile" className="w-6 mr-1" />
                     <span>{item.blog_posted_by || "Unknown Author"}</span>
@@ -100,7 +73,7 @@ export default function Bloglist() {
       {/* Load More Button */}
       {
         visibleBlogs < data.length && (
-          <div className="text-center my-4 mb-14">
+          <div className="my-4 text-center mb-14">
             <button
               onClick={loadMoreBlogs}
               className="primary-btn"

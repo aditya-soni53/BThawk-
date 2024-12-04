@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./component/Footer";
 import Blogdetail from "./pages/Blogdetail";
+import Privacy from "./pages/Privacy";
+import TermCondition from "./pages/TermCondition";
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Blogs" element={<Blogs />} />
-          <Route path="/about" element={<About />} />
           <Route path="/Blogs/:blogId" element={<Blogdetail />} />  
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms-conditions" element={<TermCondition />} />
           <Route path="/*" element={<Home />} />        
         </Routes>
         <Footer />

@@ -10,16 +10,16 @@ import Ourblog from "../component/Ourblog";
 
 export default function Home() {
   return (
-   <>
-   <Banner />
-   <Feature />
-   <Howcan />
-   <Appshowcase />
-   <Moduls />
-   <Bthawkdevice />
-   <Testimonials />
-   <Partnerslider />
-   <Ourblog />
+    <>
+      <Banner />
+      <Feature />
+      <Howcan />
+      <Appshowcase />
+      <Moduls />
+      <Bthawkdevice />
+      <Testimonials />
+      <Partnerslider />
+      <Ourblog />
     </>
   );
 }

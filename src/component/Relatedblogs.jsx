@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Blogbanner from '../assets/image/blog-banner.jpg';
+import PropTypes from "prop-types";
+
 
 import Slider from "react-slick";
 
 export default function Relatedblogs({data}) {
 
-console.log(data);
     var settings = {
         dots: false,
         infinite: false,
@@ -47,7 +47,7 @@ console.log(data);
       <div className="slider-container">
         <Slider {...settings}>
           {data.map((related, index) => (
-            <div key={index} className="blog-card m-2">
+            <div key={index} className="m-2 blog-card">
                 {/* Image with fallback */}
               <img
                 src={`https://www.bthawk.com/panel/img/` + related.image}
@@ -67,3 +67,7 @@ console.log(data);
       </div>
     );
 }
+
+Relatedblogs.propTypes = {
+  data: PropTypes.array,
+};
