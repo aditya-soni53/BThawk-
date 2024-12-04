@@ -8,6 +8,7 @@ import profileimg from "../assets/image/favicon.svg";
 import Heroslider from "../component/Heroslider";
 import Relatedblogs from "../component/Relatedblogs";
 import { Context } from "../Context";
+import { Helmet } from "react-helmet";
 
 export default function Blogdetail() {
   const { blogId } = useParams(); // Extract blog ID from URL
@@ -18,6 +19,7 @@ export default function Blogdetail() {
   const { data } = useContext(Context);
   const url = window.location.href;
   const blogTitle = blog?.meta_title;
+  const basePath = window.location.origin;
 
   // To keep track of the active heading in the TOC
   const [activeHeading, setActiveHeading] = useState(null);
@@ -115,6 +117,34 @@ export default function Blogdetail() {
 
   return (
     <>
+      <Helmet>
+        <title>{blog.meta_title}</title>
+        <meta name="keywords" content={blog.tags} />
+        <meta name="description" content={blog.meta_description} />
+        <link rel="canonical" href={url} />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={blog.meta_title} />
+        <meta property="og:description" content={blog.meta_description} />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta property="twitter:domain" content={basePath} />
+        <meta
+          property="twitter:url"
+          content={url}
+        />
+        <meta
+          name="twitter:title"
+          content={blog.meta_title}
+        />
+        <meta
+          name="twitter:description"
+          content={blog.meta_description}
+        />
+      </Helmet>
+
       <Topbanner banner={Blogbanner} />
 
       <div className="grid w-11/12 grid-cols-1 mx-auto mt-4 lg:grid-cols-4 lg:mt-8">
@@ -257,10 +287,17 @@ export default function Blogdetail() {
               <ul>
                 {headings.map((heading, index) => (
                   <li
-                    className={`mt-1 ${activeHeading === `heading_${index}` ? "text-orange-500" : ""}`}
+                    className={`mt-1 ${
+                      activeHeading === `heading_${index}`
+                        ? "text-orange-500"
+                        : ""
+                    }`}
                     key={index}
                   >
-                    <a className="hover:text-orange-500" href={`#heading_${index}`}>
+                    <a
+                      className="hover:text-orange-500"
+                      href={`#heading_${index}`}
+                    >
                       {heading}
                     </a>
                   </li>
