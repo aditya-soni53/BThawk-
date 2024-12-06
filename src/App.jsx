@@ -11,6 +11,8 @@ import Footer from "./component/Footer";
 import Blogdetail from "./pages/Blogdetail";
 import Privacy from "./pages/Privacy";
 import TermCondition from "./pages/TermCondition";
+import Service from "./pages/Service";
+import Servicedetail from "./pages/Servicedetail";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Blogs" element={<Blogs />} />
           <Route path="/Blogs/:blogId" element={<Blogdetail />} />  
+          <Route path="/Servicedetail" element={<Servicedetail />} />
+          <Route path="/Service/:serviceId" element={<Servicedetail />} />  
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<Privacy />} />

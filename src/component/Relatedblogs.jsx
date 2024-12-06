@@ -47,8 +47,8 @@ export default function Relatedblogs({data}) {
       <div className="slider-container">
         <Slider {...settings}>
           {data.map((related, index) => (
-            <div key={index} className="m-2 blog-card">
-                {/* Image with fallback */}
+            <div key={index}>
+              <div className='blog-card m-3'>
               <img
                 src={`https://www.bthawk.com/panel/img/` + related.image}
                 className="rounded-xl"
@@ -59,8 +59,8 @@ export default function Relatedblogs({data}) {
                 }}
                 />
                 <Link to={`/Blogs/${related.title_slug}`}><b className="text-lg">{related.blog_title}</b></Link>
-              
-              {/* <img src={`https://www.bthawk.com/panel/img/${related.image}`} alt={related.title} /> */}
+              </div>
+             
             </div>
           ))}
         </Slider>

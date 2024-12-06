@@ -6,6 +6,7 @@ import Blogbanner from "../assets/image/blog-banner.jpg";
 import twitter from "../assets/image/twitter.png";
 import profileimg from "../assets/image/favicon.svg";
 import Heroslider from "../component/Heroslider";
+import Faqdetail from "../component/Faqdetail";
 import Relatedblogs from "../component/Relatedblogs";
 import { Context } from "../Context";
 import { Helmet } from "react-helmet";
@@ -26,7 +27,16 @@ export default function Blogdetail() {
 
   // Create a ref for the content container to access the H2 elements directly
   const contentRef = useRef(null);
-
+ // Format date strings
+ const formatDate = (dateString) => {
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date)) throw new Error('Invalid Date');
+    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  } catch {
+    return 'Invalid Date';
+  }
+};
   useEffect(() => {
     (async () => {
       try {
@@ -174,7 +184,7 @@ export default function Blogdetail() {
                 </div>
                 <div className="flex p-2">
                   <img src={profileimg} alt="Date" className="w-6 mr-1" />
-                  <span>{blog.postedDate}</span>
+                  <span>{formatDate(blog.blog_date)}</span>
                 </div>
               </div>
             </div>
@@ -182,6 +192,11 @@ export default function Blogdetail() {
 
           <div ref={contentRef} className="blog-content">
             <p dangerouslySetInnerHTML={{ __html: blog.content }} />
+            <div>
+              
+              <Faqdetail faq={blog.faqs}/>
+            </div>
+          
             <div>
               <h2 className="related-blogs-heading">Related Blogs</h2>
               <div className="related-blogs">
@@ -192,10 +207,11 @@ export default function Blogdetail() {
         </div>
 
         <div className="w-full lg:p-4">
-          <div className="sticky top-[84px]">
-            <div className="">
+        <div className="">
               <Heroslider />
             </div>
+          <div className="sticky top-[84px]">
+
 
             <div className="share-card">
               <h6 className="mb-4 text-sm">Share with your community!</h6>
@@ -210,9 +226,9 @@ export default function Blogdetail() {
                 >
                   <svg
                     fill="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-5 h-5"
                     viewBox="0 0 24 24"
                   >
@@ -239,9 +255,9 @@ export default function Blogdetail() {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-5 h-5"
                     viewBox="0 0 24 24"
                   >
@@ -267,9 +283,9 @@ export default function Blogdetail() {
                   <svg
                     fill="currentColor"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="0"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="0"
                     className="w-5 h-5"
                     viewBox="0 0 24 24"
                   >
@@ -282,16 +298,15 @@ export default function Blogdetail() {
                 </a>
               </span>
             </div>
-            <div className="p-5 pr-0 mt-4 shadow-xl table-of-content">
+            <div className="pr-0 mt-4 table-of-content">
               <h2 className="table_content">Table of Contents</h2>
               <ul>
                 {headings.map((heading, index) => (
                   <li
-                    className={`mt-1 ${
-                      activeHeading === `heading_${index}`
-                        ? "text-orange-500"
+                    className={`mt-1 py-1 pl-2 ${activeHeading === `heading_${index}`
+                        ? "text-orange-500 side-line"
                         : ""
-                    }`}
+                      }`}
                     key={index}
                   >
                     <a
@@ -310,3 +325,7 @@ export default function Blogdetail() {
     </>
   );
 }
+
+
+
+
