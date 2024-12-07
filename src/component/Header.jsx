@@ -6,12 +6,23 @@ import scrolledLogo from "../assets/image/white-logo.svg"; // Update with your s
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(false); 
-  const [showInput, setShowInput] = useState(false); 
-  const [subMenuStates, setSubMenuStates] = useState({ showHtmlCssSubMenu: false, showJsSubMenu: false, showMoreSubMenu: false }); 
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [showInput, setShowInput] = useState(false);
+  const [subMenuStates, setSubMenuStates] = useState({ showHtmlCssSubMenu: false, showJsSubMenu: false, showMoreSubMenu: false });
   const toggleNavbar = () => { setShowNavbar(!showNavbar); }; const toggleSearch = () => { setShowInput(!showInput); };
   const toggleSubMenu = (menu) => { setSubMenuStates((prevStates) => ({ ...prevStates, [menu]: !prevStates[menu] })); };
   const location = useLocation()
+  const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
+  const [isTaxPreparationOpen, setIsTaxPreparationOpen] = useState(false);
+  const [isPayrollManagementOpen, setIsPayrollManagementOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 0);
+
+  // Update state based on window width
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth > 0);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
 
@@ -23,7 +34,7 @@ export default function Header() {
   }, [location.pathname])
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth >= 991) {
+      if (window.innerWidth >= 0) {
         if (window.scrollY > 0) {
           setIsScrolled(true);
         } else {
@@ -54,83 +65,185 @@ export default function Header() {
             <img src={scrolledLogo} alt="Logo" className="mobile-logo" />
           </a>
           <div className={`navbar-mobile ${isNavbarOpen ? "flex" : "none"}`}>
-            <nav className="flex flex-wrap items-center justify-center gap-3 text-base lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 nav-links">
+            <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 ">
+              <ul className="flex flex-wrap items-center justify-center gap-3 text-base nav-links">
+                <li>
+                  <NavLink to="/" className={({ isActive }) => `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""}`} >
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <div
+                    className={`relative ${isDesktop ? "" : "block"}`}
+                    onMouseEnter={() => isDesktop && setIsMainDropdownOpen(true)}
+                    onMouseLeave={() => isDesktop && setIsMainDropdownOpen(false)}
+                    onClick={() => !isDesktop && setIsMainDropdownOpen(!isMainDropdownOpen)}
+                  >
+                    <span className="hover:text-orange-400  cursor-pointer service-h">Accounting Service</span>
+                    {/* Dropdown Menu */}
+                    {(isMainDropdownOpen || !isDesktop) && (
+                      <div className={`lg:absolute ${isDesktop ? "w-max submenu1 text-black bg-white lg:shadow-lg px-2 py-3 rounded top-full left-0" : "relative m-submenu bg-white p-3 lg:mt-2 rounded"}`}>
+                        <ul className="flex flex-col gap-1 mb-0">
+                          {/* Tax Preparation with Sub-Submenu */}
+                          <li
+                            className={`relative ${isDesktop ? "" : "block"}`}
+                            onMouseEnter={() => isDesktop && setIsTaxPreparationOpen(true)}
+                            onMouseLeave={() => isDesktop && setIsTaxPreparationOpen(false)}
+                            onClick={() => !isDesktop && setIsTaxPreparationOpen(!isTaxPreparationOpen)}
+                          >
+                            <span className="hover:text-orange-400 cursor-pointer">Registration</span>
+                            {(isTaxPreparationOpen || !isDesktop) && (
+                              <div className={`lg:absolute ${isDesktop ? "w-max submenu2 bg-white shadow-lg p-3 rounded left-[105%] top-0" : "relative m-submenu-1 bg-white p-3 mt-2 rounded"}`}>
+                                <ul className="flex flex-col mb-0 gap-2">
+                                  <li>
+                                    <NavLink to="/Service/msme-udyam-registration" className="hover:text-orange-400">
+                                      MSME Udyam Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/business-registration-number" className="hover:text-orange-400">
+                                      BRN Number Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/gst-registration-online" className="hover:text-orange-400">
+                                      GST Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/import-export-code-registration" className="hover:text-orange-400">
+                                      Import Export Code Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/fssai-registration" className="hover:text-orange-400">
+                                      FSSAI Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/company-registration-service" className="hover:text-orange-400">
+                                      Company Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/private-limited-company-registration" className="hover:text-orange-400">
+                                      Private Limited Company Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/limited-liability-company-registration" className="hover:text-orange-400">
+                                      Limited Liability Company Registration
+                                    </NavLink>
+                                  </li>
+                                </ul>
+                              </div>
+                            )}
+                          </li>
 
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
-                  }`
-                }
-              >
-                Home
-              </NavLink>
-              <NavLink to="/Service/import-export-code-registration" className="hover:text-orange-400">
-                Accounting Service
-              </NavLink>
-              <NavLink to="/" className="hover:text-orange-400">
-                Our Customer
-              </NavLink>
-              <NavLink to="/" className="hover:text-orange-400">
-                Price
-              </NavLink>
-              <NavLink
-                to="/blogs"
-                className={({ isActive }) =>
-                  `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
-                  }`
-                }
-              >
-                Blog
-              </NavLink>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
-                  }`
-                }
-              >
-                About
-              </NavLink>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
-                  }`
-                }
-              >
-                Contact
-              </NavLink>
-              {/* <NavLink to="/contact">Contact</NavLink> */}
+                          {/* Payroll Management with Sub-Submenu */}
+                          <li
+                            className={`relative ${isDesktop ? "" : "block"}`}
+                            onMouseEnter={() => isDesktop && setIsPayrollManagementOpen(true)}
+                            onMouseLeave={() => isDesktop && setIsPayrollManagementOpen(false)}
+                            onClick={() => !isDesktop && setIsPayrollManagementOpen(!isPayrollManagementOpen)}
+                          >
+                            <span className="hover:text-orange-400 cursor-pointer">Payroll Management</span>
+                            {(isPayrollManagementOpen || !isDesktop) && (
+                              <div className={`lg:absolute ${isDesktop ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[105%] top-0" : "relative bg-white m-submenu-1 p-3 mt-2 rounded"}`}>
+                                <ul className="flex flex-col gap-2 mb-0">
+                                  <li>
+                                    <NavLink to="gst-filing-service" className="hover:text-orange-400">
+                                      GST Filing
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/tds-return-filing" className="hover:text-orange-400">
+                                      TDS Starts
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/accounting" className="hover:text-orange-400">
+                                      Accounting Service
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/income-tax-return-filing" className="hover:text-orange-400">
+                                      Income Tax Return Filing
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/tds-return-filing" className="hover:text-orange-400">
+                                      TDS Starts
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/scrutiny-assessment" className="hover:text-orange-400">
+                                      Scrutiny Assessment
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/trade-license" className="hover:text-orange-400">
+                                      Trade License Online
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/digital-signature-certificate" className="hover:text-orange-400">
+                                      Digital Signature Certificate
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/Service/annual-filing-for-llp" className="hover:text-orange-400">
+                                      Annual Form Filing
+                                    </NavLink>
+                                  </li>
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </li>
+                <li>
+                  <NavLink to="/" className="hover:text-orange-400">
+                    Our Customer
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/" className="hover:text-orange-400">
+                    Price
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/blogs" className={({ isActive }) => `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""}`} >
+                    Blog
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/about" className={({ isActive }) => `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""}`} >
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact" className={({ isActive }) => `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""}`} >
+                    Contact
+                  </NavLink>
+                </li>
+              </ul>
             </nav>
             <button
               className={`primary-btn lg:mb-0 mb-1 ${isScrolled ? "scrolled" : ""
                 }`}
             >
               Sign Up
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
-              >
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24" >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </button>
-            <button className="ml-2 primary-btn ">
+            <button className="lg:ml-2 primary-btn ">
               Schedule a Demo
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
-              >
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24" >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </button>
@@ -142,7 +255,7 @@ export default function Header() {
             </svg>{" "}
           </span>
         </div>
-      </header>
+      </header >
     </>
   );
 }
