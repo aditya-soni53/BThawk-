@@ -320,6 +320,7 @@ header {
   width: inherit;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .desk-logo{
   display: block;
@@ -642,9 +643,10 @@ dl, ol, ul {
 }
 
 @media(max-width:991px){
-  .submenu1::before{
+  .submenu1::before,.submenu2::before{
     content: '';
     display: none;
+    opacity: 0;
   }
   .submenu1{
     border-top: 1px solid;

@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/image/logo.svg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import scrolledLogo from "../assets/image/white-logo.svg"; // Update with your scrolled logo path
 
 export default function Header() {
@@ -64,9 +67,9 @@ export default function Header() {
             />
             <img src={scrolledLogo} alt="Logo" className="mobile-logo" />
           </a>
-          <div className={`navbar-mobile ${isNavbarOpen ? "flex" : "none"}`}>
+          <div className={`navbar-mobile  ${isNavbarOpen ? "flex" : "none"}`}>
             <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 ">
-              <ul className="flex flex-wrap items-center justify-center gap-3 text-base nav-links">
+              <ul className="flex flex-wrap items-center justify-center lg:gap-3 mb-0 md:gap-2 gap-1 text-base nav-links">
                 <li>
                   <NavLink to="/" className={({ isActive }) => `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""}`} >
                     Home
@@ -79,10 +82,10 @@ export default function Header() {
                     onMouseLeave={() => isDesktop && setIsMainDropdownOpen(false)}
                     onClick={() => !isDesktop && setIsMainDropdownOpen(!isMainDropdownOpen)}
                   >
-                    <span className="hover:text-orange-400  cursor-pointer service-h">Accounting Service</span>
+                    <span className="hover:text-orange-400  cursor-pointer service-h">Accounting Service  <FontAwesomeIcon icon={faChevronDown} /></span>
                     {/* Dropdown Menu */}
                     {(isMainDropdownOpen || !isDesktop) && (
-                      <div className={`lg:absolute ${isDesktop ? "w-max submenu1 text-black bg-white lg:shadow-lg px-2 py-3 rounded top-full left-0" : "relative m-submenu bg-white p-3 lg:mt-2 rounded"}`}>
+                      <div className={`lg:absolute ${isDesktop ? "w-max submenu1 text-black bg-white lg:shadow-lg lg:px-2 px-0 lg:py-3 py-1 rounded top-full left-0" : "relative m-submenu bg-white p-3 lg:mt-2 rounded"}`}>
                         <ul className="flex flex-col gap-1 mb-0">
                           {/* Tax Preparation with Sub-Submenu */}
                           <li
@@ -91,7 +94,7 @@ export default function Header() {
                             onMouseLeave={() => isDesktop && setIsTaxPreparationOpen(false)}
                             onClick={() => !isDesktop && setIsTaxPreparationOpen(!isTaxPreparationOpen)}
                           >
-                            <span className="hover:text-orange-400 cursor-pointer">Registration</span>
+                            <span className="hover:text-orange-400 cursor-pointer">Registration <FontAwesomeIcon icon={faChevronRight} /></span>
                             {(isTaxPreparationOpen || !isDesktop) && (
                               <div className={`lg:absolute ${isDesktop ? "w-max submenu2 bg-white shadow-lg p-3 rounded left-[105%] top-0" : "relative m-submenu-1 bg-white p-3 mt-2 rounded"}`}>
                                 <ul className="flex flex-col mb-0 gap-2">
@@ -147,7 +150,7 @@ export default function Header() {
                             onMouseLeave={() => isDesktop && setIsPayrollManagementOpen(false)}
                             onClick={() => !isDesktop && setIsPayrollManagementOpen(!isPayrollManagementOpen)}
                           >
-                            <span className="hover:text-orange-400 cursor-pointer">Payroll Management</span>
+                            <span className="hover:text-orange-400 cursor-pointer">Payroll Management <FontAwesomeIcon icon={faChevronRight} /></span>
                             {(isPayrollManagementOpen || !isDesktop) && (
                               <div className={`lg:absolute ${isDesktop ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[105%] top-0" : "relative bg-white m-submenu-1 p-3 mt-2 rounded"}`}>
                                 <ul className="flex flex-col gap-2 mb-0">
