@@ -106,6 +106,7 @@ header {
   color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
+  height: 80px;
 }
 .scrolled {
   background-color: #fff;
@@ -338,6 +339,9 @@ header {
     padding-top: 15px;
     padding-bottom: 7px;
     background-color: #fff;
+  }
+  .feature{
+    background-image: none;
   }
   .desk-logo{
     display: none;

@@ -209,7 +209,7 @@ export default function Header() {
                   </div>
                 </li>
                 <li>
-                  <NavLink to="/" className="hover:text-orange-400">
+                  <NavLink to="/Ourcustomer" className="hover:text-orange-400">
                     Our Customer
                   </NavLink>
                 </li>
