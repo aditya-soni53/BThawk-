@@ -31,8 +31,8 @@ const Privacy = () => {
       </Helmet>
       <section className="privacy_policy-section">
         <Hero text="" show={false} heading="Privacy Policy" />
-        <div className="container mx-auto mt-10 mb-10">
-          <div className="breadcrumb bg-[#F7F7F7] p-1 px-2 flex gap-x-3 justify-center rounded-md w-2/12 mb-4">
+        <div className="w-11/12 mx-auto mt-10 mb-10">
+          <div className="breadcrumb bg-[#F7F7F7] p-1 px-2 flex gap-x-3 justify-center rounded-md w-max mb-4">
             <Link className="hover:text-orange-500" to="/">
               Home
             </Link>
@@ -41,7 +41,7 @@ const Privacy = () => {
               Privacy Policy
             </Link>
           </div>
-          <div className="p-6 shadow-inner">
+          <div className="lg:p-6 p-3 shadow-inner">
             <p className="text-lg">
               This is the Privacy Policy of BTHAWK, a product incorporated under
               the laws of India and having its registered office at 519, 5th

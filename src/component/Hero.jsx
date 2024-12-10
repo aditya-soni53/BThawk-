@@ -7,10 +7,10 @@ const Hero = ({text, show, heading}) => {
     <section className="about-hero-section">
       <div className="about-hero_img h-[9rem] lg:h-[33rem] md:h-[18rem]" />
       <div className="about-hero_content">
-        <div className="lg:w-8/12 w-11/12 mx-auto md:-mt-16 bg-shadow">
-          <div className={`${!show && "py-6"} w-10/12 mx-auto`}>
-              {!show && <h2 className={`${mb_3} text-3xl text-center text-[#22249B]`}>{heading}</h2>}
-            <p className={`${show ? "py-8" : ""} text-base text-center`}>
+        <div className="lg:w-8/12 w-11/12 mx-auto md:-mt-12 bg-shadow">
+          <div className={`${!show && "lg:py-6 py-3"} w-10/12 mx-auto`}>
+              {!show && <h2 className={`${mb_3} lg:text-3xl md:text-2xl text-xl text-center text-[#22249B]`}>{heading}</h2>}
+            <p className={`${show ? "lg:py-8 py-4" : ""} text-base text-center`}>
               {show && <span className="text-orange-500">BTHAWK:</span>}
               {text}
             </p>
