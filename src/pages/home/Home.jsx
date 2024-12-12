@@ -1,16 +1,15 @@
-import Banner from "../component/Banner";
-import Feature from "../component/Feature";
-import Howcan from "../component/Howcan";
-import Appshowcase from "../component/Appshowcase";
-import Moduls from "../component/Moduls";
-import Bthawkdevice from "../component/Bthawkdevice";
-import Testimonials from "../component/Testimonials";
-import Partnerslider from "../component/Partnerslider";
-import Ourblog from "../component/Ourblog";
+import Banner from "./Banner";
+import Feature from "./Feature";
+import Howcan from "./Howcan";
+import Appshowcase from "./Appshowcase";
+import Moduls from "./Moduls";
+import Bthawkdevice from "./Bthawkdevice";
+import Testimonials from "./Testimonials";
+import Partnerslider from "./Partnerslider";
+import Ourblog from "./Ourblog";
 import { Helmet } from "react-helmet";
 
 export default function Home() {
-
   const basePath = window.location.origin;
 
   return (

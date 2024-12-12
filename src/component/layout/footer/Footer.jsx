@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 import { useState } from "react";
-import logo from "../assets/image/logo.svg";
-import playstore from "../assets/image/play-store-1.svg";
-import appstore from "../assets/image/app-store-1.svg";
-import twitter from "../assets/image/twitter.png";
+import logo from "../../../assets/image/logo.svg";
+import playstore from "../../../assets/image/play-store-1.svg";
+import appstore from "../../../assets/image/app-store-1.svg";
+import twitter from "../../../assets/image/twitter.png";
 import { Link } from "react-router-dom";
 // import faArrowRightFromBracket from '@fortawesome/react-fontawesome'
 

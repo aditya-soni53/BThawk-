@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Topbanner from "../component/Topbanner";
-import Blogbanner from "../assets/image/blog-banner.jpg";
+import Topbanner from "../../component/layout/topBanner/Topbanner";
+import Blogbanner from "../../assets/image/blog-banner.jpg";
 
 export default function Service() {
   const [services, setServices] = useState([]); // State for services
@@ -55,7 +55,11 @@ export default function Service() {
                 <img
                   src={service.photo}
                   alt={service.name}
-                  style={{ width: "300px", height: "200px", objectFit: "cover" }}
+                  style={{
+                    width: "300px",
+                    height: "200px",
+                    objectFit: "cover",
+                  }}
                 />
                 <p>{service.description}</p>
               </div>

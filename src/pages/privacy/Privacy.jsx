@@ -1,4 +1,5 @@
-import Hero from "../component/Hero";
+// import Hero from "../component/Hero";
+import Hero from "../../component/Hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -6,7 +7,7 @@ import {
   CollectData,
   IntroductionData,
   Privacydata,
-} from "../helper/privacyData";
+} from "../../helper/privacyData";
 import { Helmet } from "react-helmet";
 
 const Privacy = () => {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { mentorsImg } from "../helper";
-import Hero from "../component/Hero";
+import { mentorsImg } from "../../helper";
+import Hero from "../../component/Hero";
 import { Helmet } from "react-helmet";
 
 const features = [

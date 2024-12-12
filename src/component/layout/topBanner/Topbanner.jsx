@@ -1,5 +1,5 @@
 import React from 'react'
-import Blogbanner from '../assets/image/blog-banner.jpg'
+// import Blogbanner from '../../assets/image/blog-banner.jpg'
 
 export default function Topbanner(props) {
   return (

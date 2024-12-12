@@ -2,21 +2,24 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
-import Header from "./component/Header";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Footer from "./component/Footer";
+import Header from "./component/layout/header/Header";
+import Home from "./pages/home/Home"
+import Blogs from "./pages/blogs/Blogs";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
+import Footer from "./component/layout/footer/Footer";
 import Blogdetail from "./pages/Blogdetail";
-import Privacy from "./pages/Privacy";
+import Privacy from "./pages/privacy/Privacy";
 import TermCondition from "./pages/TermCondition";
-import Service from "./pages/Service";
+import Service from "./pages/servicePage/Service";
 import Servicedetail from "./pages/Servicedetail";
-import Ourcustomer from "./pages/Ourcustomer";
+import Ourcustomer from "./pages/ourCustomers/Ourcustomer";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function App() {
-  return (
+  
+return (
     <>
       <BrowserRouter>
         <Header />

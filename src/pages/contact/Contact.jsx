@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Hero from "../component/Hero";
+import Hero from "../../component/Hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faLocationDot,
   faPhoneVolume,
 } from "@fortawesome/free-solid-svg-icons";
-import letter_send from "../assets/image/letter_send 1.png";
+import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
 
 const HeroText = "Any question or remarks? Just write us a message !";

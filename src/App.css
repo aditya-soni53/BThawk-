@@ -68,6 +68,8 @@ i.bx {
   background-color: var(--primary-color1);
   font-size: 14px;
 }
+
+
 .secoundry-btn {
   border: 1px solid var(--white-color);
   padding: 3px 16px;
@@ -151,7 +153,7 @@ header {
   width: 80%;
   margin-left: auto;
 }
-.apps .active {
+.apps .active, .apps .app-1:hover {
   background-color: var(--primary-color2);
   color: #fff;
 }
@@ -166,7 +168,10 @@ header {
   place-content: center;
   border-radius: 11.36px;
   color: var(--primary-color2);
+  transition: .3s ease-in-out;
 }
+
+
 .apps .app-icon {
   background: #fff;
   color: #000;
@@ -174,6 +179,11 @@ header {
   padding: 10px 15px;
   width: fit-content;
   border: 1px solid #000;
+  transition: .3s ease-in-out;
+}
+
+.apps .app-1:hover .app-icon{
+
 }
 .apps .app-icon svg {
   font-size: 22px;
@@ -182,7 +192,7 @@ header {
   background: var(--primary-color2);
     color: #ffffff;
 }
-.apps .active .app-icon{
+.apps .active .app-icon, .apps .app-1:hover .app-icon{
   background: #fff;
     color: var(--primary-color2);
 }
@@ -212,6 +222,7 @@ header {
   background-position: 90% 10%;
   border: 1px solid #CEE4E9;
   background-color: #F1FDFF;
+  transition: .3s ease-in-out;
 }
 .module-1 .primary-btn{
   background-color: #83E7F8 !important;
@@ -225,6 +236,7 @@ header {
   background-image: url('./assets/image/module-shape-1.svg');
   background-repeat: no-repeat;
   background-position: 90% 10%;
+  transition: .3s ease-in-out;
 }
 .module-2 .primary-btn{
   background-color: #B6AAFF !important;
@@ -239,12 +251,16 @@ header {
   background-image: url('./assets/image/module-shape-1.svg');
   background-repeat: no-repeat;
   background-position: 90% 10%;
+  transition: .3s ease-in-out;
+  
 }
 .module-3 .primary-btn{
   background-color: #FFE08D !important;
   border-color: #FFE08D;
+}
 
-
+.module-1:hover, .module-2:hover ,.module-3:hover{
+  box-shadow: 0 0 10px rgb(208 208 208 / 42%);
 }
 
 .review-data{

@@ -1,6 +1,6 @@
-import Topbanner from "../component/Topbanner";
-import Blogbanner from "../assets/image/blog-banner.jpg";
-import Bloglist from "../component/Bloglist";
+import Topbanner from "../../component/layout/topBanner/Topbanner";
+import Blogbanner from "../../assets/image/blog-banner.jpg";
+import Bloglist from "../../component/Bloglist"
 import { Helmet } from "react-helmet";
 
 export default function Blogs() {

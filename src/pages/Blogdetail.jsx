@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { useEffect, useState, useContext, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
-import Topbanner from "../component/Topbanner";
+import Topbanner from "../component/layout/topBanner/Topbanner";
 import Blogbanner from "../assets/image/blog-banner.jpg";
 import twitter from "../assets/image/twitter.png";
 import profileimg from "../assets/image/favicon.svg";
@@ -27,16 +27,20 @@ export default function Blogdetail() {
 
   // Create a ref for the content container to access the H2 elements directly
   const contentRef = useRef(null);
- // Format date strings
- const formatDate = (dateString) => {
-  try {
-    const date = new Date(dateString);
-    if (isNaN(date)) throw new Error('Invalid Date');
-    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-  } catch {
-    return 'Invalid Date';
-  }
-};
+  // Format date strings
+  const formatDate = (dateString) => {
+    try {
+      const date = new Date(dateString);
+      if (isNaN(date)) throw new Error("Invalid Date");
+      return date.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    } catch {
+      return "Invalid Date";
+    }
+  };
   useEffect(() => {
     (async () => {
       try {
@@ -141,18 +145,9 @@ export default function Blogdetail() {
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta property="twitter:domain" content={basePath} />
-        <meta
-          property="twitter:url"
-          content={url}
-        />
-        <meta
-          name="twitter:title"
-          content={blog.meta_title}
-        />
-        <meta
-          name="twitter:description"
-          content={blog.meta_description}
-        />
+        <meta property="twitter:url" content={url} />
+        <meta name="twitter:title" content={blog.meta_title} />
+        <meta name="twitter:description" content={blog.meta_description} />
       </Helmet>
 
       <Topbanner banner={Blogbanner} />
@@ -193,10 +188,9 @@ export default function Blogdetail() {
           <div ref={contentRef} className="blog-content">
             <p dangerouslySetInnerHTML={{ __html: blog.content }} />
             <div>
-              
-              <Faqdetail faq={blog.faqs}/>
+              <Faqdetail faq={blog.faqs} />
             </div>
-          
+
             <div>
               <h2 className="related-blogs-heading">Related Blogs</h2>
               <div className="related-blogs">
@@ -207,12 +201,10 @@ export default function Blogdetail() {
         </div>
 
         <div className="w-full lg:p-4">
-        <div className="">
-              <Heroslider />
-            </div>
+          <div className="">
+            <Heroslider />
+          </div>
           <div className="sticky top-[84px]">
-
-
             <div className="share-card">
               <h6 className="mb-4 text-sm">Share with your community!</h6>
               <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0">
@@ -303,10 +295,11 @@ export default function Blogdetail() {
               <ul>
                 {headings.map((heading, index) => (
                   <li
-                    className={`mt-1 py-1 pl-2 ${activeHeading === `heading_${index}`
+                    className={`mt-1 py-1 pl-2 ${
+                      activeHeading === `heading_${index}`
                         ? "text-orange-500 side-line"
                         : ""
-                      }`}
+                    }`}
                     key={index}
                   >
                     <a
@@ -325,7 +318,3 @@ export default function Blogdetail() {
     </>
   );
 }
-
-
-
-

@@ -1,14 +1,14 @@
 import React from 'react'
 import Slider from "react-slick";
-import partner1 from '../assets/image/partner-1.svg'
-import partner2 from '../assets/image/partner-2.svg'
-import partner3 from '../assets/image/partner-3.svg'
-import partner4 from '../assets/image/partner-4.svg'
-import partner5 from '../assets/image/partner-5.svg'
-import partner6 from '../assets/image/partner-6.svg'
-import partner7 from '../assets/image/partner-7.svg'
-import partner8 from '../assets/image/partner-8.svg'
-import partner9 from '../assets/image/partner-9.svg'
+import partner1 from '../../assets/image/partner-1.svg'
+import partner2 from '../../assets/image/partner-2.svg'
+import partner3 from '../../assets/image/partner-3.svg'
+import partner4 from '../../assets/image/partner-4.svg'
+import partner5 from '../../assets/image/partner-5.svg'
+import partner6 from '../../assets/image/partner-6.svg'
+import partner7 from '../../assets/image/partner-7.svg'
+import partner8 from '../../assets/image/partner-8.svg'
+import partner9 from '../../assets/image/partner-9.svg'
 
 export default function Partnerslider() {
     const settings = {
