@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
   
         if (res.status === 200 && res.data.message === "successful") {
           setData(res.data.data);
-          console.log(res);
+          // console.log(res);
           setLoading(false);
         }
       } catch (error) {

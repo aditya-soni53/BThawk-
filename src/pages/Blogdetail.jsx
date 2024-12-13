@@ -53,6 +53,7 @@ export default function Blogdetail() {
         if (!response.ok) throw new Error("Failed to fetch blog details");
         const result = await response.json();
         if (result.status === 1) {
+          console.log(response);
           setBlog(result.data);
 
           // Extract H2 headings from blog content
