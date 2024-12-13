@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]); // All reviews
@@ -13,58 +14,94 @@ export default function ReviewList() {
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const GOOGLE_MAPS_API_KEY = 'AIzaSyApEkdVD7asaPM5maTuebk4QZRsuJmj8E8';
 
   // Fetch reviews on component mount
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await fetch("https://www.bthawk.com/api/blog_api", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ type: "reviewDetailsFetch" }),
-        });
-
-        if (!response.ok) throw new Error("Failed to fetch reviews");
-
-        const result = await response.json();
-        if (result.status === 1) {
-          setReviews(result.data);
-          setFilteredReviews(result.data); // Set initial state
-          console.log(reviews);
-          
-        } else {
-          throw new Error(result.message || "No reviews found");
+  const getAddressFromLatLng = async (latitude, longitude) => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/geocode/json`,
+        {
+          params: {
+            latlng: `${latitude},${longitude}`,
+            key: GOOGLE_MAPS_API_KEY,
+          },
         }
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+      );
+
+      if (response.data.status === 'OK') {
+        const addressComponents = response.data.results[0].address_components;
+        
+        // State ko address components se dhoondo
+        const stateInfo = addressComponents.find((component) =>
+          component.types.includes('administrative_area_level_1')
+        );
+
+        if (stateInfo) {
+          console.log('State:', stateInfo.long_name); // State ka naam
+        } else {
+          console.log('State not found');
+        }
+      } else {
+        console.error('Geocoding API error:', response.data.status);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
-    // const fetchReviews = async () => {
-    //   try {
-    //     const response = await axios.post(`${"https://www.bthawk.com/api/blog_api"}`,{
-    //       type:"reviewDetailsFetch"
-    //     })
-    //     console.log(response.data.data);
-    //     if(response.data.status === 1){
-    //       setReviews([response.data.data]);
-    //       console.log();
-          
-    //       setFilteredReviews([response.data.data]); // Set initial state
-    //     }else{
-    //       throw new Error(response.message || "No reviews found");
-    //     }
-    //   } catch (error) {
-    //     setError(error);
-    //   }finally{
-    //     setLoading(false);
-    //   }
-    // }
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+  });
 
-    fetchReviews();
+  // Function to fetch state using Geocoding API
+  const getStateFromLatLng = async (latitude, longitude) => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/geocode/json`,
+        {
+          params: {
+            latlng: `${latitude},${longitude}`,
+            key: GOOGLE_MAPS_API_KEY,
+          },
+        }
+      );
+
+      if (response.data.status === "OK") {
+        const addressComponents = response.data.results[0].address_components;
+        const stateInfo = addressComponents.find((component) =>
+          component.types.includes("administrative_area_level_1")
+        );
+        if (stateInfo) {
+          setStateName(stateInfo.long_name);
+        } else {
+          setStateName("State not found");
+        }
+      } else {
+        console.error("Geocoding API error:", response.data.status);
+      }
+    } catch (error) {
+      console.error("Error fetching state:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setCurrentLocation({ lat: latitude, lng: longitude });
+          getStateFromLatLng(latitude, longitude);
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+        }
+      );
+    } else {
+      console.log("Geolocation not supported by this browser.");
+    }
   }, []);
+
 
   // Fetch user's state using geolocation
   useEffect(() => {
@@ -100,8 +137,33 @@ export default function ReviewList() {
       }
     };
 
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            console.log('Latitude:', latitude);
+            console.log('Longitude:', longitude);
+
+            // Geocoding API call
+            getAddressFromLatLng(latitude, longitude);
+          },
+          (error) => {
+            console.error('Error getting location:', error);
+          }
+        );
+      } else {
+        console.log('Browser does not support geolocation');
+      }
+    };
+    
     fetchUserLocation();
+    getLocation();
   }, [reviews]);
+
+  useEffect(() => {
+
+  }, []);
 
   // Prioritize reviews from user's state
   const prioritizeReviewsByState = (state) => {
@@ -141,7 +203,7 @@ export default function ReviewList() {
   // Helper function to extract YouTube embed URL
   const getYouTubeEmbedUrl = (url) => {
     console.log(url);
-    
+
     const youtubeRegex =
       /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:shorts\/|(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=))|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     const match = url.match(youtubeRegex);
@@ -231,7 +293,11 @@ export default function ReviewList() {
             onScroll={updateArrows}
           >
             <button
-              className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${selectedState === "" ? "text-black bg-white font-semibold " : " text-white"}`}
+              className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${
+                selectedState === ""
+                  ? "text-black bg-white font-semibold "
+                  : " text-white"
+              }`}
               onClick={() => handleStateChange("")}
             >
               All
@@ -249,8 +315,13 @@ export default function ReviewList() {
               (state) => (
                 <button
                   key={state}
-                  className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${selectedState === state ? "text-black bg-white font-semibold " : " text-white"}`}
-                  onClick={() => handleStateChange(state)}>
+                  className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${
+                    selectedState === state
+                      ? "text-black bg-white font-semibold "
+                      : " text-white"
+                  }`}
+                  onClick={() => handleStateChange(state)}
+                >
                   {state}
                 </button>
               )
@@ -316,14 +387,7 @@ export default function ReviewList() {
 
       {/* Load More button */}
       {visibleReviewsCount < filteredReviews.length && (
-        <div className="load-more-container text-center mt-2 mb-2">
-          <button
-            onClick={handleLoadMore}
-            className="load-more-button primary-btn "
-          >
-            Load More
-          </button>
-        </div>
+        <div className="load-more-container text-center mt-2 mb-2"></div>
       )}
     </div>
   );
