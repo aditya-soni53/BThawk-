@@ -6,7 +6,7 @@ import Listicon from "../../assets/image/list-icon.svg";
 import Aos from "aos";
 
 export default function Appshowcase() {
-  const [activeTab, setActiveTab] = useState("fse");
+  const [activeTab, setActiveTab] = useState("admin");
   useEffect(() => {
     Aos.init(); // Refresh AOS for dynamically added components
   });
@@ -99,7 +99,7 @@ export default function Appshowcase() {
                 data-aos-duration="600"
                 data-aos-delay="300"
               >
-                <img src={app1} alt="" className="mx-auto app-img" />
+                <img src={app1} alt="home-img" className="mx-auto app-img" />
               </div>
               <div className="app-cards">
                 <div className="appcard-1">
@@ -112,18 +112,15 @@ export default function Appshowcase() {
                   </p>
                   <ul className="mt-2">
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Prevents stock leakage.
                     </li>
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Correct tracking of sales.
                     </li>
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       More focus on core business instead of compliance
                     </li>
                   </ul>
@@ -144,7 +141,7 @@ export default function Appshowcase() {
                 data-aos-duration="600"
                 data-aos-delay="300"
               >
-                <img src={app1} alt="" className="mx-auto app-img" />
+                <img src={app1} alt="home-img" className="mx-auto app-img" />
               </div>
               <div className="app-cards">
                 <div className="appcard-1 aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
@@ -157,18 +154,15 @@ export default function Appshowcase() {
                   </p>
                   <ul className="mt-2">
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Invoice Generation
                     </li>
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       DSR Management
                     </li>
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Collection Management
                     </li>
                   </ul>
@@ -185,7 +179,7 @@ export default function Appshowcase() {
               aria-labelledby="admin-tab"
             >
               <div className="app-img text-center">
-                <img src={app1} alt="" className="mx-auto app-img" />
+                <img src={app1} alt="home-img" className="mx-auto app-img" />
               </div>
               <div className="app-cards">
                 <div className="appcard-1">
@@ -198,18 +192,15 @@ export default function Appshowcase() {
                   </p>
                   <ul className="mt-2">
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Forecasting of business plans.
                     </li>
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Get complete details of credit bills of the customers.
                     </li>
                     <li className="mt-2 flex">
-                      {" "}
-                      <img className="mr-2" src={Listicon} alt="" />
+                      <img className="mr-2" src={Listicon} alt="home-img" />
                       Works as mini CRM for the retailers.
                     </li>
                   </ul>

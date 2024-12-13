@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import reviewimg from '../../assets/image/review-img.svg'
 import uparrow from '../../assets/image/arrow-up-right.svg'
 import Heroslider from '../../component/Heroslider'
+import { Link } from 'react-router-dom';
 // import faArrowUpRight from '@fortawesome/react-fontawesome'
 
 
@@ -29,14 +30,14 @@ export default function Testimonials() {
     const review = [
         {
             id: 1,
-            client_name: "1 Airtel Distributor-Mumbai",
-            review: "I have been using BTHAWK software since lkjfskfjskast year. I can easily manage all the retailers and stock. I can view multiple reports like sales ",
+            client_name: "विकास जैन(अक्षत इंटरप्राइजेज)",
+            review: "मेरा नाम विकास जैन है और मेरी फर्म अक्षत इंटरप्राइजेज हैं जिसका कंप्लायंस का काम आपकी टीम द्वारा किया जा रहा है और मुझे इसमें कोई दिक्कत नहीं आ रही है। मेरा सभी काम समय पर हो रहा है।",
             client_img: reviewimg
         },
         {
             id: 2,
-            client_name: "2 Airtel Distributor-Mumbai",
-            review: "I have been using BTHAWK software since lkjfskfjskast year. I can easily manage all the retailers and stock. I can view multiple reports like sales ",
+            client_name: "DEEPAK KUMAR (M/S SWATANTRA TELICOM)",
+            review: "MAI DEEPAK KUMAR HU. MERE FIRM KA NAAM M/S SWATANTRA TELICOM HAI. BTHAWK KE KAAM SE MAI BHUT SANTUSHT HU. INKI  SERVICES BHI BHUT ACHI HAI. MERE SABHI KAAM TIMR SE HO RHE HAI",
             client_img: reviewimg
         },
         {
@@ -83,7 +84,7 @@ export default function Testimonials() {
                                 }
                             </Slider>
                         </div>
-                        <p className='flex mt-5 text-white'>Visit our wall of love <img src={uparrow} alt="arrow" /></p>
+                        <Link to="./Ourcustomer" className='flex mt-5 text-white'>Visit our wall of love <img src={uparrow} alt="arrow" /></Link>
 
                     </div>
                     <div className="md:p-12 lg:p-6 lg:pt-12 w-full">

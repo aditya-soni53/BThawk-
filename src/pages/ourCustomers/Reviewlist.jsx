@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]); // All reviews
@@ -10,49 +10,18 @@ export default function ReviewList() {
   const [selectedState, setSelectedState] = useState(""); // Selected state
   const [userLocation, setUserLocation] = useState(null); // User's state location
   const [visibleReviewsCount, setVisibleReviewsCount] = useState(8); // Count of visible reviews
-
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  const GOOGLE_MAPS_API_KEY = 'AIzaSyApEkdVD7asaPM5maTuebk4QZRsuJmj8E8';
+  const [spinner, setSpinner] = useState(false);
+  const [currentLocation, setCurrentLocation] = useState([]);
+  const [userState, setUserState] = useState("");
 
-  // Fetch reviews on component mount
-  const getAddressFromLatLng = async (latitude, longitude) => {
-    try {
-      const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json`,
-        {
-          params: {
-            latlng: `${latitude},${longitude}`,
-            key: GOOGLE_MAPS_API_KEY,
-          },
-        }
-      );
+  const GOOGLE_MAPS_API_KEY = "AIzaSyBV68ITzQRel6iDKUCvMzGHh9YyPO5jlGw";
 
-      if (response.data.status === 'OK') {
-        const addressComponents = response.data.results[0].address_components;
-        
-        // State ko address components se dhoondo
-        const stateInfo = addressComponents.find((component) =>
-          component.types.includes('administrative_area_level_1')
-        );
-
-        if (stateInfo) {
-          console.log('State:', stateInfo.long_name); // State ka naam
-        } else {
-          console.log('State not found');
-        }
-      } else {
-        console.error('Geocoding API error:', response.data.status);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
-  });
+  // const { isLoaded } = useLoadScript({
+  //   googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+  // });
 
   // Function to fetch state using Geocoding API
   const getStateFromLatLng = async (latitude, longitude) => {
@@ -73,9 +42,12 @@ export default function ReviewList() {
           component.types.includes("administrative_area_level_1")
         );
         if (stateInfo) {
-          setStateName(stateInfo.long_name);
+          // setStateName(stateInfo.long_name);
+          console.log(stateInfo.long_name);
+          setUserState(stateInfo.long_name);
         } else {
-          setStateName("State not found");
+          // setStateName("");
+          setUserState("");
         }
       } else {
         console.error("Geocoding API error:", response.data.status);
@@ -102,68 +74,58 @@ export default function ReviewList() {
     }
   }, []);
 
+  // Fetch reviews on component mount
+  const fetchReviews = async () => {
+    // setLoading(true);
+    try {
+      const response = await fetch("https://www.bthawk.com/api/blog_api", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "reviewDetailsFetch" }),
+      });
+
+      if (!response.ok) throw new Error("Failed to fetch reviews");
+
+      const result = await response.json();
+      if (result.status === 1) {
+        setReviews(result.data);
+        setFilteredReviews(result.data); // Set initial state
+        // console.log(reviews);
+      } else {
+        console.log("State not found");
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+
+    fetchReviews();
+  }, []);
 
   // Fetch user's state using geolocation
   useEffect(() => {
-    const fetchUserLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            try {
-              const { latitude, longitude } = position.coords;
-
-              // Fetch state using geocoding API
-              const geoResponse = await fetch(
-                `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=YOUR_API_KEY&language=hi`
-              );
-              const geoData = await geoResponse.json();
-              const state = geoData.results[0]?.components?.state || "";
-
-              if (state) {
-                setUserLocation(state);
-                prioritizeReviewsByState(state); // Show reviews for user location
-              }
-            } catch (err) {
-              console.error("Error fetching location data:", err);
-            }
-          },
-          (err) => {
-            console.error("Geolocation error:", err);
-          },
-          { enableHighAccuracy: true }
-        );
-      } else {
-        alert("Geolocation is not supported by your browser.");
-      }
-    };
-
-    const getLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const { latitude, longitude } = position.coords;
-            console.log('Latitude:', latitude);
-            console.log('Longitude:', longitude);
-
-            // Geocoding API call
-            getAddressFromLatLng(latitude, longitude);
-          },
-          (error) => {
-            console.error('Error getting location:', error);
-          }
-        );
-      } else {
-        console.log('Browser does not support geolocation');
-      }
-    };
-    
-    fetchUserLocation();
-    getLocation();
-  }, [reviews]);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setCurrentLocation({ lat: latitude, lng: longitude });
+          getStateFromLatLng(latitude, longitude);
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+        }
+      );
+    } else {
+      console.log("Geolocation not supported by this browser.");
+    }
+  }, []);
 
   useEffect(() => {
-
-  }, []);
+    fetchReviews();
+  }, [selectedState])
 
   // Prioritize reviews from user's state
   const prioritizeReviewsByState = (state) => {
@@ -195,14 +157,17 @@ export default function ReviewList() {
     }
   };
 
-  // Handle "Load More" button click
   const handleLoadMore = () => {
-    setVisibleReviewsCount((prevCount) => prevCount + 8);
+    setSpinner(true); // Show loader
+    setTimeout(() => {
+      setVisibleReviewsCount((prevCount) => prevCount + 8); // Increment visible reviews
+      setSpinner(false); // Hide loader after data is "fetched"
+    }, 1000); // Simulated fetch time
   };
 
   // Helper function to extract YouTube embed URL
   const getYouTubeEmbedUrl = (url) => {
-    console.log(url);
+    // console.log(url);
 
     const youtubeRegex =
       /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:shorts\/|(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=))|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -252,29 +217,15 @@ export default function ReviewList() {
 
   // Render reviews
   return (
-    <div>
+    <div className="w-11/12 m-auto mb-16">
       <h1 className="hidden">ग्राहक समीक्षाएँ</h1>
-      {/* Dropdown for manual state selection */}
-      {/* <label>
-        राज्य का चयन करें:
-        <select value={selectedState} onChange={handleStateChange}>
-          <option value="">सभी राज्य</option>
-          {[...new Set(reviews.map((review) => review.state))].map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-      </label> */}
-
-      {/* Display user location */}
       <p className="hidden">
         {userLocation
           ? `आपके राज्य की समीक्षाएँ: ${userLocation}`
           : "स्थान खोजा जा रहा है..."}
       </p>
 
-      <div className="m-3">
+      <div className="my-6">
         <div className="relative w-full flex items-center overflow-hidden bg-gray-800 p-2">
           {/* Left Arrow */}
           {showLeftArrow && (
@@ -302,15 +253,6 @@ export default function ReviewList() {
             >
               All
             </button>
-            {/* {[...Array(45)].map((_, index) => (
-            <button
-              key={index}
-              className="px-4 py-2 rounded-full border border-gray-400 text-white"
-            >
-              State
-            </button>
-          ))} */}
-
             {[...new Set(reviews.map((review) => review.state))].map(
               (state) => (
                 <button
@@ -341,8 +283,9 @@ export default function ReviewList() {
       </div>
 
       {/* Render filtered reviews */}
+      
       {filteredReviews.length > 0 ? (
-        <div className="review-list grid sm:grid-cols-4 gap-4  p-4">
+        <div className="review-list grid lg:grid-cols-4 md:grid-cols-2  gap-x-10">
           {filteredReviews.slice(0, visibleReviewsCount).map((review) => {
             const embedUrl = getYouTubeEmbedUrl(review.video);
             return (
@@ -387,7 +330,19 @@ export default function ReviewList() {
 
       {/* Load More button */}
       {visibleReviewsCount < filteredReviews.length && (
-        <div className="load-more-container text-center mt-2 mb-2"></div>
+        <div className="load-more-container text-center mt-2 mb-2">
+          {spinner ? (
+            <div className="grid w-full h-96 place-content-center">
+              <span className="loader"></span>
+            </div>
+          ) : (
+            <button
+              onClick={handleLoadMore} className="load-more-button primary-btn " >
+              {" "}
+              Load More
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

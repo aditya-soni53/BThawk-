@@ -11,7 +11,7 @@ export default function Bthawkdevice () {
   });
   return (
     <>
-      <div className="grid mx-auto md:w-11/12 md:grid-cols-2 mt-14 aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+      <div className="grid mx-auto md:w-11/12 md:grid-cols-2 mt-14 aos-animate overflow-hidden" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
         <div className="mobile-device bg-[#000000] md:p-14 p-6 text-white rounded-md ">
           <p>Mobile App</p>
           <h1 className="text-xl">

@@ -10,10 +10,9 @@ const FAQComponent = ({
 
   return (
     <>
-     <h3 className='text-2xl my-3'>FAQs</h3>
+     <h3 className='text-2xl my-3'>Frequently Asked Questions</h3>
       {questions.map((e, qIndex) => (
-        <>
-       
+
         <div key={qIndex} id="faq-wrapper" onClick={() => handleOnClick(qIndex)} className="cursor-pointer mb-4">
           <div className='flex justify-between border-b-2 pb-1'>
           <b className="text-md">
@@ -29,7 +28,7 @@ const FAQComponent = ({
           )}
           
         </div>
-        </>
+      
       ))}
     </>
   );
@@ -38,10 +37,11 @@ const FAQComponent = ({
 export default function Faq(props) {
   const [openQuestionIndex, setOpenQuestionIndex] = useState(null);
 
+  // console.log(props.faq)
   return (
     <>
       <div className="container grid  pb-16">
-        <div data-aos="fade-up" className='lg:mt-0 mt-10'>
+        <div  className='lg:mt-0 mt-10'>
           <FAQComponent
             questions={props.faq}
             openQuestionIndex={openQuestionIndex}

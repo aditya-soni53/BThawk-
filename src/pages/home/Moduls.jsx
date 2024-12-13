@@ -10,11 +10,11 @@ export default function Moduls() {
       });
     return (
         <>
-            <div className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 md:mt-5 mt-14 mb-4 aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <div className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 md:mt-5 mt-14 mb-4 aos-animate overflow-hidden" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                 <h1 className='text-3xl pb-3'> Different modules of <span className='text-[#22249B]'>BT</span><span className='text-[#E45325]'>HAWK</span> as per your need</h1>
                 <p className=''>(With 100% customization) </p>
             </div>
-            <div className='w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 md:gap-14 gap-6 mt-2'>
+            <div className='w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 md:gap-14 gap-6 mt-2 overflow-hidden'>
                 <div className="module-1 aos-animate" data-aos="fade-right" data-aos-duration="600" data-aos-delay="400">
                     <h3>Distributor Module</h3>
                     <p className='text-slate-700'>(With Salesman)</p>

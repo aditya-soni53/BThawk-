@@ -155,7 +155,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/msme-udyam-registration"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       MSME Udyam Registration
                                     </NavLink>
@@ -163,7 +167,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/business-registration-number"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       BRN Number Registration
                                     </NavLink>
@@ -171,7 +179,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/gst-registration-online"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       GST Registration
                                     </NavLink>
@@ -179,7 +191,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/import-export-code-registration"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Import Export Code Registration
                                     </NavLink>
@@ -187,7 +203,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/fssai-registration"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       FSSAI Registration
                                     </NavLink>
@@ -195,7 +215,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/company-registration-service"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Company Registration
                                     </NavLink>
@@ -203,7 +227,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/private-limited-company-registration"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Private Limited Company Registration
                                     </NavLink>
@@ -211,7 +239,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/limited-liability-company-registration"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Limited Liability Company Registration
                                     </NavLink>
@@ -253,7 +285,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="gst-filing-service"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       GST Filing
                                     </NavLink>
@@ -261,7 +297,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/tds-return-filing"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       TDS Starts
                                     </NavLink>
@@ -269,7 +309,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/accounting"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Accounting Service
                                     </NavLink>
@@ -277,7 +321,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/income-tax-return-filing"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Income Tax Return Filing
                                     </NavLink>
@@ -285,7 +333,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/tds-return-filing"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       TDS Starts
                                     </NavLink>
@@ -293,7 +345,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/scrutiny-assessment"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Scrutiny Assessment
                                     </NavLink>
@@ -301,7 +357,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/trade-license"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Trade License Online
                                     </NavLink>
@@ -309,7 +369,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/digital-signature-certificate"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Digital Signature Certificate
                                     </NavLink>
@@ -317,7 +381,11 @@ export default function Header() {
                                   <li>
                                     <NavLink
                                       to="/Service/annual-filing-for-llp"
-                                      className="hover:text-orange-400"
+                                      className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
                                     >
                                       Annual Form Filing
                                     </NavLink>
@@ -344,7 +412,11 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className="hover:text-orange-400">
+                  <NavLink to="/" className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }>
                     Price
                   </NavLink>
                 </li>

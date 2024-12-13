@@ -54,11 +54,11 @@ export default function Home() {
         <link rel="canonical" href={`${basePath}/`} />
       </Helmet>
       <Banner />
-      <Feature />
-      <Howcan />
-      <Appshowcase />
+       <Feature />
+     <Howcan />
+       <Appshowcase />
       <Moduls />
-      <Bthawkdevice />
+     <Bthawkdevice />
       <Testimonials />
       <Partnerslider />
       <Ourblog />
