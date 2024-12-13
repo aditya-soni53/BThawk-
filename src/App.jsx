@@ -16,6 +16,7 @@ import Servicedetail from "./pages/Servicedetail";
 import Ourcustomer from "./pages/ourCustomers/Ourcustomer";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import Faq from "./pages/Faq";
 
 function App() {
   
@@ -35,6 +36,7 @@ return (
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms-conditions" element={<TermCondition />} />
           <Route path="/*" element={<Home />} />        
+          <Route path="/faq" element={<Faq />} />        
         </Routes>
         <Footer />
       </BrowserRouter>

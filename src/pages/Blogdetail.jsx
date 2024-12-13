@@ -191,7 +191,6 @@ export default function Blogdetail() {
             <div>
               <Faqdetail faq={blog.faqs} />
             </div>
-
             <div>
               <h2 className="related-blogs-heading">Related Blogs</h2>
               <div className="related-blogs">

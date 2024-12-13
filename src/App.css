@@ -682,7 +682,7 @@ dl, ol, ul {
     -o-border-radius: 10px;
     -ms-border-radius: 10px;
     border-radius: 5px;
-    padding: 15px;
+    /* padding: 15px; */
     /* border: 1px solid #b5b5c3; */
     -webkit-transition: all 0.2s ease-out 0s;
     -moz-transition: all 0.2s ease-out 0s;

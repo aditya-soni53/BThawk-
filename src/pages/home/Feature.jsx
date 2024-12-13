@@ -15,7 +15,7 @@ export default function Feature() {
       
     return (
         <>
-            <div className='feature w-11/12 mx-auto relative grid lg:grid-cols-3 gap-2 mb-4'>
+            <div className='feature w-11/12 mx-auto relative grid lg:grid-cols-3 gap-2 mb-4 overflow-hidden'>
                 <div className="col-span-1 aos-animate" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
                     <div className='sticky top-[120px]'>
                         <h1 className='Feature-heading border-b-2 border-b-zinc-950 w-full'>Top Features</h1>

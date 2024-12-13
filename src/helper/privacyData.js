@@ -85,3 +85,4 @@ export const CollectData = [
     text: "To respond to the court orders, establish or exercise our legal rights, or defend ourselves against legal claims.",
   },
 ];
+

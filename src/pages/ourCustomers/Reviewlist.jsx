@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 
+
 export default function ReviewList() {
   const [reviews, setReviews] = useState([]); // All reviews
   const [filteredReviews, setFilteredReviews] = useState([]); // Filtered reviews
@@ -9,10 +10,10 @@ export default function ReviewList() {
   const [selectedState, setSelectedState] = useState(""); // Selected state
   const [userLocation, setUserLocation] = useState(null); // User's state location
   const [visibleReviewsCount, setVisibleReviewsCount] = useState(8); // Count of visible reviews
-
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [spinner, setSpinner] = useState(false);
 
   // Fetch reviews on component mount
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function ReviewList() {
         if (result.status === 1) {
           setReviews(result.data);
           setFilteredReviews(result.data); // Set initial state
-          console.log(reviews);
+          // console.log(reviews);
           
         } else {
           throw new Error(result.message || "No reviews found");
@@ -42,26 +43,6 @@ export default function ReviewList() {
       }
     };
 
-    // const fetchReviews = async () => {
-    //   try {
-    //     const response = await axios.post(`${"https://www.bthawk.com/api/blog_api"}`,{
-    //       type:"reviewDetailsFetch"
-    //     })
-    //     console.log(response.data.data);
-    //     if(response.data.status === 1){
-    //       setReviews([response.data.data]);
-    //       console.log();
-          
-    //       setFilteredReviews([response.data.data]); // Set initial state
-    //     }else{
-    //       throw new Error(response.message || "No reviews found");
-    //     }
-    //   } catch (error) {
-    //     setError(error);
-    //   }finally{
-    //     setLoading(false);
-    //   }
-    // }
 
     fetchReviews();
   }, []);
@@ -133,14 +114,18 @@ export default function ReviewList() {
     }
   };
 
-  // Handle "Load More" button click
+
   const handleLoadMore = () => {
-    setVisibleReviewsCount((prevCount) => prevCount + 8);
+    setSpinner(true); // Show loader
+    setTimeout(() => {
+      setVisibleReviewsCount((prevCount) => prevCount + 8); // Increment visible reviews
+      setSpinner(false); // Hide loader after data is "fetched"
+    }, 1000); // Simulated fetch time
   };
 
   // Helper function to extract YouTube embed URL
   const getYouTubeEmbedUrl = (url) => {
-    console.log(url);
+    // console.log(url);
     
     const youtubeRegex =
       /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:shorts\/|(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=))|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -190,29 +175,15 @@ export default function ReviewList() {
 
   // Render reviews
   return (
-    <div>
+    <div className="w-11/12 m-auto mb-16">
       <h1 className="hidden">ग्राहक समीक्षाएँ</h1>
-      {/* Dropdown for manual state selection */}
-      {/* <label>
-        राज्य का चयन करें:
-        <select value={selectedState} onChange={handleStateChange}>
-          <option value="">सभी राज्य</option>
-          {[...new Set(reviews.map((review) => review.state))].map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-      </label> */}
-
-      {/* Display user location */}
       <p className="hidden">
         {userLocation
           ? `आपके राज्य की समीक्षाएँ: ${userLocation}`
           : "स्थान खोजा जा रहा है..."}
       </p>
 
-      <div className="m-3">
+      <div className="my-6">
         <div className="relative w-full flex items-center overflow-hidden bg-gray-800 p-2">
           {/* Left Arrow */}
           {showLeftArrow && (
@@ -236,15 +207,6 @@ export default function ReviewList() {
             >
               All
             </button>
-            {/* {[...Array(45)].map((_, index) => (
-            <button
-              key={index}
-              className="px-4 py-2 rounded-full border border-gray-400 text-white"
-            >
-              State
-            </button>
-          ))} */}
-
             {[...new Set(reviews.map((review) => review.state))].map(
               (state) => (
                 <button
@@ -271,7 +233,7 @@ export default function ReviewList() {
 
       {/* Render filtered reviews */}
       {filteredReviews.length > 0 ? (
-        <div className="review-list grid sm:grid-cols-4 gap-4  p-4">
+        <div className="review-list grid lg:grid-cols-4 md:grid-cols-2  gap-x-10">
           {filteredReviews.slice(0, visibleReviewsCount).map((review) => {
             const embedUrl = getYouTubeEmbedUrl(review.video);
             return (
@@ -317,12 +279,9 @@ export default function ReviewList() {
       {/* Load More button */}
       {visibleReviewsCount < filteredReviews.length && (
         <div className="load-more-container text-center mt-2 mb-2">
-          <button
-            onClick={handleLoadMore}
-            className="load-more-button primary-btn "
-          >
-            Load More
-          </button>
+          {spinner ? (    <div className="grid w-full h-96 place-content-center">
+        <span className="loader"></span>
+      </div>) : ( <button onClick={handleLoadMore} className="load-more-button primary-btn " > Load More</button>) }
         </div>
       )}
     </div>
