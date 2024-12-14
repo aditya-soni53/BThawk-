@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 const HeroText = "Any question or remarks? Just write us a message !";
 const ContactInfo = [
@@ -86,20 +87,34 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Form submitted:", formData);
-      alert("Form submitted successfully!");
-      setFormData({
-        f_name: "",
-        l_name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-      setErrors({});
+    if (validate()) { 
+      const res = await axios.post("https://www.bthawk.com/api/contact_quary_api",{
+        first_name: formData.f_name,
+        last_name:formData.l_name,
+        email:formData.email,
+        phone:formData.phone,
+        subject:formData.subject,
+        message:formData.message
+      })
+
+      
+      if(res.data.status === 1){
+        Swal.fire({
+            title: 'Error',
+            text: "Our Team Wil Contact You Soon",
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+    }else{
+        Swal.fire({
+            title: 'Error',
+            text: "There is Some Error",
+            icon: 'error',
+            confirmButtonText: 'OK'
+          })
+    }
     }
   };
 

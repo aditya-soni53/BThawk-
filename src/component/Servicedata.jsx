@@ -79,8 +79,6 @@ export default function Servicedata(propes) {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-
-        
         // Ensure all fields are filled
         if (!pincode ||!mobileNumber) {
             Swal.fire({
