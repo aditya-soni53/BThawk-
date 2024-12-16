@@ -29,6 +29,7 @@ const ContactInfo = [
   },
 ];
 
+
 const Contact = () => {
   
   const basePath = window.location.origin;
@@ -96,7 +97,8 @@ const Contact = () => {
         email:formData.email,
         phone:formData.phone,
         subject:formData.subject,
-        message:formData.message
+        message:formData.message,
+
       })
 
       
@@ -118,6 +120,9 @@ const Contact = () => {
     }
   };
 
+  useEffect(() => {
+
+  }, [input])
   return (
     <>
       <Helmet>
