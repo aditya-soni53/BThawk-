@@ -30,6 +30,7 @@ const ContactInfo = [
   },
 ];
 
+
 const Contact = () => {
   
   const basePath = window.location.origin;
@@ -98,7 +99,8 @@ const Contact = () => {
         email:formData.email,
         mobile_number:formData.phone,
         subject:formData.subject,
-        message:formData.message
+        message:formData.message,
+
       })
       if(res.data.status === 1){
         Swal.fire({
@@ -118,6 +120,9 @@ const Contact = () => {
     }
   };
 
+  useEffect(() => {
+
+  }, [input])
   return (
     <>
       <Helmet>
