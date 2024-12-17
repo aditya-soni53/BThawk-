@@ -56,28 +56,7 @@ export default function Career() {
                 <h1 className='text-2xl'>All Job</h1>
             </div>
             <div className='w-11/12 mx-auto grid grid-cols-4 mt-10 mb-10 gap-8'>
-                {/* <div className="app-cards">
-                    <div className="appcard-1 aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
-                    <h3 className="text-xl text-[#22249B]">
-                    Finance Content Writer
-                    </h3>
-                    <p className="">
-                    Gandhi Nagar, Jaipur, Rajasthan
-                    </p>
-                    <ul className="mt-2">
-                        <li className="mt-2 flex">
-                        <img className="mr-2" src={Listicon} alt="home-img" />
-                        Fresher and Experience
-                        </li>
-                        <li className="mt-2 flex">
-                        <img className="mr-2" src={Listicon} alt="home-img" />
-                        Salary 3 to 4 LPA
-                        </li>
-                    
-                    </ul>
-                    <button className="primary-btn mt-3">View</button>
-                    </div>
-            </div> */}
+                
                 {
                     jobs.map((item, index) =>
                     (

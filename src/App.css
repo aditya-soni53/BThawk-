@@ -710,3 +710,9 @@ dl, ol, ul {
   -ms-overflow-style: none;  /* Hides the scrollbar in IE and Edge */
   scrollbar-width: none;  /* Hides the scrollbar in Firefox */
 }
+.widget{
+  margin-top: 10px;
+}
+.widget h4{
+  color: #383838;
+}
