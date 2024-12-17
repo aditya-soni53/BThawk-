@@ -120,9 +120,6 @@ const Contact = () => {
     }
   };
 
-  useEffect(() => {
-
-  }, [input])
   return (
     <>
       <Helmet>
