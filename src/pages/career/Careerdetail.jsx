@@ -95,7 +95,6 @@ export default function Careerdetail() {
       <p dangerouslySetInnerHTML={{ __html: jobsData.description }} />
         {/* {} */}
       </div>
-      <button className='primary-btn'>Apply now</button>
       <Modals />
       </div>
     </div>
