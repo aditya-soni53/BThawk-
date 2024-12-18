@@ -9,8 +9,6 @@ export default function Ourcustomer() {
     <>
       <Topbanner banner={Blogbanner} />
       <Reviewlist />
-
-      {/* <Mappy/> */}
     </>
   );
 }

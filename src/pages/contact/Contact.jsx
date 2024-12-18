@@ -9,7 +9,7 @@ import {
 import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
 import axios from "axios";
-
+import Swal from "sweetalert2"; 
 const HeroText = "Any question or remarks? Just write us a message !";
 const ContactInfo = [
   {
@@ -29,11 +29,8 @@ const ContactInfo = [
   },
 ];
 
-
 const Contact = () => {
-  
   const basePath = window.location.origin;
-
 
   const [formData, setFormData] = useState({
     f_name: "",
@@ -88,41 +85,45 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) { 
-      const res = await axios.post("https://www.bthawk.com/api/contact_quary_api",{
-        first_name: formData.f_name,
-        last_name:formData.l_name,
-        email:formData.email,
-        phone:formData.phone,
-        subject:formData.subject,
-        message:formData.message,
+    if (validate()) {
+      const res = await axios.post(
+        "https://www.bthawk.com/api/contact_quary_api",
+        {
+          first_name: formData.f_name,
+          last_name: formData.l_name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }
+      );
 
-      })
-
+      console.log(res);
       
-      if(res.data.status === 1){
+
+      if (res.data.status === 1) {
         Swal.fire({
-            title: 'Error',
-            text: "Our Team Wil Contact You Soon",
-            icon: 'success',
-            confirmButtonText: 'OK'
-          })
-    }else{
+          title: "Success",
+          text: "Our Team Wil Contact You Soon",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        console.log("Hello")
+      } else {
         Swal.fire({
-            title: 'Error',
-            text: "There is Some Error",
-            icon: 'error',
-            confirmButtonText: 'OK'
-          })
-    }
+          title: "Error",
+          text: "There is Some Error",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        // console.log(res.data)
+
+      }
     }
   };
 
-  useEffect(() => {
-
-  }, [input])
   return (
     <>
       <Helmet>
@@ -137,7 +138,7 @@ const Contact = () => {
           name="description"
           content="Get in touch with BTHAWK for GST billing, accounting, and compliance support. Contact us for expert assistance and streamline your business needs."
         />
-        <link rel="canonical" href={`${basePath}/contact`}/>
+        <link rel="canonical" href={`${basePath}/contact`} />
       </Helmet>
       <section className="contact-section">
         <Hero text={HeroText} show={false} heading="Contact Us" />
