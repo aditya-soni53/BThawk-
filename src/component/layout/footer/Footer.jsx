@@ -108,7 +108,7 @@ export default function Footer() {
               <Link to="/privacy-policy" className=" hover:text-[#FF553E]">Privacy policy</Link>
             </li>
             <li>
-              <Link className=" hover:text-[#FF553E]">FAQ</Link>
+              <Link to="/faq" className=" hover:text-[#FF553E]">FAQ</Link>
             </li>
             <li>
               <Link to="/terms-conditions" className=" hover:text-[#FF553E]">Terms & Cond.</Link>

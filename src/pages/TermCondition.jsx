@@ -15,6 +15,8 @@ import {
   warranty,
 } from "../helper/termsData";
 import { Helmet } from "react-helmet";
+import banner1 from '../assets/image/contact-us.webp'
+import Topbanner from "../component/layout/topBanner/Topbanner";
 
 const ListSection = ({ title, items }) => {
   const mx =
@@ -62,6 +64,7 @@ const TermCondition = () => {
 
         <link rel="canonical" href={`${basePath}/terms-conditions`} />
       </Helmet>
+      <Topbanner banner={banner1} />
       <section className="privacy_policy-section">
         <Hero text="" show={false} heading="Terms & Conditions" />
         <div className="w-11/12 mx-auto mt-10 mb-10">

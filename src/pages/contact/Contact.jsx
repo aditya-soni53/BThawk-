@@ -10,7 +10,8 @@ import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import banner1 from '../../assets/image/contact-us.webp'
+import Topbanner from "../../component/layout/topBanner/Topbanner";
 const HeroText = "Any question or remarks? Just write us a message !";
 const ContactInfo = [
   {
@@ -29,7 +30,7 @@ const ContactInfo = [
     text: "15&16, 18th Floor, AIPL Business Club Sector 62, Gurugram 122102",
   },
 ];
-
+const banner = "hello"
 const Contact = () => {
   const basePath = window.location.origin;
 
@@ -126,21 +127,14 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Contact BTHAWK - GST Billing, Accounting, and Compliance Help
-        </title>
-        <meta
-          name="keywords"
-          content="contact BTHAWK, GST billing support, accounting help, business compliance, BTHAWK support"
-        />
-        <meta
-          name="description"
-          content="Get in touch with BTHAWK for GST billing, accounting, and compliance support. Contact us for expert assistance and streamline your business needs."
-        />
+        <title> Contact BTHAWK - GST Billing, Accounting, and Compliance Help </title>
+        <meta name="keywords" content="contact BTHAWK, GST billing support, accounting help, business compliance, BTHAWK support" />
+        <meta name="description" content="Get in touch with BTHAWK for GST billing, accounting, and compliance support. Contact us for expert assistance and streamline your business needs." />
         <link rel="canonical" href={`${basePath}/contact`} />
       </Helmet>
       <section className="contact-section">
-        <Hero text={HeroText} show={false} heading="Contact Us" />
+      <Topbanner banner={banner1} />
+        <Hero text={HeroText} show={false} heading="Contact Us"  />
         <div className="w-11/12 mx-auto mt-14 contact_us-details mb-14">
           <div className="container flex flex-col p-2 mx-auto md:flex-row contact_us-container">
             <aside className="p-10 contact_us-details_left md:w-4/12">

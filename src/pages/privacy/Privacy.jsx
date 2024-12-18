@@ -9,6 +9,8 @@ import {
   Privacydata,
 } from "../../helper/privacyData";
 import { Helmet } from "react-helmet";
+import banner1 from '../../assets/image/contact-us.webp'
+import Topbanner from "../../component/layout/topBanner/Topbanner";
 
 const Privacy = () => {
 
@@ -30,6 +32,7 @@ const Privacy = () => {
         />
         <link rel="canonical" href={`${basePath}/privacy-policy`} />
       </Helmet>
+      <Topbanner banner={banner1} />
       <section className="privacy_policy-section">
         <Hero text="" show={false} heading="Privacy Policy" />
         <div className="w-11/12 mx-auto mt-10 mb-10">

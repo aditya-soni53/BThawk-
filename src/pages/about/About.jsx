@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { mentorsImg } from "../../helper";
 import Hero from "../../component/Hero";
 import { Helmet } from "react-helmet";
+import banner1 from '../../assets/image/contact-us.webp'
+import Topbanner from "../../component/layout/topBanner/Topbanner";
 
 const features = [
   {
@@ -148,6 +150,7 @@ const About = () => {
           content="GST billing and accounting | GST Billing software | ITR Filing- BTHAWK"
         />
       </Helmet>
+      <Topbanner banner={banner1} />
       <Hero text={HeroText} show={true} />
       <section className="mt-10 mb-6 about-features-section">
         <div className="container mx-auto">
