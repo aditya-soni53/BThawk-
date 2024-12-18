@@ -9,7 +9,8 @@ import {
 import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
 import axios from "axios";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
+
 const HeroText = "Any question or remarks? Just write us a message !";
 const ContactInfo = [
   {
@@ -91,26 +92,25 @@ const Contact = () => {
       const res = await axios.post(
         "https://www.bthawk.com/api/contact_quary_api",
         {
+          type: "addContact",
           first_name: formData.f_name,
           last_name: formData.l_name,
           email: formData.email,
-          phone: formData.phone,
+          mobile_number: formData.phone,
           subject: formData.subject,
           message: formData.message,
         }
       );
 
       console.log(res);
-      
 
       if (res.data.status === 1) {
         Swal.fire({
-          title: "Success",
+          title: "Error",
           text: "Our Team Wil Contact You Soon",
           icon: "success",
           confirmButtonText: "OK",
         });
-        console.log("Hello")
       } else {
         Swal.fire({
           title: "Error",
@@ -119,7 +119,6 @@ const Contact = () => {
           confirmButtonText: "OK",
         });
         // console.log(res.data)
-
       }
     }
   };

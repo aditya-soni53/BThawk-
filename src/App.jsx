@@ -17,6 +17,8 @@ import Ourcustomer from "./pages/ourCustomers/Ourcustomer";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import Faq from "./pages/Faq";
+import Career from "./pages/career/Career";
+import Careerdetail from "./pages/career/Careerdetail";
 
 function App() {
   
@@ -37,6 +39,8 @@ return (
           <Route path="/terms-conditions" element={<TermCondition />} />
           <Route path="/*" element={<Home />} />        
           <Route path="/faq" element={<Faq />} />        
+          <Route path="/career" element={<Career />} />      
+          <Route path="/career/:jobSlug" element={<Careerdetail />} />  
         </Routes>
         <Footer />
       </BrowserRouter>

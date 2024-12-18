@@ -114,7 +114,7 @@ export default function Footer() {
               <Link to="/terms-conditions" className=" hover:text-[#FF553E]">Terms & Cond.</Link>
             </li>
             <li>
-              <Link className=" hover:text-[#FF553E]">Career</Link>
+              <Link to="/career" className=" hover:text-[#FF553E]">Career</Link>
             </li>
             <li>
               <Link to="/contact" className=" hover:text-[#FF553E]">Contact us</Link>
