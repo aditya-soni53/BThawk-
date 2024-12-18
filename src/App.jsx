@@ -17,7 +17,7 @@ import Ourcustomer from "./pages/ourCustomers/Ourcustomer";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import Faq from "./pages/Faq";
-import Career from "./pages/career/career";
+import Career from "./pages/career/Career";
 import Careerdetail from "./pages/career/Careerdetail";
 
 function App() {
