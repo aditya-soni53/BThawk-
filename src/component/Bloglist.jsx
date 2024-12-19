@@ -71,8 +71,7 @@ export default function Bloglist() {
       </div>
 
       {/* Load More Button */}
-      {
-        visibleBlogs < data.length && (
+      {visibleBlogs < data.length && (
           <div className="my-4 text-center mb-14">
             <button
               onClick={loadMoreBlogs}

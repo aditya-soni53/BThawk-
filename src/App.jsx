@@ -40,7 +40,7 @@ return (
           <Route path="/*" element={<Home />} />        
           <Route path="/faq" element={<Faq />} />        
           <Route path="/career" element={<Career />} />      
-          <Route path="/career/:jobSlug" element={<Careerdetail />} />  
+          <Route path="/career/:jobSlug/:jobId" element={<Careerdetail />} />  
         </Routes>
         <Footer />
       </BrowserRouter>

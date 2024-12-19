@@ -42,7 +42,6 @@ export default function Servicedata(propes) {
                     headingIds.push({ id: element.id, text: element.innerText });
                 }
             });
-
             setHeadings(headingIds);
         }
     }, [propes.servicedata.description]);
@@ -124,8 +123,7 @@ export default function Servicedata(propes) {
             <p className="mb-3">
             <span className="bg-[#F7F7F7] p-2 rounded-md">
               <Link to="/Home">Home </Link>/<Link to="/Home"> service </Link>/{" "}
-              {propes.servicedata.slug}
-              
+              {propes.servicedata.slug}   
             </span>
           </p>
             {/* <img className='relative pb-4 overflow-hidden rounded-xl'
@@ -139,8 +137,7 @@ export default function Servicedata(propes) {
             
           <div ref={contentRef}>
                 <div dangerouslySetInnerHTML={{ __html: propes.servicedata.description }} />
-                <Faqdetail faq={propes.servicedata.faqs}/>
-                
+                    <Faqdetail faq={propes.servicedata.faqs}/>
                 </div>
             </div>
             <div className="w-full lg:p-4 mb-10">

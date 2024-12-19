@@ -10,11 +10,10 @@ export default function Career() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [spinner, setSpinner] = useState(true);
-  
 
   useEffect(() => {
     const fetchJobs = async () => {
-    setSpinner(true);
+      setSpinner(true);
       try {
         const res = await axios.post(
           `${"https://www.bthawk.com/api/blog_api"}`,
@@ -35,7 +34,6 @@ export default function Career() {
       } finally {
         setLoading(false);
         setSpinner(false);
-
       }
     };
     fetchJobs();
@@ -51,53 +49,52 @@ export default function Career() {
   return (
     <>
       <Topbanner banner={Blogbanner} />
-      {spinner  ? (
-                <div className="grid w-full h-96 place-content-center">
-                <span className="loader"></span>
-              </div>
+      {spinner ? (
+        <div className="grid w-full h-96 place-content-center">
+          <span className="loader"></span>
+        </div>
       ) : (
         <>
-        <div className="w-11/12 mx-auto  mt-10">
-          <h1 className="text-2xl">All Job</h1>
-        </div>
-        <div className="w-11/12 mx-auto grid grid-cols-4 mt-2 mb-10 gap-8 items-start">
-          {
-            jobs.map((item, index) => (
-              <div className="app-cards" key={index}>
-                <div
-                  className="appcard-1 aos-animate"
-                  data-aos="fade-left"
-                  data-aos-duration="600"
-                  data-aos-delay="300"
-                >
-                  <h3 className="text-xl text-[#22249B]">{item.job_title}</h3>
-                  <p className="">{item.location}</p>
-                  <ul className="mt-2">
-                    <li className="mt-2 flex items-start">
-                      <img className="mr-2" src={Listicon} alt="home-img" />
-                      {item.experience}
-                    </li>
-                    <li className="mt-2 flex items-start">
-                      <img className="mr-2" src={Listicon} alt="home-img" />
-                      {item.salary}
-                    </li>
-                  </ul>
-                  <Link
-                    to={`/career/${item.title_slug}`}
-                    className="primary-btn mt-3"
+          <div className="w-11/12 mx-auto  mt-10">
+            <h1 className="text-2xl">All Job</h1>
+          </div>
+          <div className="w-11/12 mx-auto grid grid-cols-4 mt-2 mb-10 gap-8 items-start">
+            {
+              jobs.map((item, index) => (
+                <div className="app-cards" key={index}>
+                  <div
+                    className="appcard-1 aos-animate"
+                    data-aos="fade-left"
+                    data-aos-duration="600"
+                    data-aos-delay="300"
                   >
-                    View
-                  </Link>
+                    <h3 className="text-xl text-[#22249B]">{item.job_title}</h3>
+                    <p className="">{item.location}</p>
+                    <ul className="mt-2">
+                      <li className="mt-2 flex items-start">
+                        <img className="mr-2" src={Listicon} alt="home-img" />
+                        {item.experience}
+                      </li>
+                      <li className="mt-2 flex items-start">
+                        <img className="mr-2" src={Listicon} alt="home-img" />
+                        {item.salary}
+                      </li>
+                    </ul>
+                    <Link
+                      to={`/career/${item.title_slug}/${item.jobid}`}
+                      className="primary-btn mt-3"
+                    >
+                      View
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))
+              ))
 
-            //
-          }
-        </div>
-      </>
+              //
+            }
+          </div>
+        </>
       )}
-
     </>
   );
 }
