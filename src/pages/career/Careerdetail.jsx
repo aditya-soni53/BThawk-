@@ -16,7 +16,7 @@ import { faClockFour } from "@fortawesome/free-regular-svg-icons/faClockFour";
 import Modals from "../../component/Modals";
 
 export default function Careerdetail() {
-  const { jobSlug } = useParams();
+  const { jobSlug, jobId } = useParams();
   const [jobsData, setJobdata] = useState([]);
   const [spinner, setSpinner] = useState(true);
 
@@ -67,6 +67,7 @@ export default function Careerdetail() {
                 />
                 <div className="overflow-hidden d-block">
                   <h4 className="">Employee Type:</h4>
+
                   <p className="text-green-500">{jobsData.employee_type}</p>
                 </div>
               </div>
@@ -127,7 +128,7 @@ export default function Careerdetail() {
               <p dangerouslySetInnerHTML={{ __html: jobsData.description }} />
               {/* {} */}
             </div>
-            <Modals />
+            <Modals jobId={jobId} />
           </div>
         </div>
       )}
