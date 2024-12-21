@@ -10,7 +10,7 @@ import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import Swal from "sweetalert2";
-import banner1 from '../../assets/image/contact-us.webp'
+import banner1 from '../../assets/image/contact-us.jpg'
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 const HeroText = "Any question or remarks? Just write us a message !";
 const ContactInfo = [
@@ -30,7 +30,6 @@ const ContactInfo = [
     text: "15&16, 18th Floor, AIPL Business Club Sector 62, Gurugram 122102",
   },
 ];
-const banner = "hello"
 const Contact = () => {
   const basePath = window.location.origin;
 
@@ -103,15 +102,23 @@ const Contact = () => {
         }
       );
 
-      console.log(res);
 
       if (res.data.status === 1) {
         Swal.fire({
-          title: "Error",
+          title: "Success",
           text: "Our Team Wil Contact You Soon",
           icon: "success",
           confirmButtonText: "OK",
-        });
+        }).then(()=>{
+          setFormData({
+            f_name: "",
+            l_name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          })
+        })
       } else {
         Swal.fire({
           title: "Error",

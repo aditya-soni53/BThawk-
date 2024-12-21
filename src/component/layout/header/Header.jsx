@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../../assets/image/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import scrolledLogo from "../../../assets/image/white-logo.svg"; // Update with your scrolled logo path
+import { Context } from "../../../Context";
+import Schedulemodal from "../../Schedulemodal";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +35,7 @@ export default function Header() {
   const [isTaxPreparationOpen, setIsTaxPreparationOpen] = useState(false);
   const [isPayrollManagementOpen, setIsPayrollManagementOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 0);
-
+  const {setIsModalOpen, isModalOpen} = useContext(Context);
   // Update state based on window width
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 0);
@@ -67,6 +69,10 @@ export default function Header() {
   const handleToggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <>
       <header
@@ -74,14 +80,14 @@ export default function Header() {
           }`}
       >
         <div className="w-11/12 mx-auto header-1 ">
-          <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
+          <Link to="./" className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
             <img
               src={isScrolled ? scrolledLogo : logo}
               alt="Logo"
               className="desk-logo"
             />
             <img src={scrolledLogo} alt="Logo" className="mobile-logo" />
-          </a>
+          </Link>
           <div className={`navbar-mobile  ${isNavbarOpen ? "flex" : "none"}`}>
             <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 ">
               <ul className="flex flex-wrap items-center justify-center lg:gap-3 mb-0 md:gap-2 gap-1 text-base nav-links">
@@ -117,7 +123,7 @@ export default function Header() {
                     {(isMainDropdownOpen || !isDesktop) && (
                       <div
                         className={`lg:absolute ${isDesktop
-                            ? "w-max submenu1 text-black bg-white lg:shadow-lg lg:px-2 px-0 lg:py-3 py-1 rounded top-full left-0"
+                            ? "w-max submenu1 text-black bg-white lg:shadow-lg lg:px-5 px-0 lg:py-5 py-1 rounded top-full left-0"
                             : "relative m-submenu bg-white p-3 lg:mt-2 rounded"
                           }`}
                       >
@@ -143,11 +149,11 @@ export default function Header() {
                             {(isTaxPreparationOpen || !isDesktop) && (
                               <div
                                 className={`lg:absolute transition ease-in-out delay-150 ${isDesktop
-                                    ? "w-max submenu2 bg-white shadow-lg p-3 rounded left-[105%] top-0"
+                                    ? "w-max submenu2 bg-white shadow-lg px-5 py-5 rounded left-[105%] top-0"
                                     : "relative m-submenu-1 bg-white p-3 mt-2 rounded"
                                   }`}
                               >
-                                <ul className="flex flex-col mb-0 gap-2">
+                                <ul className="flex flex-col mb-0 gap-3">
                                   <li>
                                     <NavLink
                                       to="/Service/msme-udyam-registration"
@@ -438,7 +444,7 @@ export default function Header() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </button>
-            <button className="lg:ml-2 primary-btn ">
+            <button className="lg:ml-2 primary-btn "  onClick={toggleModal}>
               Schedule a Demo
               <svg
                 fill="none"
@@ -461,6 +467,7 @@ export default function Header() {
           </span>
         </div>
       </header>
+      <Schedulemodal />
     </>
   );
 }

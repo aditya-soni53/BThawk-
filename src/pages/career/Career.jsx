@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Topbanner from "../../component/layout/topBanner/Topbanner";
-import Blogbanner from "../../assets/image/blog-banner.jpg";
+import Blogbanner from "../../assets/image/career.jpg";
 import Listicon from "../../assets/image/list-icon.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";

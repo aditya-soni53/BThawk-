@@ -21,22 +21,22 @@ export default function Heroslider() {
       };
     return (
         <>
-           <div className='slider-container'>
+           <div className='slider-container '>
            <Slider {...banner1} >
                 <div>
-                    <img src={clientbanner1} className='rounded-xl' alt="" />
+                    <img src={clientbanner1} className='rounded-xl mx-auto' alt="heroslider" />
                 </div>
                 <div>
-                    <img src={clientbanner2} className='rounded-xl' alt="" />
+                    <img src={clientbanner2} className='rounded-xl mx-auto' alt="heroslider" />
                 </div>
                 <div>
-                    <img src={clientbanner3} className='rounded-xl' alt="" />
+                    <img src={clientbanner3} className='rounded-xl mx-auto' alt="heroslider" />
                 </div>
                 <div>
-                    <img src={clientbanner4} className='rounded-xl' alt="" />
+                    <img src={clientbanner4} className='rounded-xl mx-auto' alt="heroslider" />
                 </div>
                 <div>
-                    <img src={clientbanner5} className='rounded-xl' alt="" />
+                    <img src={clientbanner5} className='rounded-xl mx-auto' alt="heroslider" />
                 </div>
             </Slider>
            </div>

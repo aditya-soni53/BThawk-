@@ -59,19 +59,13 @@ const Modals = () => {
   return (
     <div className="flex">
       {/* Show Modal Button */}
-      <button
-        className=" primary-btn py-2  transition font-medium duration-500"
-        onClick={toggleModal}
-      >
+      <button className=" primary-btn py-2  transition font-medium duration-500" onClick={toggleModal}>
         SHOW MODAL
       </button>
 
       {/* Modal */}
       {isModalOpen && (
-        <div
-          className="fixed z-10 overflow-y-auto top-0 w-full left-0"
-          id="modal"
-        >
+        <div className="fixed z-10 overflow-y-auto top-0 w-full left-0" id="modal" >
           <div className="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity">
               <div className="absolute inset-0 bg-gray-900 opacity-75"></div>

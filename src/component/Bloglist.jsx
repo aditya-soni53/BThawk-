@@ -38,6 +38,7 @@ export default function Bloglist() {
       <div className="grid w-11/12 grid-cols-1 gap-4 mx-auto my-10 mb-16 lg:grid-cols-3">
         {
           data.slice(0, visibleBlogs).map((item, index) => (
+            <Link to={`/Blogs/${item.title_slug}`}>
             <div key={index} className="blog-card">
               {/* Image with fallback */}
               <img
@@ -52,7 +53,7 @@ export default function Bloglist() {
 
               {/* Blog content */}
               <div className="pt-3 blog-card-content">
-              <Link to={`/Blogs/${item.title_slug}`}><b className="text-lg">{item.blog_title}</b></Link>
+              <b className="text-lg">{item.blog_title}</b>
               <p className='mt-2 blog-detail' dangerouslySetInnerHTML={{ __html: item.content }} />
                 <div className="grid grid-cols-2 blog-card-footer">
                   <div className="flex p-2">
@@ -66,6 +67,7 @@ export default function Bloglist() {
                 </div>
               </div>
             </div>
+            </Link>
           ))
         }
       </div>

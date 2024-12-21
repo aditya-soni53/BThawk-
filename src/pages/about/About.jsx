@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { mentorsImg } from "../../helper";
 import Hero from "../../component/Hero";
 import { Helmet } from "react-helmet";
-import banner1 from '../../assets/image/contact-us.webp'
+import banner1 from '../../assets/image/contact-us.jpg'
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 
 const features = [

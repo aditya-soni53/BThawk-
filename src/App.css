@@ -134,6 +134,11 @@ header {
   bottom: -100px;
   left: 25%;
 }
+@media(max-width:1300px){
+  .about-bthawk{
+    bottom: -30px;
+  }
+}
 .feature {
   margin-top: 180px;
 }
@@ -146,7 +151,7 @@ header {
   padding: 25px 0px;
 }
 .card-footer {
-  background-color: #e3e0e0;
+  background-color: #ff683dd9;
   border-top-left-radius: 21px;
   border-bottom-left-radius: 21px;
   padding: 10px;

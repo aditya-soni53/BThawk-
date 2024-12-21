@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import featureimg1 from '../../assets/image/feature-img-1.svg'
 import featureimg2 from '../../assets/image/feature-img-2.svg'
 import featureimg3 from '../../assets/image/feature-img-3.svg'
@@ -8,6 +8,33 @@ import featureimg6 from '../../assets/image/feature-img-6.svg'
 import Aos from 'aos';
 
 export default function Feature() {
+    const [offset, setOffset] = useState(0);
+    const [bgPosition, setBgPosition] = useState();
+
+    useEffect(() => {
+        const onScroll = () => {
+        const scrollY = window.scrollY;
+        setOffset(scrollY);
+
+        // Update background position based on scroll
+        if (scrollY >= 900) {
+            console.log(scrollY);
+            setBgPosition(scrollY - 750); // Adjust for smoother transition
+            console.log(scrollY - 1200);
+            
+        } else {
+            setBgPosition(0); // Reset position if below threshold
+        }
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        // Cleanup event listener on unmount
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    // console.log(offset); 
+
 
     useEffect(() => {
         Aos.init(); // Refresh AOS for dynamically added components
@@ -15,7 +42,7 @@ export default function Feature() {
       
     return (
         <>
-            <div className='feature w-11/12 mx-auto relative grid lg:grid-cols-3 gap-2 mb-4 overflow-hidden'>
+            <div className='feature w-11/12 mx-auto relative grid lg:grid-cols-3 gap-2 mb-4' style={{backgroundPosition: `-${bgPosition}px center`}}>
                 <div className="col-span-1 aos-animate" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
                     <div className='sticky top-[120px]'>
                         <h1 className='Feature-heading border-b-2 border-b-zinc-950 w-full'>Top Features</h1>

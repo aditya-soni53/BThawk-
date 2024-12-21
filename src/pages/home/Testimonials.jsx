@@ -126,12 +126,9 @@ export default function Testimonials() {
                         <Link to="./Ourcustomer" className='flex mt-5 text-white'>Visit our wall of love 
                         <img src={uparrow} alt="arrow" />
                         </Link>
-
                     </div>
                     <div className="md:p-12 lg:p-6 lg:pt-12 w-full">
-                       
                         <Heroslider />
-                    
                     </div>
                     
                 </div>

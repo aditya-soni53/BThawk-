@@ -9,7 +9,7 @@ import {
   Privacydata,
 } from "../../helper/privacyData";
 import { Helmet } from "react-helmet";
-import banner1 from '../../assets/image/contact-us.webp'
+import banner1 from '../../assets/image/privacy-policy.jpg'
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 
 const Privacy = () => {

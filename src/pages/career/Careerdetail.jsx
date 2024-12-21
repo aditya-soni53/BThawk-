@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Blogbanner from "../../assets/image/blog-banner.jpg";
+import Blogbanner from "../../assets/image/career.jpg";
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 import axios from "axios";
 import { useParams } from "react-router-dom";

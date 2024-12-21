@@ -1,6 +1,6 @@
 import React from 'react'
 import Topbanner from '../component/layout/topBanner/Topbanner'
-import Blogbanner from "../assets/image/blog-banner.jpg";
+import Blogbanner from "../assets/image/faq.jpg";
 import Faqdetail from "../component/Faqdetail"
 
 export default function Faq() {

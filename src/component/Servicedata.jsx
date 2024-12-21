@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import user from '../assets/image/user.svg';
-import lock from '../assets/image/lock.svg';
 import google from '../assets/image/google.svg';
 import Faqdetail from "./Faqdetail";
-import profileimg from "../assets/image/favicon.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons'; 
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import Quaryform from './Quaryform';
+
 
 
 export default function Servicedata(propes) {
@@ -23,8 +20,7 @@ export default function Servicedata(propes) {
     const [activeHeading, setActiveHeading] = useState(null);
     const contentRef = useRef(null);
 
-    const [mobileNumber, setMobileNumber] = useState();
-    const [pincode, setPincode] = useState();
+
 
 
     useEffect(() => {
@@ -77,47 +73,7 @@ export default function Servicedata(propes) {
     }, []);
 
 
-    const handleSubmit = async(e) => {
-        e.preventDefault();
-        // Ensure all fields are filled
-        if (!pincode ||!mobileNumber) {
-            Swal.fire({
-                title: 'Error',
-                text: "Please Insert All The Details",
-                icon: 'error',
-                confirmButtonText: 'OK'
-              })
-        return;
-      }
 
-      try {
-        const res = await axios.post('https://www.bthawk.com/api/contact_quary_api', {
-            pincode:pincode,
-            mobile_number:mobileNumber,
-            type: "contectQuery"
-        });
-
-        if(res.data.status === 1){
-            Swal.fire({
-                title: 'Error',
-                text: "Our Team Wil Contact You Soon",
-                icon: 'success',
-                confirmButtonText: 'OK'
-              })
-        }else{
-            Swal.fire({
-                title: 'Error',
-                text: "There is Some Error",
-                icon: 'error',
-                confirmButtonText: 'OK'
-              })
-        }
-        
-
-      } catch (error) {
-        console.error("Error in submitting bank details:", error);
-      }
-    }
     return (
         <div className="grid w-11/12 grid-cols-1 mx-auto mt-4 lg:grid-cols-4 lg:mt-8">
             <div className="lg:col-span-3 lg:p-4 blog-content" >
@@ -144,22 +100,7 @@ export default function Servicedata(propes) {
                 </div>
             </div>
             <div className="w-full lg:p-4 mb-10">
-                <form action="" className='lg:shadow-2xl border-2 p-7 py-8 rounded-xl' onSubmit={handleSubmit}>
-                    <p className='text-2xl mb-3'>Connect with <span className='text-[#2E30A5] font-semibold'>BT</span><span className='font-semibold text-[#F3771E]'>HAWK</span></p>
-                    <div className="form-group relative">
-                        <label htmlFor="">Mobile Number</label> <br />
-                        <input type="text" className='bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl' placeholder='Mobile Number' onChange={(e)=>{setMobileNumber(e.target.value)}} />
-                        <img src={user} className='absolute bottom-3 left-2' alt="user" />
-                    </div>
-                    <div className="form-group relative">
-                        <label htmlFor="">Pincode</label> <br />
-                        <input type="text" className='bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl' placeholder='Pincode' onChange={(e)=>{setPincode(e.target.value)}} />
-                        <img src={lock} className='absolute bottom-3 left-2' alt="user" />
-                    </div>
-                    <div className="form-group relative">
-                        <button className='bg-[#2E30A5] px-5px w-full text-white rounded-xl py-1 mt-4' type="submit">Get Started</button>
-                    </div>
-                </form>
+                <Quaryform />
                 <div className="rating grid grid-cols-3 my-4 border-2 border-[#22249B] p-3">
                     <div>
                         <img src={google} alt="google" />

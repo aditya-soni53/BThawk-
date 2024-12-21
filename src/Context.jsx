@@ -10,6 +10,7 @@ export const UserProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -31,7 +32,7 @@ export const UserProvider = ({ children }) => {
     };
     fetchBlog();
   }, [])
-  return <Context.Provider value={{ data, error, loading }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ data, error, loading, isModalOpen , setIsModalOpen}}>{children}</Context.Provider>;
 };
 
 UserProvider.propTypes = {

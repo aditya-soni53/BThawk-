@@ -15,7 +15,7 @@ import {
   warranty,
 } from "../helper/termsData";
 import { Helmet } from "react-helmet";
-import banner1 from '../assets/image/contact-us.webp'
+import banner1 from '../assets/image/contact-us.jpg'
 import Topbanner from "../component/layout/topBanner/Topbanner";
 
 const ListSection = ({ title, items }) => {

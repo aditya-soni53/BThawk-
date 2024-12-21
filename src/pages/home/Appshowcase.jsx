@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import app1 from "../../assets/image/app-1.svg";
 import Listicon from "../../assets/image/list-icon.svg";
 import Aos from "aos";
+import { Context } from "../../Context";
+
 
 export default function Appshowcase() {
   const [activeTab, setActiveTab] = useState("admin");
   useEffect(() => {
     Aos.init(); // Refresh AOS for dynamically added components
   });
+  const {setIsModalOpen, isModalOpen} = useContext(Context);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <div className="overflow-hidden">
@@ -50,7 +56,7 @@ export default function Appshowcase() {
             <div className="app-icon m-auto">
               <FontAwesomeIcon icon={faUserTie} />
             </div>
-            <b>Admin</b>
+            <b>Businessman App</b>
           </button>
 
           <button
@@ -104,10 +110,10 @@ export default function Appshowcase() {
               <div className="app-cards">
                 <div className="appcard-1">
                   <h3 className="text-xl text-center text-[#22249B]">
-                    Admin App and Dashboard
+                  Businessman App and Dashboard
                   </h3>
                   <p className="text-center">
-                    Admin App gives you the supremacy to maintain a hawk eye on
+                  Businessman App gives you the supremacy to maintain a hawk eye on
                     the activities of your FSEs.
                   </p>
                   <ul className="mt-2">
@@ -124,7 +130,7 @@ export default function Appshowcase() {
                       More focus on core business instead of compliance
                     </li>
                   </ul>
-                  <button className="primary-btn mt-3">Schedule a Demo</button>
+                  <button className="primary-btn mt-3" onClick={toggleModal}>Schedule a Demo</button>
                 </div>
               </div>
             </div>
@@ -166,7 +172,7 @@ export default function Appshowcase() {
                       Collection Management
                     </li>
                   </ul>
-                  <button className="primary-btn mt-3">Schedule a Demo</button>
+                  <button className="primary-btn mt-3" onClick={toggleModal}>Schedule a Demo</button>
                 </div>
               </div>
             </div>
@@ -204,7 +210,7 @@ export default function Appshowcase() {
                       Works as mini CRM for the retailers.
                     </li>
                   </ul>
-                  <button className="primary-btn mt-3">Schedule a Demo</button>
+                  <button className="primary-btn mt-3" onClick={toggleModal}>Schedule a Demo</button>
                 </div>
               </div>
             </div>
