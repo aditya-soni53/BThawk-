@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "../../../assets/image/logo.svg";
+import logo from "../../../assets/image/logo-11.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import scrolledLogo from "../../../assets/image/white-logo.svg"; // Update with your scrolled logo path
+import scrolledLogo from "../../../assets/image/new-logo.png"; // Update with your scrolled logo path
 import { Context } from "../../../Context";
 import Schedulemodal from "../../Schedulemodal";
 
@@ -84,9 +84,9 @@ export default function Header() {
             <img
               src={isScrolled ? scrolledLogo : logo}
               alt="Logo"
-              className="desk-logo"
+              className="desk-logo logo-main"
             />
-            <img src={scrolledLogo} alt="Logo" className="mobile-logo" />
+            <img src={scrolledLogo} alt="Logo" className="mobile-logo logo-main" />
           </Link>
           <div className={`navbar-mobile  ${isNavbarOpen ? "flex" : "none"}`}>
             <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 ">

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import blogimg from "../../assets/image/blog-image.svg";
+import blogimg from "../../assets/image/blog-image.webp";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
 

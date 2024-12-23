@@ -1,8 +1,8 @@
 import React,{useEffect} from 'react'
 import Slider from 'react-slick';
-import Banner1 from '../../assets/image/new/banner-1.svg'
-import Banner2 from '../../assets/image/new/banner-2.svg'
-import Banner3 from '../../assets/image/banner-3.svg'
+import Banner1 from '../../assets/image/new/banner-1.webp'
+import Banner2 from '../../assets/image/new/banner-2.webp'
+import Banner3 from '../../assets/image/banner-3.webp'
 import Aos from 'aos';
 
 export default function Banner() {

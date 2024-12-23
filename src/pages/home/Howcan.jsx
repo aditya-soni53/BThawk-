@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import help1 from '../../assets/image/help-cractor-img.svg'
+import help1 from '../../assets/image/help-cractor-img.webp'
 import Listicon from '../../assets/image/list-icon.svg'
 import Aos from 'aos';
 

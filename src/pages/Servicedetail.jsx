@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Topbanner from "../component/layout/topBanner/Topbanner";
-import servicedetaibanner from "../assets/image/servicedetail.svg";
+import servicedetaibanner from "../assets/image/servicedetail.webp";
 import Servicedata from "../component/Servicedata";
 
 export default function Servicedetail() {
@@ -39,19 +39,6 @@ export default function Servicedetail() {
 
     fetchServiceData();
   }, [serviceId])
-
-  // if (loading)
-  //   return (
-  //     <div className="grid w-full h-96 place-content-center">
-  //       <span className="loader"></span>
-  //     </div>
-  //   );
-  // if (error)
-  //   return (
-  //     <div className="grid w-full h-96 place-content-center">
-  //       Error: {error}
-  //     </div>
-  //   );
 
   return (
     <div>

@@ -350,8 +350,14 @@ header {
 .mobile-logo{
   display: none;
 }
+.logo-main{
+  width: 180px;
+}
 
 @media(max-width:991px){
+  .logo-main{
+    width: 150px;
+  }
   .navbar-mobile { display: none; /* default to hidden */ } 
   .navbar-mobile.flex { display: flex; /* show when flex class is added */ }
   header{
