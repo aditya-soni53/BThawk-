@@ -8,6 +8,7 @@ import Testimonials from "./Testimonials";
 import Partnerslider from "./Partnerslider";
 import Ourblog from "./Ourblog";
 import { Helmet } from "react-helmet";
+import Pricing from "./Pricing";
 
 export default function Home() {
   const basePath = window.location.origin;
@@ -58,6 +59,7 @@ export default function Home() {
      <Howcan />
        <Appshowcase />
       <Moduls />
+      {/* <Pricing /> */}
      <Bthawkdevice />
       <Testimonials />
       <Partnerslider />

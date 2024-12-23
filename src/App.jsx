@@ -41,12 +41,7 @@ return (
           <Route path="/*" element={<Home />} />        
           <Route path="/faq" element={<Faq />} />        
           <Route path="/career" element={<Career />} />      
-<<<<<<< HEAD
-          <Route path="/career/:jobSlug" element={<Careerdetail />} />  
-          <Route path="/home1" element={<Home1 />} />  
-=======
           <Route path="/career/:jobSlug/:jobId" element={<Careerdetail />} />  
->>>>>>> 09c2146b18f90445265c4b22a8354063ac3bea60
         </Routes>
         <Footer />
       </BrowserRouter>

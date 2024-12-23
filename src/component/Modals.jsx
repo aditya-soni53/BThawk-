@@ -143,30 +143,20 @@ const Modals = ({ jobId }) => {
   return (
     <div className="flex">
       {/* Show Modal Button */}
-<<<<<<< HEAD
-      <button className=" primary-btn py-2  transition font-medium duration-500" onClick={toggleModal}>
-        SHOW MODAL
-=======
       <button
         className="primary-btn py-2 transition font-medium duration-500"
         onClick={toggleModal}
       >
         Apply Now
->>>>>>> 09c2146b18f90445265c4b22a8354063ac3bea60
       </button>
 
       {/* Modal */}
       {isModalOpen && (
-<<<<<<< HEAD
-        <div className="fixed z-10 overflow-y-auto top-0 w-full left-0" id="modal" >
-          <div className="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-=======
         <div
           className="fixed z-10 overflow-y-auto top-0 w-full left-0"
           id="modal"
         >
           <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
->>>>>>> 09c2146b18f90445265c4b22a8354063ac3bea60
             <div className="fixed inset-0 transition-opacity">
               <div className="absolute inset-0 bg-gray-900 opacity-75"></div>
             </div>
