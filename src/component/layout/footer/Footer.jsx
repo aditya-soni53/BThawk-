@@ -156,18 +156,7 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-            {/* <li>
-              <Link className=" hover:text-[#FF553E]">BTRESTRO</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTEDGE</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTPRIME</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTPOINT</Link>
-            </li> */}
+
           </nav>
         </div>
         <div className="px-4">
