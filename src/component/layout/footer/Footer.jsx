@@ -14,19 +14,73 @@ export default function Footer() {
     event.preventDefault();
   };
 
+  const footerData = [
+    {
+      name: "BTHAWK",
+      link: "https://www.bthawk.com/index",
+    },
+    {
+      name: "BTCAMPUS",
+      link: "https://www.btcampus.in/",
+    },
+    {
+      name: "BTRESTRO",
+      link: "https://www.btrestro.com/",
+    },
+    {
+      name: "BTEDGE",
+      link: "https://www.bthawk.com/btedge",
+    },
+    {
+      name: "BTCONNECT",
+      link: "https://zucol.in/btconnect/",
+    },
+    {
+      name: "BTROOMER",
+      link: "https://www.btroomer.com/",
+    },
+    {
+      name: "BTPLUS",
+      link: "#",
+    },
+    {
+      name: "BTRISE",
+      link: "https://btrise.bthawk.com/",
+    },
+    {
+      name: "BTPRIME",
+      link: "https://www.bthawk.com/btprime/",
+    },
+    {
+      name: "BTPOINT",
+      link: "https://www.bthawk.com/btpoint/",
+    },
+    {
+      name: "Z-WEALTH",
+      link: "https://www.bthawk.com/zucol-wealth/",
+    },
+  ];
+
   return (
     <footer className="text-white bg-black body-font">
       <div className="grid w-11/12 grid-cols-2 pb-6 mx-auto md:px-5 pt-14 lg:grid-cols-5 ">
         <div className="flex-shrink-0 col-span-2 mx-auto mb-8 text-center lg:mx-0 md:text-left">
-          <Link to="/" className="flex items-center justify-center mb-4 font-medium text-gray-900 title-font md:justify-start md:mb-10">
-            <img src={logo} alt="" width={200} />
+          <Link
+            to="/"
+            className="flex items-center justify-center mb-4 font-medium text-gray-900 title-font md:justify-start md:mb-10"
+          >
+            <img src={logo} alt="" width={200}/>
           </Link>
           <p className="md:mt-2 md:mb-10 md-4 text-md ">
             Start working with BTHAWK that can provide everything you need to
             increase your business revenue.
           </p>
           <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0">
-            <Link to="https://www.facebook.com/Bell.BTHawk/" target="_blank" className="px-4 text-center border-r-2">
+            <Link
+              to="https://www.facebook.com/Bell.BTHawk/"
+              target="_blank"
+              className="px-4 text-center border-r-2"
+            >
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -38,10 +92,18 @@ export default function Footer() {
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
               </svg>
             </Link>
-            <Link to="https://www.twitter.com/bell_bthawk" target="_blank" className="px-4 text-center border-r-2">
+            <Link
+              to="https://www.twitter.com/bell_bthawk"
+              target="_blank"
+              className="px-4 text-center border-r-2"
+            >
               <img src={twitter} alt="twitter" width={17} />
             </Link>
-            <Link to="https://www.instagram.com/bell.bthawk/?hl=en" target="_blank" className="px-4 text-center border-r-2">
+            <Link
+              to="https://www.instagram.com/bell.bthawk/?hl=en"
+              target="_blank"
+              className="px-4 text-center border-r-2"
+            >
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -55,7 +117,11 @@ export default function Footer() {
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
               </svg>
             </Link>
-            <Link to="https://www.linkedin.com/company/bthawk2019/?viewAsMember=true" target="_blank" className="px-4 text-center">
+            <Link
+              to="https://www.linkedin.com/company/bthawk2019/?viewAsMember=true"
+              target="_blank"
+              className="px-4 text-center"
+            >
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -79,21 +145,18 @@ export default function Footer() {
             Our solution
           </h2>
           <nav className="grid gap-4 mb-10 list-none">
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTHAWK</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTRESTRO</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTEDGE</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTPRIME</Link>
-            </li>
-            <li>
-              <Link className=" hover:text-[#FF553E]">BTPOINT</Link>
-            </li>
+            {footerData.map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={item.link}
+                  target="_blank"
+                  className=" hover:text-[#FF553E]"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+
           </nav>
         </div>
         <div className="px-4">
@@ -102,22 +165,34 @@ export default function Footer() {
           </h2>
           <nav className="grid gap-4 mb-10 list-none">
             <li>
-              <Link to="/about" className=" hover:text-[#FF553E]">About</Link>
+              <Link to="/about" className=" hover:text-[#FF553E]">
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/privacy-policy" className=" hover:text-[#FF553E]">Privacy policy</Link>
+              <Link to="/privacy-policy" className=" hover:text-[#FF553E]">
+                Privacy policy
+              </Link>
             </li>
             <li>
-              <Link to="/faq" className=" hover:text-[#FF553E]">FAQ</Link>
+              <Link to="/faq" className=" hover:text-[#FF553E]">
+                FAQ
+              </Link>
             </li>
             <li>
-              <Link to="/terms-conditions" className=" hover:text-[#FF553E]">Terms & Cond.</Link>
+              <Link to="/terms-conditions" className=" hover:text-[#FF553E]">
+                Terms & Cond.
+              </Link>
             </li>
             <li>
-              <Link to="/career" className=" hover:text-[#FF553E]">Career</Link>
+              <Link to="/career" className=" hover:text-[#FF553E]">
+                Career
+              </Link>
             </li>
             <li>
-              <Link to="/contact" className=" hover:text-[#FF553E]">Contact us</Link>
+              <Link to="/contact" className=" hover:text-[#FF553E]">
+                Contact us
+              </Link>
             </li>
           </nav>
         </div>
