@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import micon1 from '../../assets/image/module-icon-2.svg'
 import micon2 from '../../assets/image/module-icon-3.svg'
 import micon3 from '../../assets/image/module-icon-3.svg'
 import Aos from 'aos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLocationDot, faPhoneVolume, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { Context } from '../../Context';
 export default function Pricing() {
+    
     const [isYearly, setIsYearly] = useState(false)
           useEffect(() => {
             Aos.init(); // Refresh AOS for dynamically added components
@@ -28,6 +30,10 @@ export default function Pricing() {
             },
           ];
           const handleToggle = () => { setIsYearly(!isYearly); };
+          const {setIsModalOpen, isModalOpen} = useContext(Context);
+          const toggleModal = () => {
+            setIsModalOpen(!isModalOpen);
+          };
   return (
            <>
                <div className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 md:mt-5 mt-14 mb-4 aos-animate overflow-hidden" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
@@ -72,17 +78,18 @@ export default function Pricing() {
                             </div>
                         </div>
                    </div>
-                   <div className="p-5 aos-animate  border-2 border-dashed border-[#6851b1] rounded-lg" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
+                   <div className="aos-animate border-2  border-[#6851b1] rounded-lg" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
                         <div className='bg-[#EDEAFF] block p-4 rounded-lg leading-none'> 
-                            <h2>Business Plan</h2>
+                            <h2>Starting from</h2>
                             <div className='flex my-3 items-baseline'>
                             <s>{isYearly ? '4999' : '1999'}</s><h2 className='text-5xl'>₹{isYearly ? '1999' : '199'}/ </h2><p>{isYearly ? 'yearly' : 'monthly'}</p>
                             </div>
+                            <h2>Business Plan</h2>
                             {/* <p className='leading-none'>Small businesses and startups automating their operations.</p> */}
                         </div>
-                        <div className='mt-5'>
+                        <div className='mt-5 px-5'>
                         <ul className='mb-3'>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Access for 1 Admin + 3 Users.</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Access upto 5 user.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Financial dashboard for business insights.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Generate and manage E-way bills.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Track raw materials, in-progress goods, and finished goods.</li>
@@ -93,20 +100,21 @@ export default function Pricing() {
                             <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Barcode-based billing for items and batches.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Includes a 14-day free trial.</li>
                         </ul>
+                       <button className='bg-[#7861ca] align-bottom p-2 rounded-lg text-white mt-3 w-full' onClick={toggleModal}>Schedule a Demo</button>
                         </div>
-                       <button className='bg-[#7861ca] align-bottom p-2 rounded-lg text-white mt-3 w-full'>Schedule a Demo</button>
                    </div>
-                   <div className="p-5 aos-animate grid align-bottom border-2 border-dashed border-[#9c4b21] rounded-lg" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
+                   <div className="aos-animate grid align-bottom border-2  border-[#9c4b21] rounded-lg" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
                         <div className='bg-[#FFF7E2]  p-4 rounded-lg leading-none relative'>
-                            <h2>Business Pro<sup className='text-sm'>+</sup> Plan</h2>
+                            <h2>Starting from</h2>
                             <div className='flex my-3 items-baseline'>
                             <s>{isYearly ? '8999' : '3999'}</s><h2 className='text-5xl'>₹{isYearly ? '2999' : '299'}/ </h2><p>{isYearly ? 'yearly' : 'monthly'}</p>
                             </div>
+                            <h2>Business Pro<sup className='text-sm'>+</sup> Plan</h2>
                             <p className='absolute top-0 bg-[#d4882c] text-white p-3 right-0 rounded-s-full'>50% off</p>
                         </div>
-                        <div className='mt-5'>
+                        <div className='mt-5 px-5 mb-3'>
                         <ul className='mb-3'>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Access for 1 Admin + 5 Users.</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Access upto 7 user.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Automate sales quotations, delivery notes, and purchase orders.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Reconcile bank transactions and adjust bill-to-bill entries.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Manage stock with batch tracking and warehouse transfers.</li>
@@ -118,8 +126,9 @@ export default function Pricing() {
                             <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Export data to Tally and other accounting tools.</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Dedicated support and training for premium users.</li>
                         </ul>
+                        <button className='bg-[#d4882c] p-2 rounded-lg text-white mt-3 w-full' onClick={toggleModal}>Schedule a Demo</button>
                         </div>
-                       <button className='bg-[#d4882c] p-2 rounded-lg text-white mt-3 w-full'>Schedule a Demo</button>
+                       
                    </div>
                </div>
            </>

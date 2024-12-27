@@ -44,7 +44,7 @@ export default function Schedulemodal() {
 
               <div className="bg-blue-00 px-4 h-1 text-right">
                 {/* Cancel Button */}
-                <button type="button" className="py-1 px-4 secoundary-btn border-2 mr-2 absolute right-1 top-7" onClick={toggleModal} >
+                <button type="button" className="py-1 px-4 secoundary-btn border-2 mr-2 absolute right-1 lg:top-7 top-2" onClick={toggleModal} >
                 <FontAwesomeIcon icon={faCircleXmark} className='text-2xl text-blue-900' />
                 </button>
                 {/* Create Button */}

@@ -19,7 +19,6 @@ import Aos from "aos";
 import Faq from "./pages/Faq";
 import Career from "./pages/career/Career";
 import Careerdetail from "./pages/career/Careerdetail";
-import Home1 from "./pages/home/Home1";
 
 function App() {
   
