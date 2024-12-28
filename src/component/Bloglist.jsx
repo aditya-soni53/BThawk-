@@ -38,8 +38,8 @@ export default function Bloglist() {
       <div className="grid w-11/12 grid-cols-1 gap-4 mx-auto my-10 mb-16 lg:grid-cols-3">
         {
           data.slice(0, visibleBlogs).map((item, index) => (
-            <Link to={`/Blogs/${item.title_slug}`}>
-            <div key={index} className="blog-card">
+            <Link key={index} to={`/Blogs/${item.title_slug}`}>
+            <div className="blog-card">
               {/* Image with fallback */}
               <img
                 src={`https://www.bthawk.com/panel/img/` + item.image}

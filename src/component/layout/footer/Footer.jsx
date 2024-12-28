@@ -4,7 +4,7 @@ import { useState } from "react";
 import logo from "../../../assets/image/logo-11.png";
 import playstore from "../../../assets/image/play-store-1.svg";
 import appstore from "../../../assets/image/app-store-1.svg";
-import twitter from "../../../assets/image/twitter.png";
+import youtube from "../../../assets/image/youtube.png";
 import { Link } from "react-router-dom";
 // import faArrowRightFromBracket from '@fortawesome/react-fontawesome'
 
@@ -16,49 +16,34 @@ export default function Footer() {
 
   const footerData = [
     {
-      name: "BTHAWK",
-      link: "https://www.bthawk.com/index",
-    },
-    {
-      name: "BTCAMPUS",
-      link: "https://www.btcampus.in/",
-    },
-    {
-      name: "BTRESTRO",
-      link: "https://www.btrestro.com/",
-    },
-    {
-      name: "BTEDGE",
-      link: "https://www.bthawk.com/btedge",
-    },
-    {
-      name: "BTCONNECT",
-      link: "https://zucol.in/btconnect/",
-    },
-    {
-      name: "BTROOMER",
-      link: "https://www.btroomer.com/",
-    },
-    {
-      name: "BTPLUS",
-      link: "#",
-    },
-    {
-      name: "BTRISE",
-      link: "https://btrise.bthawk.com/",
+      name: "BTPOINT",
+      link: "https://www.bthawk.com/btpoint/",
     },
     {
       name: "BTPRIME",
       link: "https://www.bthawk.com/btprime/",
     },
     {
-      name: "BTPOINT",
-      link: "https://www.bthawk.com/btpoint/",
+      name: "BTRESTRO",
+      link: "https://www.btrestro.com/",
     },
     {
-      name: "Z-WEALTH",
-      link: "https://www.bthawk.com/zucol-wealth/",
+      name: "BTCAMPUS",
+      link: "https://www.btcampus.in/",
     },
+    {
+      name: "BTROOMER",
+      link: "https://www.btroomer.com/",
+    },
+    {
+      name: "BTRISE",
+      link: "https://btrise.bthawk.com/",
+    },
+    
+    // {
+    //   name: "Z-WEALTH",
+    //   link: "https://www.bthawk.com/zucol-wealth/",
+    // },
   ];
 
   return (
@@ -75,7 +60,7 @@ export default function Footer() {
             Start working with BTHAWK that can provide everything you need to
             increase your business revenue.
           </p>
-          <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0">
+          <span className="inline-flex items-center justify-center mt-4 sm:ml-auto sm:mt-0">
             <Link
               to="https://www.facebook.com/Bell.BTHawk/"
               target="_blank"
@@ -93,11 +78,11 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              to="https://www.twitter.com/bell_bthawk"
+              to="https://www.youtube.com/channel/UC4T9nnKwOAxOvwXfDm9qlhg"
               target="_blank"
               className="px-4 text-center border-r-2"
             >
-              <img src={twitter} alt="twitter" width={17} />
+              <img src={youtube} alt="twitter" width={17} />
             </Link>
             <Link
               to="https://www.instagram.com/bell.bthawk/?hl=en"
@@ -144,7 +129,7 @@ export default function Footer() {
           <h2 className="mb-3 text-2xl font-medium tracking-widest title-font">
             Our solution
           </h2>
-          <nav className="grid gap-4 mb-10 list-none">
+          <nav className="grid gap-2 mb-10 list-none">
             {footerData.map((item, index) => (
               <li key={index}>
                 <Link
@@ -163,7 +148,7 @@ export default function Footer() {
           <h2 className="mb-3 text-2xl font-medium tracking-widest title-font">
             Quick link
           </h2>
-          <nav className="grid gap-4 mb-10 list-none">
+          <nav className="grid gap-2 mb-10 list-none">
             <li>
               <Link to="/about" className=" hover:text-[#FF553E]">
                 About
@@ -198,7 +183,7 @@ export default function Footer() {
         </div>
         <div className="col-span-2 px-4 md:col-span-1">
           <h2 className="mb-3 text-xl tracking-widest title-font">
-            Download App Now
+            Download App
           </h2>
           <nav className="flex gap-2 mb-10 list-none">
             <li>
