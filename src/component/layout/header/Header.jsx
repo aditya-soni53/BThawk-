@@ -494,6 +494,7 @@ export default function Header() {
               <div className="absolute top-0 hidden w-32 transition-opacity ease-in-out bg-white rounded-md shadow-lg duration-50000 md:-left-7 md:top-9 left-24 dropdown-menu group-hover:block">
                 <Link
                   to="https://bthawk.appexperts.net/signup/"
+                  target="_blank"
                   className="block px-4 pt-2 pb-3 text-base text-gray-800 rounded-md hover:text-orange-400 text-start"
                 >
                   Sign Up
