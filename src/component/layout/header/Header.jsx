@@ -35,7 +35,7 @@ export default function Header() {
   const [isTaxPreparationOpen, setIsTaxPreparationOpen] = useState(false);
   const [isPayrollManagementOpen, setIsPayrollManagementOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 0);
-  const {setIsModalOpen, isModalOpen} = useContext(Context);
+  const { setIsModalOpen, isModalOpen } = useContext(Context);
   // Update state based on window width
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 0);
@@ -48,7 +48,9 @@ export default function Header() {
     if (isNavbarOpen) {
       setIsNavbarOpen(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerWidth >= 0) {
@@ -76,26 +78,35 @@ export default function Header() {
   return (
     <>
       <header
-        className={`w-full body-font transition duration-150 ease-out md:ease-in ${isScrolled ? "scrolled drop-shadow-md" : ""
-          }`}
+        className={`w-full body-font transition duration-150 ease-out md:ease-in ${
+          isScrolled ? "scrolled drop-shadow-md" : ""
+        }`}
       >
         <div className="w-11/12 mx-auto header-1 ">
-          <Link to="./" className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
+          <Link
+            to="./"
+            className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0"
+          >
             <img
               src={isScrolled ? scrolledLogo : logo}
               alt="Logo"
               className="desk-logo logo-main"
             />
-            <img src={scrolledLogo} alt="Logo" className="mobile-logo logo-main" />
+            <img
+              src={scrolledLogo}
+              alt="Logo"
+              className="mobile-logo logo-main"
+            />
           </Link>
           <div className={`navbar-mobile  ${isNavbarOpen ? "flex" : "none"}`}>
             <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 ">
-              <ul className="flex flex-wrap items-center justify-center lg:gap-3 mb-0 md:gap-2 gap-1 text-base nav-links">
+              <ul className="flex flex-wrap items-center justify-center gap-1 mb-0 text-base lg:gap-3 md:gap-2 nav-links">
                 <li>
                   <NavLink
                     to="/"
                     className={({ isActive }) =>
-                      `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
                       }`
                     }
                   >
@@ -115,22 +126,25 @@ export default function Header() {
                       !isDesktop && setIsMainDropdownOpen(!isMainDropdownOpen)
                     }
                   >
-                    <span className="hover:text-orange-400 cursor-pointer service-h">
+                    <span className="cursor-pointer hover:text-orange-400 service-h">
                       Accounting Service{" "}
                       <FontAwesomeIcon icon={faChevronDown} />
                     </span>
                     {/* Dropdown Menu */}
                     {(isMainDropdownOpen || !isDesktop) && (
                       <div
-                        className={`lg:absolute ${isDesktop
-                            ? "w-max submenu1 text-black bg-white lg:shadow-lg lg:px-5 px-0 lg:py-5 py-1 rounded top-full left-0"
+                        className={`lg:absolute ${
+                          isDesktop
+                            ? "w-max submenu1 text-black bg-white lg:shadow-lg px-0 py-1 rounded top-full left-0"
                             : "relative m-submenu bg-white p-3 lg:mt-2 rounded"
-                          }`}
+                        }`}
                       >
-                        <ul className="flex flex-col gap-1 mb-0">
+                        <ul className="flex flex-col gap-1 pb-1 mb-0">
                           {/* Tax Preparation with Sub-Submenu */}
                           <li
-                            className={`relative ${isDesktop ? "" : "block"}`}
+                            className={`relative ${
+                              isDesktop ? "" : "block"
+                            }cursor-pointer`}
                             onMouseEnter={() =>
                               isDesktop && setIsTaxPreparationOpen(true)
                             }
@@ -142,23 +156,30 @@ export default function Header() {
                               setIsTaxPreparationOpen(!isTaxPreparationOpen)
                             }
                           >
-                            <span className="hover:text-orange-400 cursor-pointer">
+                            <span
+                              className={`flex justify-between cursor-pointer lg:px-5 lg:pt-2 hover:text-orange-400 ${
+                                isTaxPreparationOpen ? "text-orange-400" : ""
+                              }`}
+                            >
                               Registration{" "}
                               <FontAwesomeIcon icon={faChevronRight} />
                             </span>
                             {(isTaxPreparationOpen || !isDesktop) && (
                               <div
-                                className={`lg:absolute transition ease-in-out delay-150 ${isDesktop
-                                    ? "w-max submenu2 bg-white shadow-lg px-5 py-5 rounded left-[105%] top-0"
-                                    : "relative m-submenu-1 bg-white p-3 mt-2 rounded"
+                                className={`lg:absolute transition ease-in-out delay-150 
+                                  ${
+                                    isDesktop
+                                      ? "w-max submenu2 bg-white shadow-lg px-5 py-5 rounded left-[100%] top-0"
+                                      : "relative m-submenu-1 bg-white p-3 mt-2 rounded  "
                                   }`}
                               >
-                                <ul className="flex flex-col mb-0 gap-3">
+                                <ul className="flex flex-col gap-3 mb-0">
                                   <li>
                                     <NavLink
                                       to="/Service/msme-udyam-registration"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -169,7 +190,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/business-registration-number"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -180,7 +202,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/gst-registration-online"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -191,7 +214,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/import-export-code-registration"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -202,7 +226,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/fssai-registration"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -213,7 +238,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/company-registration-service"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -224,7 +250,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/private-limited-company-registration"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -235,7 +262,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/limited-liability-company-registration"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -249,7 +277,9 @@ export default function Header() {
 
                           {/* Payroll Management with Sub-Submenu */}
                           <li
-                            className={`relative ${isDesktop ? "" : "block"}`}
+                            className={`relative ${
+                              isDesktop ? "" : "block"
+                            } cursor-pointer`}
                             onMouseEnter={() =>
                               isDesktop && setIsPayrollManagementOpen(true)
                             }
@@ -263,23 +293,29 @@ export default function Header() {
                               )
                             }
                           >
-                            <span className="hover:text-orange-400 cursor-pointer">
+                            <span
+                              className={`cursor-pointer lg:px-5 lg:mb-2 hover:text-orange-400 ${
+                                isPayrollManagementOpen ? "text-orange-400" : ""
+                              }`}
+                            >
                               Payroll Management{" "}
                               <FontAwesomeIcon icon={faChevronRight} />
                             </span>
                             {(isPayrollManagementOpen || !isDesktop) && (
                               <div
-                                className={`lg:absolute ${isDesktop
-                                    ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[105%] top-0"
+                                className={`lg:absolute ${
+                                  isDesktop
+                                    ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[100%] top-0"
                                     : "relative bg-white m-submenu-1 p-3 mt-2 rounded"
-                                  }`}
+                                }`}
                               >
                                 <ul className="flex flex-col gap-2 mb-0">
                                   <li>
                                     <NavLink
                                       to="/Service/gst-filing-service"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -290,7 +326,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/tds-return-filing"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -301,7 +338,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/accounting"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -312,19 +350,21 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/income-tax-return-filing"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
                                       Income Tax Return Filing
                                     </NavLink>
                                   </li>
-                                  
+
                                   <li>
                                     <NavLink
                                       to="/Service/scrutiny-assessment"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -335,7 +375,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/trade-license"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -346,7 +387,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/digital-signature-certificate"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -357,7 +399,8 @@ export default function Header() {
                                     <NavLink
                                       to="/Service/annual-filing-for-llp"
                                       className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
@@ -377,7 +420,8 @@ export default function Header() {
                   <NavLink
                     to="/Ourcustomer"
                     className={({ isActive }) =>
-                      `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
                       }`
                     }
                   >
@@ -385,10 +429,14 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/price" className={({ isActive }) =>
-                    `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
-                    }`
-                  }>
+                  <NavLink
+                    to="/price"
+                    className={({ isActive }) =>
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
+                      }`
+                    }
+                  >
                     Price
                   </NavLink>
                 </li>
@@ -396,7 +444,8 @@ export default function Header() {
                   <NavLink
                     to="/blogs"
                     className={({ isActive }) =>
-                      `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
                       }`
                     }
                   >
@@ -407,7 +456,8 @@ export default function Header() {
                   <NavLink
                     to="/about"
                     className={({ isActive }) =>
-                      `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
                       }`
                     }
                   >
@@ -418,7 +468,8 @@ export default function Header() {
                   <NavLink
                     to="/contact"
                     className={({ isActive }) =>
-                      `cursor-pointer hover:text-orange-400 ${isActive ? "text-orange-400" : ""
+                      `cursor-pointer hover:text-orange-400 ${
+                        isActive ? "text-orange-400" : ""
                       }`
                     }
                   >
@@ -427,10 +478,7 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
-            <button
-              className={`primary-btn lg:mb-0 mb-1 ${isScrolled ? "scrolled" : ""
-                }`}
-            >
+            <button className="relative mb-1 primary-btn lg:mb-0 group hover:dropdown-menu">
               Sign Up
               <svg
                 fill="none"
@@ -443,8 +491,23 @@ export default function Header() {
               >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
+              <div className="absolute top-0 hidden w-32 transition-opacity ease-in-out bg-white rounded-md shadow-lg duration-50000 md:-left-7 md:top-9 left-24 dropdown-menu group-hover:block">
+                <Link
+                  to="https://bthawk.appexperts.net/signup/"
+                  className="block px-4 pt-2 pb-3 text-base text-gray-800 rounded-md hover:text-orange-400 text-start"
+                >
+                  Sign Up
+                </Link>
+                <Link
+                  to="https://bthawk.appexperts.net/"
+                  target="_blank"
+                  className="block px-4 pb-3 text-base text-gray-800 rounded-md hover:text-orange-400 text-start"
+                >
+                  Sign In
+                </Link>
+              </div>
             </button>
-            <button className="lg:ml-2 primary-btn "  onClick={toggleModal}>
+            <button className="lg:ml-2 primary-btn " onClick={toggleModal}>
               Schedule a Demo
               <svg
                 fill="none"

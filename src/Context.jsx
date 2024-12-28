@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.post("https://www.bthawk.com/api/api", {
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
           type: "blogFetch",
         });
 

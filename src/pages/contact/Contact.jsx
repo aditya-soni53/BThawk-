@@ -5,6 +5,7 @@ import {
   faEnvelope,
   faLocationDot,
   faPhoneVolume,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
@@ -41,6 +42,8 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const [errors, setErrors] = useState({}); // To store validation errors
 
@@ -89,8 +92,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
+      setLoading(true);
       const res = await axios.post(
-        "https://www.bthawk.com/api/contact_quary_api",
+        `${import.meta.env.VITE_API_BASE_URL}`,
         {
           type: "addContact",
           first_name: formData.f_name,
@@ -104,6 +108,7 @@ const Contact = () => {
 
 
       if (res.data.status === 1) {
+        setLoading(false);
         Swal.fire({
           title: "Success",
           text: "Our Team Wil Contact You Soon",
@@ -120,6 +125,7 @@ const Contact = () => {
           })
         })
       } else {
+        setLoading(false);
         Swal.fire({
           title: "Error",
           text: "There is Some Error",
@@ -318,7 +324,7 @@ const Contact = () => {
                       <div className="w-full md:w-1/2"></div>
                       <div className="w-full md:w-1/2 text-end">
                         <button className="px-8 py-2 text-sm font-normal text-white transition-all duration-300 ease-in-out bg-blue-700 rounded sm:text-base hover:bg-blue-800 hover:shadow-lg hover:scale-105">
-                          Send Message
+                          {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : "Send Message"}
                         </button>
                       </div>
                     </div>

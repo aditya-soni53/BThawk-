@@ -16,7 +16,7 @@ export default function Servicedetail() {
       setLoading(true);
 
       try {
-        const res = await axios.post(`${"https://www.bthawk.com/api/api"}`, {
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
           type: "serviceDetailFetch",
           serviceId: serviceId,
         });
@@ -44,7 +44,7 @@ export default function Servicedetail() {
     <div>
       <Topbanner banner={servicedetaibanner} heading={service} />
       {loading == true ? (
-        <div className="grid w-full h-96 place-content-center justify-center justify-items-center">
+        <div className="grid justify-center w-full h-96 place-content-center justify-items-center">
           <span className="loader"></span>
           <span className="mt-4 font-semibold ">Loading Service</span>
         </div>

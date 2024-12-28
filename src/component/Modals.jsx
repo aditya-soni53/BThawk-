@@ -105,7 +105,7 @@ const Modals = ({ jobId }) => {
       formData.append("job_id", jobId);
 
       const res = await axios.post(
-        "https://www.bthawk.com/api/contact_quary_api",
+        `${import.meta.env.VITE_API_BASE_URL}`,
         formData
       );
 
@@ -144,7 +144,7 @@ const Modals = ({ jobId }) => {
     <div className="flex">
       {/* Show Modal Button */}
       <button
-        className="primary-btn py-2 transition font-medium duration-500"
+        className="py-2 font-medium transition duration-500 primary-btn"
         onClick={toggleModal}
       >
         Apply Now
@@ -153,10 +153,10 @@ const Modals = ({ jobId }) => {
       {/* Modal */}
       {isModalOpen && (
         <div
-          className="fixed z-10 overflow-y-auto top-0 w-full left-0"
+          className="fixed top-0 left-0 z-10 w-full overflow-y-auto"
           id="modal"
         >
-          <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity">
               <div className="absolute inset-0 bg-gray-900 opacity-75"></div>
             </div>
@@ -165,31 +165,31 @@ const Modals = ({ jobId }) => {
             </span>
             <form
               onSubmit={handleSubmit}
-              className="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+              className="inline-block overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl align-center sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-headline"
             >
               {/* Modal Content */}
-              <div className="bg-white px-4 pt-5 pb-2 sm:p-6 sm:pb-4">
+              <div className="px-4 pt-5 pb-2 bg-white sm:p-6 sm:pb-4">
                 <label className="font-medium text-gray-800">Name</label>
                 <input
                   type="text"
-                  className="w-full outline-none rounded bg-gray-100 p-2 mt-2 mb-3"
+                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
                   value={mname}
                   onChange={(e) => setMname(e.target.value)}
                 />
                 <label className="font-medium text-gray-800">Email</label>
                 <input
                   type="email"
-                  className="w-full outline-none rounded bg-gray-100 p-2 mt-2 mb-3"
+                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
                   value={memail}
                   onChange={(e) => setMemail(e.target.value)}
                 />
                 <label className="font-medium text-gray-800">Phone no.</label>
                 <input
                   type="number"
-                  className="w-full outline-none rounded bg-gray-100 p-2 mt-2 mb-3"
+                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
                   value={mmobile}
                   onChange={(e) => setMmobile(e.target.value)}
                 />
@@ -198,21 +198,21 @@ const Modals = ({ jobId }) => {
                 </label>
                 <input
                   type="file"
-                  className="w-full outline-none rounded bg-gray-100 p-2 mt-2 mb-3"
+                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
                   onChange={handleFileChange}
                 />
               </div>
-              <div className="bg-gray-200 px-4 py-3 text-right">
+              <div className="px-4 py-3 text-right bg-gray-200">
                 <button
                   type="button"
-                  className="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
+                  className="px-4 py-2 mr-2 text-white bg-gray-500 rounded hover:bg-gray-700"
                   onClick={toggleModal}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-blue-500 text-white rounded font-medium hover:bg-blue-700 mr-2 transition duration-500"
+                  className="px-4 py-2 mr-2 font-medium text-white transition duration-500 bg-blue-500 rounded hover:bg-blue-700"
                 >
                   Submit
                 </button>

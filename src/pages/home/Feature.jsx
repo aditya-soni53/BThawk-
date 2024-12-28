@@ -18,9 +18,9 @@ export default function Feature() {
 
         // Update background position based on scroll
         if (scrollY >= 900) {
-            console.log(scrollY);
+            // console.log(scrollY);
             setBgPosition(scrollY - 750); // Adjust for smoother transition
-            console.log(scrollY - 1200);
+            // console.log(scrollY - 1200);
             
         } else {
             setBgPosition(0); // Reset position if below threshold
@@ -42,14 +42,14 @@ export default function Feature() {
       
     return (
         <>
-            <div className='feature w-11/12 mx-auto relative grid lg:grid-cols-3 gap-2 mb-4' style={{backgroundPosition: `-${bgPosition}px center`}}>
+            <div className='relative grid w-11/12 gap-2 mx-auto mb-4 feature lg:grid-cols-3' style={{backgroundPosition: `-${bgPosition}px center`}}>
                 <div className="col-span-1 aos-animate" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
                     <div className='sticky top-[120px]'>
-                        <h1 className='Feature-heading border-b-2 border-b-zinc-950 w-full'>Top Features</h1>
+                        <h1 className='w-full border-b-2 Feature-heading border-b-zinc-950'>Top Features</h1>
                         <p className='pt-2 text-gray-600'>Start Working with Finest GST Billing Software and stay ahead from your competitors with more focus on core Business. With advanced technology,<b className='text-black'> BTHAWK </b>provide you complete accounting solutions for your growing business.</p>
                     </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4 lg:w-9/12 mt-3 mb-4 ml-auto col-span-2 overflow-hidden p-2">
+                <div className="grid col-span-2 gap-4 p-2 mt-3 mb-4 ml-auto overflow-hidden sm:grid-cols-2 lg:w-9/12">
                     <div className="feature-card aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
                         <h1 className='px-[25px] text-xl text-center'>GST Compliance</h1>
                         <p className='px-[25px] text-center'>The cancer in disguise problem for a Businessman will be sorted. Our aim is to make our client satisfied and stress free from all the compliance complications.</p>

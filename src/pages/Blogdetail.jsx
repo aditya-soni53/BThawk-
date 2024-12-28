@@ -44,7 +44,7 @@ export default function Blogdetail() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("https://www.bthawk.com/api/api", {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ type: "blogDetailFetch", blogId: blogId }),
@@ -53,7 +53,7 @@ export default function Blogdetail() {
         if (!response.ok) throw new Error("Failed to fetch blog details");
         const result = await response.json();
         if (result.status === 1) {
-          console.log(response);
+          // console.log(response);
           setBlog(result.data);
 
           // Extract H2 headings from blog content

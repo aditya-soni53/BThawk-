@@ -23,16 +23,16 @@ export default function Careerdetail() {
   useEffect(() => {
     const retaledJob = async () => {
       try {
-        console.log(jobSlug);
+        // console.log(jobSlug);
 
-        const res = await axios.post(`${"https://www.bthawk.com/api/api"}`, {
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
           type: "jobDetailFetch",
           title_slug: jobSlug,
         });
-        console.log(res.data.data.status == 1);
+        // console.log(res.data.data.status == 1);
         if (res.data.data.status == 1) {
           setJobdata(res.data.data);
-          console.log(res.data.data);
+          // console.log(res.data.data);
           setSpinner(false);
         } else {
           throw new Error("job not find");
@@ -51,8 +51,8 @@ export default function Careerdetail() {
           <span className="loader"></span>
         </div>
       ) : (
-        <div className="w-11/12 mx-auto my-8 grid grid-cols-4">
-          <div className="border-2 p-3 rounded-xl">
+        <div className="grid w-11/12 grid-cols-4 mx-auto my-8">
+          <div className="p-3 border-2 rounded-xl">
             <h3 className="text-xl text-[#22249B] border-b-2 py-3">
               Job Information
             </h3>

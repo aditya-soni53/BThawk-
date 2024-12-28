@@ -20,7 +20,7 @@ export default function ReviewList() {
 
   // Fetch State
   const fetchState = async () => {
-    const res = await axios.post("https://www.bthawk.com/api/api", {
+    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
       type: "getStateList",
     });
 
@@ -56,7 +56,7 @@ export default function ReviewList() {
       const address = response.data.address;
       if (address) {
         // setUserState(address.state); // Set state (you can also extract other parts of the address)
-        console.log(address.state);
+        // console.log(address.state);
         setSelectedState(address.state);
       } else {
         setSelectedState("All");
@@ -91,14 +91,14 @@ export default function ReviewList() {
   }, []);
 
   const FetchReviews = async () => {
-    console.log(selectedState);
+    // console.log(selectedState);
     SetsmallLoader(true);
 
-    const res = await axios.post("https://www.bthawk.com/api/api", {
+    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
       type: "stateWiseReviewFetch",
       state: selectedState,
     });
-    console.log(res);
+    // console.log(res);
     if (res.data.status === 1) {
       setReviews(res.data.data);
       setLoading(false);
@@ -182,11 +182,11 @@ export default function ReviewList() {
       </p>
 
       <div className="my-6">
-        <div className="relative w-full flex items-center overflow-hidden bg-gray-800 p-2">
+        <div className="relative flex items-center w-full p-2 overflow-hidden bg-gray-800">
           {/* Left Arrow */}
           {showLeftArrow && (
             <button
-              className="absolute left-2 z-10 p-2 bg-gray-700 rounded-full text-white hover:bg-gray-600"
+              className="absolute z-10 p-2 text-white bg-gray-700 rounded-full left-2 hover:bg-gray-600"
               onClick={scrollLeft}
             >
               &#8249;
@@ -245,7 +245,7 @@ export default function ReviewList() {
           {/* Right Arrow */}
           {showRightArrow && (
             <button
-              className="absolute right-2 z-10 p-2 bg-gray-700 rounded-full text-white hover:bg-gray-600"
+              className="absolute z-10 p-2 text-white bg-gray-700 rounded-full right-2 hover:bg-gray-600"
               onClick={scrollRight}
             >
               &#8250;
@@ -258,11 +258,11 @@ export default function ReviewList() {
       {smallLoader === false ? (
         <div>
           {reviews.length > 0 ? (
-            <div className="review-list grid lg:grid-cols-4 md:grid-cols-2  gap-x-10">
+            <div className="grid review-list lg:grid-cols-4 md:grid-cols-2 gap-x-10">
               {reviews.slice(0, visibleReviewsCount).map((review) => {
                 const url = getYouTubeEmbedUrl(review.review_video_link);
                 return (
-                  <div key={review.id} className="reviewCard overflow-hidden">
+                  <div key={review.id} className="overflow-hidden reviewCard">
                     <div className="thumbnail">
                       <iframe
                         width="100%"
@@ -289,7 +289,7 @@ export default function ReviewList() {
 
       {/* Load More button */}
 
-      <div className="load-more-container text-center mt-2 mb-2">
+      <div className="mt-2 mb-2 text-center load-more-container">
         {spinner ? (
           <div className="grid w-full h-96 place-content-center">
             <span className="loader"></span>

@@ -15,14 +15,14 @@ export default function Career() {
     const fetchJobs = async () => {
       setSpinner(true);
       try {
-        const res = await axios.post(`${"https://www.bthawk.com/api/api"}`, {
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
           type: "career",
         });
 
-        console.log(res);
+        // console.log(res);
         if (res.data.status === 1) {
           setJob(res.data.data);
-          console.log(res.data);
+          // console.log(res.data);
         } else {
           throw new Error(result.message || "Service not found");
         }
@@ -52,10 +52,10 @@ export default function Career() {
         </div>
       ) : (
         <>
-          <div className="w-11/12 mx-auto  mt-10">
+          <div className="w-11/12 mx-auto mt-10">
             <h1 className="text-2xl">All Job</h1>
           </div>
-          <div className="w-11/12 mx-auto grid grid-cols-4 mt-2 mb-10 gap-8 items-start">
+          <div className="grid items-start w-11/12 grid-cols-4 gap-8 mx-auto mt-2 mb-10">
             {
               jobs.map((item, index) => (
                 <div className="app-cards" key={index}>
@@ -68,18 +68,18 @@ export default function Career() {
                     <h3 className="text-xl text-[#22249B]">{item.job_title}</h3>
                     <p className="">{item.location}</p>
                     <ul className="mt-2">
-                      <li className="mt-2 flex items-start">
+                      <li className="flex items-start mt-2">
                         <img className="mr-2" src={Listicon} alt="home-img" />
                         {item.experience}
                       </li>
-                      <li className="mt-2 flex items-start">
+                      <li className="flex items-start mt-2">
                         <img className="mr-2" src={Listicon} alt="home-img" />
                         {item.salary}
                       </li>
                     </ul>
                     <Link
                       to={`/career/${item.title_slug}/${item.jobid}`}
-                      className="primary-btn mt-3"
+                      className="mt-3 primary-btn"
                     >
                       View
                     </Link>
