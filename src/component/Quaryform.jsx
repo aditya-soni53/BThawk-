@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import profileimg from "../assets/image/favicon.svg";
 import user from '../assets/image/user.svg';
 import lock from '../assets/image/lock.svg';
+import seclogo from '../assets/image/secoundary-logo.png'
 import { Context } from '../Context';
 
 export default function Quaryform() {
@@ -61,7 +62,10 @@ export default function Quaryform() {
 
     return (
         <form action="" className='lg:shadow-2xl border-2 p-7 py-8 rounded-xl bg-white' onSubmit={handleSubmit}>
-            <p className='text-2xl mb-3'>Connect with <span className='text-[#2E30A5] font-semibold'>BT</span><span className='font-semibold text-[#F3771E]'>HAWK</span></p>
+            <p className='text-2xl mb-3 flex items-center'>Connect with 
+                <span className='text-[#2E30A5] font-semibold'>BT</span><span className='font-semibold text-[#F3771E]'>HAWK</span>
+                {/* <span className='mr-1'><img src={seclogo} alt="" width={80}/></span> */}
+                </p>
             <div className="form-group relative">
                 <label htmlFor="">Mobile Number</label> <br />
                 <input type="text" className='bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl' maxLength={12} placeholder='Mobile Number' onChange={(e) => { setMobileNumber(e.target.value) }} />
