@@ -672,26 +672,9 @@ dl, ol, ul {
   -webkit-box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.15);
   box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.15);
 }
-.submenu3::before{
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  margin-left: 0px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 7px solid #495057;
-  border-color: transparent transparent #ffffff #ffffff;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(130deg);
-  -webkit-box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.15);
-  box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.15);
-}
 
 @media(max-width:991px){
-  .submenu1::before,.submenu2::before ,.submenu3::before{
+  .submenu1::before,.submenu2::before {
     content: '';
     display: none;
     opacity: 0;
