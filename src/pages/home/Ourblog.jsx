@@ -20,13 +20,25 @@ export default function Ourblog() {
         <div className="grid grid-cols-1 py-8 md:py-14 md:grid-cols-2">
           {data.slice(0, 8).map((item, index) => (
             <Link to={`/Blogs/${item.title_slug}`} key={index}>
-              <div  className="grid w-full grid-cols-4 gap-4 mb-5 review" >
-                <img className="col-span-1 border-2 rounded-xl blog-img" width={170} src={ item.image ? `https://www.bthawk.com/panel/img/${item.image}` : blogimg } alt={item.title} />
+              <div className="grid w-full grid-cols-4 gap-4 mb-5 review">
+                <img
+                  className="col-span-1 border-2 rounded-xl blog-img"
+                  width={170}
+                  src={
+                    item.image
+                      ? `https://www.bthawk.com/panel/img/${item.image}`
+                      : blogimg
+                  }
+                  alt={item.title}
+                />
                 <div className="col-span-3">
                   <b className="mb-2 text-xl blog-detail text-wrap">
                     {item.blog_title}
                   </b>
-                  <p className="mt-2 blog-detail" dangerouslySetInnerHTML={{ __html: item.content }} />
+                  <p
+                    className="mt-2 blog-detail"
+                    dangerouslySetInnerHTML={{ __html: item.content }}
+                  />
                 </div>
               </div>
             </Link>

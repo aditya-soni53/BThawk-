@@ -12,45 +12,44 @@ export default function Servicedetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchServiceData = async() => {
+    const fetchServiceData = async () => {
       setLoading(true);
 
       try {
-        const res = await axios.post(`${"https://www.bthawk.com/api/blog_api"}`, {
-          type:"serviceDetailFetch", 
-          serviceId:serviceId,
-        })
+        const res = await axios.post(`${"https://www.bthawk.com/api/api"}`, {
+          type: "serviceDetailFetch",
+          serviceId: serviceId,
+        });
 
         // console.log(res.data.status);
-        
+
         // if() throw new Error("Failed to fetch service details");
-          if (res.data.status === 1) {
+        if (res.data.status === 1) {
           setService(res.data.data);
           // console.log(res.data.data); // Show data in console
         } else {
           throw new Error(result.message || "Service not found");
-        } 
+        }
       } catch (err) {
         setError(err.message);
-      }finally{
+      } finally {
         setLoading(false);
       }
-    }
+    };
 
     fetchServiceData();
-  }, [serviceId])
+  }, [serviceId]);
 
   return (
     <div>
       <Topbanner banner={servicedetaibanner} heading={service} />
       {loading == true ? (
-      <div className="grid w-full h-96 place-content-center justify-center justify-items-center">
-        <span className="loader"></span>
-        <span className="mt-4 font-semibold ">Loading Service</span>
-      </div>
+        <div className="grid w-full h-96 place-content-center justify-center justify-items-center">
+          <span className="loader"></span>
+          <span className="mt-4 font-semibold ">Loading Service</span>
+        </div>
       ) : (
-
-      <Servicedata servicedata={service} /> 
+        <Servicedata servicedata={service} />
       )}
     </div>
   );

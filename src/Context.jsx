@@ -15,10 +15,10 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.post("https://www.bthawk.com/api/blog_api", {
+        const res = await axios.post("https://www.bthawk.com/api/api", {
           type: "blogFetch",
         });
-  
+
         if (res.status === 200 && res.data.message === "successful") {
           setData(res.data.data);
           // console.log(res);
@@ -31,8 +31,14 @@ export const UserProvider = ({ children }) => {
       }
     };
     fetchBlog();
-  }, [])
-  return <Context.Provider value={{ data, error, loading, isModalOpen , setIsModalOpen}}>{children}</Context.Provider>;
+  }, []);
+  return (
+    <Context.Provider
+      value={{ data, error, loading, isModalOpen, setIsModalOpen }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };
 
 UserProvider.propTypes = {

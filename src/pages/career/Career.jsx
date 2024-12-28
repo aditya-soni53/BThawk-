@@ -15,12 +15,9 @@ export default function Career() {
     const fetchJobs = async () => {
       setSpinner(true);
       try {
-        const res = await axios.post(
-          `${"https://www.bthawk.com/api/blog_api"}`,
-          {
-            type: "career",
-          }
-        );
+        const res = await axios.post(`${"https://www.bthawk.com/api/api"}`, {
+          type: "career",
+        });
 
         console.log(res);
         if (res.data.status === 1) {

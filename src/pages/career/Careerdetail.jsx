@@ -25,13 +25,10 @@ export default function Careerdetail() {
       try {
         console.log(jobSlug);
 
-        const res = await axios.post(
-          `${"https://www.bthawk.com/api/blog_api"}`,
-          {
-            type: "jobDetailFetch",
-            title_slug: jobSlug,
-          }
-        );
+        const res = await axios.post(`${"https://www.bthawk.com/api/api"}`, {
+          type: "jobDetailFetch",
+          title_slug: jobSlug,
+        });
         console.log(res.data.data.status == 1);
         if (res.data.data.status == 1) {
           setJobdata(res.data.data);

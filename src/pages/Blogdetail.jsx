@@ -21,7 +21,6 @@ export default function Blogdetail() {
   const url = window.location.href;
   const blogTitle = blog?.meta_title;
   const basePath = window.location.origin;
-  
 
   // To keep track of the active heading in the TOC
   const [activeHeading, setActiveHeading] = useState(null);
@@ -45,7 +44,7 @@ export default function Blogdetail() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("https://www.bthawk.com/api/blog_api", {
+        const response = await fetch("https://www.bthawk.com/api/api", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ type: "blogDetailFetch", blogId: blogId }),
@@ -131,32 +130,32 @@ export default function Blogdetail() {
 
   return (
     <>
- 
-
       <Topbanner banner={Blogbanner} />
-      {loading ? (      <div className="grid w-full h-96 place-content-center">
-        <span className="loader"></span>
-      </div>) : (
-      <>
-             <Helmet>
-             <title>{blog.meta_title}</title>
-             <meta name="keywords" content={blog.tags} />
-             <meta name="description" content={blog.meta_description} />
-             <link rel="canonical" href={url} />
-     
-             {/* <!-- Facebook Meta Tags --> */}
-             <meta property="og:url" content={url} />
-             <meta property="og:type" content="website" />
-             <meta property="og:title" content={blog.meta_title} />
-             <meta property="og:description" content={blog.meta_description} />
-     
-             {/* <!-- Twitter Meta Tags --> */}
-             <meta property="twitter:domain" content={basePath} />
-             <meta property="twitter:url" content={url} />
-             <meta name="twitter:title" content={blog.meta_title} />
-             <meta name="twitter:description" content={blog.meta_description} />
-           </Helmet>
-            <div className="grid w-11/12 grid-cols-1 mx-auto mt-4 lg:grid-cols-4 lg:mt-8">
+      {loading ? (
+        <div className="grid w-full h-96 place-content-center">
+          <span className="loader"></span>
+        </div>
+      ) : (
+        <>
+          <Helmet>
+            <title>{blog.meta_title}</title>
+            <meta name="keywords" content={blog.tags} />
+            <meta name="description" content={blog.meta_description} />
+            <link rel="canonical" href={url} />
+
+            {/* <!-- Facebook Meta Tags --> */}
+            <meta property="og:url" content={url} />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content={blog.meta_title} />
+            <meta property="og:description" content={blog.meta_description} />
+
+            {/* <!-- Twitter Meta Tags --> */}
+            <meta property="twitter:domain" content={basePath} />
+            <meta property="twitter:url" content={url} />
+            <meta name="twitter:title" content={blog.meta_title} />
+            <meta name="twitter:description" content={blog.meta_description} />
+          </Helmet>
+          <div className="grid w-11/12 grid-cols-1 mx-auto mt-4 lg:grid-cols-4 lg:mt-8">
             <div className="lg:col-span-3 lg:p-4">
               <p className="mb-3">
                 <span className="bg-[#F7F7F7] p-2 rounded-md">
@@ -164,7 +163,7 @@ export default function Blogdetail() {
                   {blogId}
                 </span>
               </p>
-    
+
               <div className="relative mb-4 overflow-hidden rounded-xl">
                 <img
                   src={`https://www.bthawk.com/panel/img/` + blog.image}
@@ -178,7 +177,11 @@ export default function Blogdetail() {
                   <h1 className="text-2xl">{blog.title}</h1>
                   <div className="flex blog-card-footer">
                     <div className="flex p-2">
-                      <img src={profileimg} alt="Profile" className="w-6 mr-1" />
+                      <img
+                        src={profileimg}
+                        alt="Profile"
+                        className="w-6 mr-1"
+                      />
                       <span>{blog.posted || "Unknown Author"}</span>
                     </div>
                     <div className="flex p-2">
@@ -188,7 +191,7 @@ export default function Blogdetail() {
                   </div>
                 </div>
               </div>
-    
+
               <div ref={contentRef} className="blog-content">
                 <p dangerouslySetInnerHTML={{ __html: blog.content }} />
                 <div>
@@ -202,7 +205,7 @@ export default function Blogdetail() {
                 </div>
               </div>
             </div>
-    
+
             <div className="w-full lg:p-4">
               <div className="">
                 <Heroslider />
@@ -318,9 +321,8 @@ export default function Blogdetail() {
               </div>
             </div>
           </div>
-      </>
+        </>
       )}
-  
     </>
   );
 }

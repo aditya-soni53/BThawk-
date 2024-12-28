@@ -18,10 +18,9 @@ export default function ReviewList() {
   const [userState, setUserState] = useState("");
   const [stateList, setStateList] = useState([]);
 
-
   // Fetch State
   const fetchState = async () => {
-    const res = await axios.post("https://www.bthawk.com/api/blog_api", {
+    const res = await axios.post("https://www.bthawk.com/api/api", {
       type: "getStateList",
     });
 
@@ -95,8 +94,7 @@ export default function ReviewList() {
     console.log(selectedState);
     SetsmallLoader(true);
 
-
-    const res = await axios.post("https://www.bthawk.com/api/blog_api", {
+    const res = await axios.post("https://www.bthawk.com/api/api", {
       type: "stateWiseReviewFetch",
       state: selectedState,
     });
