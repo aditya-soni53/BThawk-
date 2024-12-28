@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 import { useState } from "react";
-import logo from "../../../assets/image/logo.svg";
+import logo from "../../../assets/image/logo-11.png";
 import playstore from "../../../assets/image/play-store-1.svg";
 import appstore from "../../../assets/image/app-store-1.svg";
 import twitter from "../../../assets/image/twitter.png";
@@ -69,7 +69,7 @@ export default function Footer() {
             to="/"
             className="flex items-center justify-center mb-4 font-medium text-gray-900 title-font md:justify-start md:mb-10"
           >
-            <img src={logo} alt="" />
+            <img src={logo} alt="" width={200}/>
           </Link>
           <p className="md:mt-2 md:mb-10 md-4 text-md ">
             Start working with BTHAWK that can provide everything you need to

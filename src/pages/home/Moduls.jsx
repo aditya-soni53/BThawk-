@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
-import micon1 from '../../assets/image/module-icon-1.svg'
-import micon2 from '../../assets/image/module-icon-2.svg'
-import micon3 from '../../assets/image/module-icon-3.svg'
+    import micon1 from '../../assets/image/module-icon-1.svg'
+    import micon2 from '../../assets/image/module-icon-2.svg'
+    import micon3 from '../../assets/image/module-icon-3.svg'
 import Aos from 'aos';
 import { Context } from '../../Context';
 

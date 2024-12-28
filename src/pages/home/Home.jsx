@@ -58,8 +58,8 @@ export default function Home() {
        <Feature />
      <Howcan />
        <Appshowcase />
-      <Moduls />
-      {/* <Pricing /> */}
+      {/* <Moduls /> */}
+      <Pricing />
      <Bthawkdevice />
       <Testimonials />
       <Partnerslider />
