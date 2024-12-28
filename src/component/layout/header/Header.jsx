@@ -127,7 +127,7 @@ export default function Header() {
                     }
                   >
                     <span className="cursor-pointer hover:text-orange-400 service-h">
-                      Accounting Service{" "}
+                      Service{" "}
                       <FontAwesomeIcon icon={faChevronDown} />
                     </span>
                     {/* Dropdown Menu */}
@@ -298,7 +298,7 @@ export default function Header() {
                                 isPayrollManagementOpen ? "text-orange-400" : ""
                               }`}
                             >
-                              Payroll Management{" "}
+                              Compliances{" "}
                               <FontAwesomeIcon icon={faChevronRight} />
                             </span>
                             {(isPayrollManagementOpen || !isDesktop) && (
