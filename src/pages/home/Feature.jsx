@@ -46,7 +46,7 @@ export default function Feature() {
                 <div className="col-span-1 aos-animate" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
                     <div className='sticky top-[120px]'>
                         <h1 className='w-full border-b-2 Feature-heading border-b-zinc-950'>Top Features</h1>
-                        <p className='pt-2 text-gray-600'>Start Working with Finest GST Billing Software and stay ahead from your competitors with more focus on core Business. With advanced technology,<b className='text-black'> BTHAWK </b>provide you complete accounting solutions for your growing business.</p>
+                        <p className='pt-2 text-gray-600'>Start Working with Finest GST Billing Solution and stay ahead from your competitors with more focus on core Business. With advanced technology,<b className='text-black'> BTHAWK </b>provide you complete accounting solutions for your growing business.</p>
                     </div>
                 </div>
                 <div className="grid col-span-2 gap-4 p-2 mt-3 mb-4 ml-auto overflow-hidden sm:grid-cols-2 lg:w-9/12">
@@ -58,8 +58,8 @@ export default function Feature() {
                         </div>
                     </div>
                     <div className="feature-card aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
-                        <h1 className='px-[25px] text-xl text-center'>Instant Invoice Generation</h1>
-                        <p className='px-[25px] text-center'>Be digital with digitalized India. No need to use paper and pen. Share invoices in one go via WhatsApp, Email etc. in PDF format.</p>
+                        <h1 className='px-[25px] text-xl text-center'>Instant Invoice Of New India</h1>
+                        <p className='px-[25px] text-center'>Be digital with digitalized India. No need to use paper base invoice system. Share invoices in one go via WhatsApp, Email etc. in PDF format.</p>
                         <div className='card-footer mt-7'>
                             <img className='ml-auto' src={featureimg2} alt="" />
                         </div>

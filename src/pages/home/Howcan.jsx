@@ -22,7 +22,7 @@ export default function Howcan() {
                     </div>
                     <div className="lg:col-span-2 lg:w-9/12 mx-auto aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
                         <h1 className='text-2xl pb-3'><span className='text-[#FFC403]'>BTHAWK</span> Loyal Partner For Your Business</h1>
-                        <p className='text-slate-300'>BTHAWK is one of the best GST Billing software available in the market which is serving Businessmen from all the fields and backgrounds. We assist our clients in handling their accounting activities in the most innovative and cost effective manner.</p>
+                        <p className='text-slate-300'>BTHAWK is the best GST Billing solution available in the market which is serving bussiness accross the industry & bussinesses. We assist our clients in handling their accounting activities in the most innovative and cost effective manner.</p>
                         <ul className='md:mt-12 mt-8 mb-8'>
                             <li className='mt-5 flex text-xl'> <img className='mr-2' src={Listicon} alt="" />Complete Accounting Solutions for Ease of Doing Business</li>
                             <li className='mt-5 flex text-xl'> <img className='mr-2' src={Listicon} alt="" />Direct and Indirect tax filings are done as per regulations</li>

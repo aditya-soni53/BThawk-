@@ -39,7 +39,7 @@ export default function Footer() {
       name: "BTRise",
       link: "https://btrise.bthawk.com/",
     },
-    
+
     // {
     //   name: "Z-WEALTH",
     //   link: "https://www.bthawk.com/zucol-wealth/",
@@ -54,7 +54,7 @@ export default function Footer() {
             to="/"
             className="flex items-center justify-center mb-4 font-medium text-gray-900 title-font md:justify-start md:mb-10"
           >
-            <img src={logo} alt="" width={200}/>
+            <img src={logo} alt="" width={200} />
           </Link>
           <p className="md:mt-2 md:mb-10 md-4 text-md ">
             Start working with BTHAWK that can provide everything you need to
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
         <div className="px-4">
           <h2 className="mb-3 text-2xl font-medium tracking-widest title-font">
-            Our solution
+            Solution
           </h2>
           <nav className="grid gap-2 mb-10 list-none">
             {footerData.map((item, index) => (
@@ -141,7 +141,6 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-
           </nav>
         </div>
         <div className="px-4">
@@ -191,11 +190,6 @@ export default function Footer() {
                 <img src={playstore} alt="playstore" />
               </a>
             </li>
-            <li>
-              <a className="">
-                <img src={appstore} alt="playstore" />
-              </a>
-            </li>
           </nav>
           <h2 className="mb-3 text-xl tracking-widest title-font">
             News Letter
@@ -227,7 +221,7 @@ export default function Footer() {
       <div className="bg-black">
         <div className="flex flex-col flex-wrap w-11/12 px-5 mx-auto text-center border-t-2 py-7 sm:flex-row">
           <p className="mx-auto text-center text-md">
-            © 2019-2024 BTHAWK Developed with by ZUCOL
+            © 2019-2025 BTHAWK Developed by ZUCOL
           </p>
         </div>
       </div>
