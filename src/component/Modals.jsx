@@ -109,7 +109,7 @@ const Modals = ({ jobId }) => {
         formData
       );
 
-      console.log(res);
+      // console.log(res);
 
       if (res.data.status === 1) {
         Swal.fire({

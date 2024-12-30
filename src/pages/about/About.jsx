@@ -104,7 +104,7 @@ const mentors = [
     name: "Shilpa Khandelwal",
     designation: "Technical Leader",
     img: mentorsImg[11],
-    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+    link: "https://www.linkedin.com/in/shilpa-khandelwal-09b850107/",
   },
   {
     id: 7,
@@ -125,14 +125,14 @@ const mentors = [
     name: "Ghanshyam Vyas",
     designation: "Complince Leader",
     img: mentorsImg[10],
-    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+    link: "https://www.linkedin.com/in/cmno1zucol/",
   },
   {
     id: 13,
     name: "Jeevika Tomer",
     designation: "Business Head",
     img: mentorsImg[12],
-    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+    link: "https://www.linkedin.com/in/jeevika-tomer-7b198b208/",
   },
   {
     id: 9,

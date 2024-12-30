@@ -48,10 +48,10 @@ export default function Pricing() {
       const res = await axios.post("https://www.bthawk.com/api/api", {
         type: "packageDetails", // Send as request body
       });
-      console.log(res);
+      // console.log(res);
       if (res.data.status == 1) {
         setPackageData(res.data.data);
-        console.log("Working");
+        // console.log("Working");
       } else {
         console.error("Something Went Wrong");
       }
@@ -69,12 +69,12 @@ export default function Pricing() {
   return (
     <>
       <div id="pricing"
-        className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 md:mt-5 mt-14 mb-4 aos-animate overflow-hidden"
+        className="w-11/12 mx-auto mb-4 overflow-hidden text-center lg:w-8/12 md:p-10 md:mt-5 mt-14 aos-animate"
         data-aos="fade-up"
         data-aos-duration="600"
         data-aos-delay="300"
       >
-        <h1 className="text-3xl pb-3">
+        <h1 className="pb-3 text-3xl">
            Different plan of <span className="text-[#22249B]">BT</span>
           <span className="text-[#E45325]">HAWK</span> as per your need
         </h1>
@@ -82,10 +82,10 @@ export default function Pricing() {
         {/* <button className='primary-btn' onClick={togglePricing}> {isMonthly ? 'Switch to Yearly' : 'Switch to Monthly'}
                    </button> */}
       </div>
-      <div className="w-11/12 mx-auto grid mb-3 relative lg:grid-cols-3 md:grid-cols-2 md:gap-14 gap-6 mt-2 overflow-hidden">
+      <div className="relative grid w-11/12 gap-6 mx-auto mt-2 mb-3 overflow-hidden lg:grid-cols-3 md:grid-cols-2 md:gap-14">
         <div className="aos-animate " data-aos="fade-right">
           <div className="">
-            <div className="plan-toggle-wrap active mb-5">
+            <div className="mb-5 plan-toggle-wrap active">
               {/* <p className="pera">Save up to 32% with yearly billing.</p>  */}
               <div className="toggle-inner toggle-inner2">
                 <input
@@ -102,7 +102,7 @@ export default function Pricing() {
                 {/* <p>{isYearly ? '₹2400 / year' : '₹240 / month'}</p>  */}
               </div>
             </div>
-            <h2 className="text-3xl mb-5">
+            <h2 className="mb-5 text-3xl">
               Choose the Right Plan for Your Business Success
             </h2>
             <div className="mb-4">
@@ -123,7 +123,7 @@ export default function Pricing() {
                 support to boost profitability and compliance.
               </p>
             </div>
-            <div className=" mt-3 contact_us-details_info">
+            <div className="mt-3 contact_us-details_info">
               {ContactInfo.map((info) => (
                 <div key={info.id} className="flex items-center gap-3 mb-2">
                   <FontAwesomeIcon
@@ -144,7 +144,7 @@ export default function Pricing() {
         >
           <div className="bg-[#EDEAFF] block p-4 rounded-lg leading-none">
             <h2>Starting from</h2>
-            <div className="flex my-3 items-baseline">
+            <div className="flex items-baseline my-3">
               <s>{isYearly ? "4999" : "1999"}</s>
               <h2 className="text-5xl">₹{isYearly ? "1999" : "199"}/ </h2>
               <p>{isYearly ? "yearly" : "monthly"}</p>
@@ -152,54 +152,54 @@ export default function Pricing() {
             <h2>Business Plan</h2>
             {/* <p className='leading-none'>Small businesses and startups automating their operations.</p> */}
           </div>
-          <div className="mt-5 px-5">
+          <div className="px-5 mt-5">
             <ul className="mb-3">
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Access upto 5 user
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Financial dashboard for business insights
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Generate and manage E-way bills
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Track raw materials, in-progress goods, and finished goods
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 E-invoice generation and GST return filing
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Record and monitor company expenses
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 100 free credits for E-invoice & E-way bill generation
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Reports on payables, receivables, and financial health
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Barcode-based billing for items and batches
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
                 Includes a 14-day free trial
@@ -221,7 +221,7 @@ export default function Pricing() {
         >
           <div className="bg-[#FFF7E2]  p-4 rounded-lg leading-none relative">
             <h2>Starting from</h2>
-            <div className="flex my-3 items-baseline">
+            <div className="flex items-baseline my-3">
               <s>{isYearly ? "8999" : "3999"}</s>
               <h2 className="text-5xl">₹{isYearly ? "2999" : "299"}/ </h2>
               <p>{isYearly ? "yearly" : "monthly"}</p>
@@ -233,59 +233,59 @@ export default function Pricing() {
               50% off
             </p>
           </div>
-          <div className="mt-5 px-5 mb-3">
+          <div className="px-5 mt-5 mb-3">
             <ul className="mb-3">
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Access upto 7 user
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Automate sales quotations, delivery notes, and purchase orders
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Reconcile bank transactions and adjust bill-to-bill entries
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Manage stock with batch tracking and warehouse transfers
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Role-based access control for users
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Customize fields for invoices, items, and forms
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Detailed reports on batch-wise and party-wise profit/loss
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Unlimited E-invoices and E-way bills
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Barcode and serial tracking for inventory.
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Export data to Tally and other accounting tools
               </li>
-              <li className="mt-2 flex">
+              <li className="flex mt-2">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
                 Dedicated support and training for premium users
