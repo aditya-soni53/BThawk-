@@ -9,5 +9,8 @@ import Padam_yadav from '../assets/mentors/padam_yadav.png'
 import Sunil_Pareek from '../assets/mentors/sunil_pareek.png'
 import Priyanka_Pal from '../assets/mentors/priyanka_pal.png'
 import Ankit_Gori from '../assets/mentors/ankit_gori.png'
+import Ghanshyam_Vyas from '../assets/mentors/ghanshyam_vyas.png'
+import Shilpa_Khandelwal from '../assets/mentors/shilpa_khandelwal.png'
+import Jeevika_Tomer from '../assets/mentors/jeevika_tomer.png'
 
-export const mentorsImg = [Sanjay_Khandelwal, Dushyant_Yadav, Ankush_Tambi, Arpit_Aeron, Abhishek_Sharma, Padam_yadav, Sunil_Pareek, Neha_jain, Priyanka_Pal, Ankit_Gori]
+export const mentorsImg = [Sanjay_Khandelwal, Dushyant_Yadav, Ankush_Tambi, Arpit_Aeron, Abhishek_Sharma, Padam_yadav, Sunil_Pareek, Neha_jain, Priyanka_Pal, Ankit_Gori, Ghanshyam_Vyas, Shilpa_Khandelwal, Jeevika_Tomer]

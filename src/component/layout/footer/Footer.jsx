@@ -16,11 +16,11 @@ export default function Footer() {
 
   const footerData = [
     {
-      name: "BTPOINT",
+      name: "BTPoint",
       link: "https://www.bthawk.com/btpoint/",
     },
     {
-      name: "BTPRIME",
+      name: "BTPrime",
       link: "https://www.bthawk.com/btprime/",
     },
     {
@@ -32,11 +32,11 @@ export default function Footer() {
       link: "https://www.btcampus.in/",
     },
     {
-      name: "BTROOMER",
+      name: "BTRoomer",
       link: "https://www.btroomer.com/",
     },
     {
-      name: "BTRISE",
+      name: "BTRise",
       link: "https://btrise.bthawk.com/",
     },
     

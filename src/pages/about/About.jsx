@@ -59,7 +59,7 @@ const features = [
 const mentors = [
   {
     id: 1,
-    name: "Sanjay Khandelwal",
+    name: "Dr. Sanjay Khandelwal",
     designation: "Founder",
     img: mentorsImg[0],
     link: "https://www.linkedin.com/in/dr-sanjay-khandelwal-phd-b3b8078/",
@@ -88,7 +88,7 @@ const mentors = [
   {
     id: 5,
     name: "Abhishek Sharma",
-    designation: "CFO & COO",
+    designation: "CFO",
     img: mentorsImg[4],
     link: "https://www.linkedin.com/in/cfozucol/",
   },
@@ -100,30 +100,51 @@ const mentors = [
     link: "https://www.linkedin.com/in/padam-yadav/",
   },
   {
+    id: 12,
+    name: "Shilpa Khandelwal",
+    designation: "Technical Leader",
+    img: mentorsImg[11],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
     id: 7,
     name: "Sunil Pareek",
-    designation: "Deputy General Manager",
+    designation: "Compliance Leader",
     img: mentorsImg[6],
     link: "https://www.linkedin.com/in/agmzucol/",
   },
   {
     id: 8,
     name: "Neha Jain",
-    designation: "Assistant General Manager",
+    designation: "Compliance Leader",
     img: mentorsImg[7],
     link: "https://www.linkedin.com/in/agm-zucol-neha/",
   },
   {
+    id: 11,
+    name: "Ghanshyam Vyas",
+    designation: "Complince Leader",
+    img: mentorsImg[10],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
+    id: 13,
+    name: "Jeevika Tomer",
+    designation: "Business Head",
+    img: mentorsImg[12],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
     id: 9,
     name: "Priyanka Pal",
-    designation: "Business Assistant Manager",
+    designation: "Business Leader",
     img: mentorsImg[8],
     link: "https://www.linkedin.com/in/priyanka-pal-22bb99235/",
   },
   {
     id: 10,
     name: "Ankit Gori",
-    designation: "Business Team Leader",
+    designation: "Business Leader",
     img: mentorsImg[9],
     link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
   }
@@ -224,7 +245,7 @@ const About = () => {
                 key={mentor.id}
                 className="flex flex-col items-center justify-center md:w-3/12"
               >
-                <img src={mentor.img} alt="" width={200} />
+              <Link to={mentor.link} target="_blank"><img src={mentor.img} alt="" width={200} /></Link>
                 <div className="text-center text-white mentors_details">
                   <Link
                     to={mentor.link}

@@ -89,16 +89,16 @@ export default function Pricing() {
                         </div>
                         <div className='mt-5 px-5'>
                         <ul className='mb-3'>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Access upto 5 user.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Financial dashboard for business insights.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Generate and manage E-way bills.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Track raw materials, in-progress goods, and finished goods.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />E-invoice generation and GST return filing.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Record and monitor company expenses.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />100 free credits for E-invoice & E-way bill generation.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Reports on payables, receivables, and financial health.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Barcode-based billing for items and batches.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Includes a 14-day free trial.</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Access upto 5 user</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Financial dashboard for business insights</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Generate and manage E-way bills</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Track raw materials, in-progress goods, and finished goods</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />E-invoice generation and GST return filing</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Record and monitor company expenses</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />100 free credits for E-invoice & E-way bill generation</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Reports on payables, receivables, and financial health</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Barcode-based billing for items and batches</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon1} alt="" />Includes a 14-day free trial</li>
                         </ul>
                        <button className='bg-[#7861ca] align-bottom p-2 rounded-lg text-white mt-3 w-full' onClick={toggleModal}>Schedule a Demo</button>
                         </div>
@@ -114,17 +114,17 @@ export default function Pricing() {
                         </div>
                         <div className='mt-5 px-5 mb-3'>
                         <ul className='mb-3'>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Access upto 7 user.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Automate sales quotations, delivery notes, and purchase orders.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Reconcile bank transactions and adjust bill-to-bill entries.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Manage stock with batch tracking and warehouse transfers.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Role-based access control for users.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Customize fields for invoices, items, and forms.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Detailed reports on batch-wise and party-wise profit/loss.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Unlimited E-invoices and E-way bills.</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Access upto 7 user</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Automate sales quotations, delivery notes, and purchase orders</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Reconcile bank transactions and adjust bill-to-bill entries</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Manage stock with batch tracking and warehouse transfers</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Role-based access control for users</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Customize fields for invoices, items, and forms</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Detailed reports on batch-wise and party-wise profit/loss</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Unlimited E-invoices and E-way bills</li>
                             <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Barcode and serial tracking for inventory.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Export data to Tally and other accounting tools.</li>
-                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Dedicated support and training for premium users.</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Export data to Tally and other accounting tools</li>
+                            <li className='mt-2 flex'> <img className='mr-2' src={micon2} alt="" />Dedicated support and training for premium users</li>
                         </ul>
                         <button className='bg-[#d4882c] p-2 rounded-lg text-white mt-3 w-full' onClick={toggleModal}>Schedule a Demo</button>
                         </div>
