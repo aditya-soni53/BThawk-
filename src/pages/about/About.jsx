@@ -194,6 +194,40 @@ const About = () => {
       </Helmet>
       <Topbanner banner={banner1} />
       <Hero text={HeroText} show={true} />
+      <section className="our-mentors bg-[#22249B] py-8">
+        <div className="container mx-auto">
+          <div className="text-center text-white about-features_heading">
+            <h2 className="text-3xl">Our Mentors</h2>
+            <p className="mt-2 text-xl md:w-7/12 md:mx-auto">
+              Start working with <span className="text-orange-500">BTHAWK</span>{" "}
+              that can provide everything you need to generate awareness, drive
+              traffic, connect.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center mt-12 our-mentors_box gap-y-12">
+            {mentors.map((mentor) => (
+              <div
+                key={mentor.id}
+                className="flex flex-col items-center justify-center md:w-3/12"
+              >
+              <Link to={mentor.link} target="_blank"><img src={mentor.img} alt="" width={200} /></Link>
+                <div className="text-center text-white mentors_details">
+                  <Link
+                    to={mentor.link}
+                    target="_blank"
+                    className="font-normal transition-all duration-300 ease-in-out hover:underline hover:text-orange-500"
+                  >
+                    {mentor.name}
+                  </Link>
+                  <p className="text-sm font-extralight">
+                    {mentor.designation}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="mt-10 mb-6 about-features-section">
         <div className="container mx-auto">
           <div className="text-center about-features_heading">
@@ -229,40 +263,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="our-mentors bg-[#22249B] py-8">
-        <div className="container mx-auto">
-          <div className="text-center text-white about-features_heading">
-            <h2 className="text-3xl">Our Mentors</h2>
-            <p className="mt-2 text-xl md:w-7/12 md:mx-auto">
-              Start working with <span className="text-orange-500">BTHAWK</span>{" "}
-              that can provide everything you need to generate awareness, drive
-              traffic, connect.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center mt-12 our-mentors_box gap-y-12">
-            {mentors.map((mentor) => (
-              <div
-                key={mentor.id}
-                className="flex flex-col items-center justify-center md:w-3/12"
-              >
-              <Link to={mentor.link} target="_blank"><img src={mentor.img} alt="" width={200} /></Link>
-                <div className="text-center text-white mentors_details">
-                  <Link
-                    to={mentor.link}
-                    target="_blank"
-                    className="font-normal transition-all duration-300 ease-in-out hover:underline hover:text-orange-500"
-                  >
-                    {mentor.name}
-                  </Link>
-                  <p className="text-sm font-extralight">
-                    {mentor.designation}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </>
   );
 };
