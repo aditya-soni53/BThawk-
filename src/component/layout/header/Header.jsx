@@ -185,7 +185,7 @@ export default function Header() {
                             }
                           >
                             <span
-                              className={`flex justify-between cursor-pointer items-center lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${
+                              className={`flex justify-between cursor-pointer items-center lg:pl-3 lg:pr-2 lg:pt-3 hover:text-orange-400 ${
                                 isTaxPreparationOpen ? "text-orange-400" : ""
                               }`}
                             >
@@ -217,7 +217,7 @@ export default function Header() {
                                       Annual Form Filing
                                     </NavLink>
                                   </li>
-                                  <li>
+                                  {/* <li>
                                     <NavLink
                                       to="/Service/accounting"
                                       className={({ isActive }) =>
@@ -228,7 +228,7 @@ export default function Header() {
                                     >
                                       Accounting Service
                                     </NavLink>
-                                  </li>
+                                  </li> */}
                                 </ul>
                               </div>
                             )}
@@ -253,10 +253,9 @@ export default function Header() {
                             }
                           >
                             <span
-                              className={`flex justify-around cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 items-center hover:text-orange-400 ${
+                              className={`flex justify-around cursor-pointer lg:pl-3 lg:pr-2 lg:pt-3 items-center hover:text-orange-400 ${
                                 isPayrollManagementOpen ? "text-orange-400" : ""
-                              }`}
-                            >
+                              }`} >
                               Accounting Service{" "}
                               <FontAwesomeIcon
                                 icon={faChevronRight}
@@ -271,6 +270,230 @@ export default function Header() {
                                     : "relative bg-white m-submenu-1 p-3 mt-2 rounded"
                                 }`}
                               >
+                                {/* <ul className="flex flex-col gap-2 mb-0">
+                                  <li>
+                                    <NavLink
+                                      to="/Service/msme-udyam-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      MSME Udyam Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/business-registration-number"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      BRN Number Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/company-registration-service"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Company Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/private-limited-company-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Private Limited Company Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/limited-liability-company-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Limited Liability Company Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/trade-license"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Trade License Online
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/digital-signature-certificate"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Digital Signature Certificate
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/fssai-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      FSSAI Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/import-export-code-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Import Export Code Registration
+                                    </NavLink>
+                                  </li>
+                                </ul> */}
+                                <ul className="flex flex-col gap-2 mb-0">
+                                  <li>
+                                    <NavLink
+                                      to="/Service/gst-filing-service"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      GST Filing
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/tds-return-filing"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      TDS Starts
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/income-tax-return-filing"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Income Tax Return Filing
+                                    </NavLink>
+                                  </li>
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                          {/* Tax service with Sub-Submenu */}
+                          <li
+                            className={`relative ${
+                              isDesktop ? "" : "block"
+                            } cursor-pointer`}
+                            onMouseEnter={() =>
+                              isDesktop && setIsTaxserviceOpen(true)
+                            }
+                            onMouseLeave={() =>
+                              isDesktop && setIsTaxserviceOpen(false)
+                            }
+                            onClick={() =>
+                              !isDesktop &&
+                              setIsTaxserviceOpen(!isTaxserviceOpen)
+                            }
+                          >
+                            <span
+                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-3 hover:text-orange-400 ${
+                                isTaxserviceOpen ? "text-orange-400" : ""
+                              }`}
+                            >
+                              Tax Service{" "}
+                              <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="ml-4"
+                              />
+                            </span>
+                            {(isTaxserviceOpen || !isDesktop) && (
+                              <div
+                                className={`lg:absolute ${
+                                  isDesktop
+                                    ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[100%] top-0"
+                                    : "relative bg-white m-submenu-1 p-3 mt-2 rounded"
+                                }`}
+                              >
+                                {/* <ul className="flex flex-col gap-2 mb-0">
+                                  <li>
+                                    <NavLink
+                                      to="/Service/gst-filing-service"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      GST Filing
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/tds-return-filing"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      TDS Starts
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/income-tax-return-filing"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Income Tax Return Filing
+                                    </NavLink>
+                                  </li>
+                                </ul> */}
                                 <ul className="flex flex-col gap-2 mb-0">
                                   <li>
                                     <NavLink
@@ -384,82 +607,6 @@ export default function Header() {
                               </div>
                             )}
                           </li>
-                          {/* Tax service with Sub-Submenu */}
-                          <li
-                            className={`relative ${
-                              isDesktop ? "" : "block"
-                            } cursor-pointer`}
-                            onMouseEnter={() =>
-                              isDesktop && setIsTaxserviceOpen(true)
-                            }
-                            onMouseLeave={() =>
-                              isDesktop && setIsTaxserviceOpen(false)
-                            }
-                            onClick={() =>
-                              !isDesktop &&
-                              setIsTaxserviceOpen(!isTaxserviceOpen)
-                            }
-                          >
-                            <span
-                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${
-                                isTaxserviceOpen ? "text-orange-400" : ""
-                              }`}
-                            >
-                              Tax Service{" "}
-                              <FontAwesomeIcon
-                                icon={faChevronRight}
-                                className="ml-4"
-                              />
-                            </span>
-                            {(isTaxserviceOpen || !isDesktop) && (
-                              <div
-                                className={`lg:absolute ${
-                                  isDesktop
-                                    ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[100%] top-0"
-                                    : "relative bg-white m-submenu-1 p-3 mt-2 rounded"
-                                }`}
-                              >
-                                <ul className="flex flex-col gap-2 mb-0">
-                                  <li>
-                                    <NavLink
-                                      to="/Service/gst-filing-service"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      GST Filing
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/tds-return-filing"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      TDS Starts
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/income-tax-return-filing"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Income Tax Return Filing
-                                    </NavLink>
-                                  </li>
-                                </ul>
-                              </div>
-                            )}
-                          </li>
                           {/* Tax counslatancy with Sub-Submenu */}
                           <li
                             className={`relative ${
@@ -477,7 +624,7 @@ export default function Header() {
                             }
                           >
                             <span
-                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${
+                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-3 hover:text-orange-400 ${
                                 isTaxcounsultancyOpen ? "text-orange-400" : ""
                               }`}
                             >
@@ -542,10 +689,7 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <a
-                    href={baseUrl + "/#pricing"}
-                    className=""
-                  >
+                  <a href={baseUrl + "/#pricing"} className="">
                     Price
                   </a>
                 </li>
@@ -588,8 +732,10 @@ export default function Header() {
               </ul>
             </nav>
             <Link
-                  to="https://bthawk.appexperts.net/"
-                  target="_blank" className="relative mb-1 primary-btn lg:mb-0 group hover:dropdown-menu">
+              to="https://bthawk.appexperts.net/"
+              target="_blank"
+              className="relative mb-1 primary-btn lg:mb-0 group hover:dropdown-menu"
+            >
               Login
               {/* <div className="absolute top-0 hidden w-32 transition-opacity ease-in-out bg-white rounded-md shadow-lg duration-50000 md:-left-7 md:top-9 left-24 dropdown-menu group-hover:block">
                 <Link
