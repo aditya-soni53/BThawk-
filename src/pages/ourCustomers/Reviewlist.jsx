@@ -26,6 +26,7 @@ export default function ReviewList() {
 
     if (res.data.status === 1) {
       setStateList(res.data.data);
+      console.log(res.data.data);
     }
   };
   useEffect(() => {}, []);
@@ -256,8 +257,8 @@ export default function ReviewList() {
                       ></iframe>
                     </div>
                     <div className="text-center my-2 mt-3">
-                    <b className="reviewCardTitle">{review.client_name}</b>
-                    <p className="leading-none">({review.state_en})</p>
+                      <b className="reviewCardTitle">{review.client_name}</b>
+                      <p className="leading-none">({review.state_en})</p>
                     </div>
                   </div>
                 );

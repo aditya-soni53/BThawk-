@@ -131,7 +131,7 @@ header {
   box-shadow: 0px 4px 4px 0px #00000040;
   border-radius: 16px;
   position: absolute;
-  bottom: -100px;
+  bottom: -160px;
   left: 25%;
 }
 @media(max-width:1300px){
@@ -140,7 +140,7 @@ header {
   }
 }
 .feature {
-  margin-top: 180px;
+  margin-top: 230px;
 }
 .Feature-heading {
   font-size: 30px;
