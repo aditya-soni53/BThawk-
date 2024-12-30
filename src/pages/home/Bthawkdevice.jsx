@@ -21,7 +21,7 @@ export default function Bthawkdevice () {
           <img src={mobile} alt="" className="mx-auto my-10" />
           <div className="flex justify-center gap-2">
             <img src={playstore} alt="" className="store-img" />
-            <img src={appstore} alt="" className="store-img" />
+            {/* <img src={appstore} alt="" className="store-img" /> */}
           </div>
         </div>
         <div className="web-device md:p-14 p-6 bg-[#F2F7F7] rounded-md">

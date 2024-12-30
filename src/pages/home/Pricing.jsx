@@ -75,8 +75,8 @@ export default function Pricing() {
         data-aos-delay="300"
       >
         <h1 className="pb-3 text-3xl">
-           Different plan of <span className="text-[#22249B]">BT</span>
-          <span className="text-[#E45325]">HAWK</span> as per your need
+           Different plan of <span className="text-[#E45325]">BT</span>
+          <span className="text-[#22249B]">HAWK</span> as per your need
         </h1>
         <p className="">(With 100% customization) </p>
         {/* <button className='primary-btn' onClick={togglePricing}> {isMonthly ? 'Switch to Yearly' : 'Switch to Monthly'}

@@ -233,7 +233,8 @@ const About = () => {
           <div className="text-center about-features_heading">
             <h2 className="text-3xl">Key Features</h2>
             <p className="mt-2 text-xl md:w-7/12 md:mx-auto">
-              As a team <span className="text-orange-500">BTHAWK</span> that can
+              As a team <b><span className="text-[#E45325]">BT</span>
+              <span className="text-[#22249B]">HAWK</span></b> that can
               provide everything you need to generate awareness, drive traffic,
               connect.
             </p>

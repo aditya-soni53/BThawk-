@@ -26,8 +26,8 @@ export default function Appshowcase() {
         data-aos-delay="300"
       >
         <h1 className="text-3xl pb-3">
-          <span className="text-[#22249B]">BT</span>
-          <span className="text-[#E45325]">HAWK</span> App Showcase
+          <span className="text-[#F3771E]">BT</span>
+          <span className="text-[#22249B]">HAWK</span> App Showcase
         </h1>
         <p className="">
           In order to make the business less complicated, BTHAWK has introduced
