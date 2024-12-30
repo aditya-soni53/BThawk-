@@ -49,6 +49,7 @@ const Contact = () => {
 
   // Validation function
   const validate = () => {
+
     let newErrors = {};
     if (!formData.f_name.trim()) newErrors.f_name = "First Name is required";
     if (!formData.l_name.trim()) newErrors.l_name = "Last Name is required";
@@ -281,6 +282,12 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                       />
+                      {/* <select className="w-full py-1 transition-colors border-b border-black custom-input focus:border-b-2 focus:border-blue-700 focus:outline-none peer bg-inherit" name="" id="" value={formData.subject} onChange={handleChange}>
+                        <option value="query">Query</option>
+                        <option value="question">Question</option>
+                        <option value="remark">Remark</option>
+                        <option value="Query"></option>
+                      </select> */}
                       <label
                         htmlFor="subject"
                         className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${

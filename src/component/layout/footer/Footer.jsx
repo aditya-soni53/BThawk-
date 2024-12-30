@@ -227,7 +227,7 @@ export default function Footer() {
         <div className="flex flex-col flex-wrap w-11/12 px-5 mx-auto text-center border-t-2 py-7 sm:flex-row">
           <p className="mx-auto text-center text-md">
             © 2019-2025 BTHAWK Developed by{" "}
-            <Link className="text#60a5fa" to={"https://zucol.in/"} target="#">
+            <Link className="text#60a5fa" style={{color:"skyblue"}} to={"https://zucol.in/"} target="#">
               ZUCOL
             </Link>
           </p>
