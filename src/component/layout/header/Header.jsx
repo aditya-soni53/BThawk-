@@ -587,20 +587,11 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
-            <button className="relative mb-1 primary-btn lg:mb-0 group hover:dropdown-menu">
-              Sign Up
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-              <div className="absolute top-0 hidden w-32 transition-opacity ease-in-out bg-white rounded-md shadow-lg duration-50000 md:-left-7 md:top-9 left-24 dropdown-menu group-hover:block">
+            <Link
+                  to="https://bthawk.appexperts.net/"
+                  target="_blank" className="relative mb-1 primary-btn lg:mb-0 group hover:dropdown-menu">
+              Login
+              {/* <div className="absolute top-0 hidden w-32 transition-opacity ease-in-out bg-white rounded-md shadow-lg duration-50000 md:-left-7 md:top-9 left-24 dropdown-menu group-hover:block">
                 <Link
                   to="https://bthawk.appexperts.net/signup/"
                   target="_blank"
@@ -615,8 +606,8 @@ export default function Header() {
                 >
                   Sign In
                 </Link>
-              </div>
-            </button>
+              </div> */}
+            </Link>
             <button className="lg:ml-2 primary-btn " onClick={toggleModal}>
               Schedule a Demo
               <svg

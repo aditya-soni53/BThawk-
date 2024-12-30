@@ -190,6 +190,11 @@ export default function Footer() {
                 <img src={playstore} alt="playstore" />
               </a>
             </li>
+            {/* <li>
+              <a className="">
+                <img src={appstore} alt="playstore" />
+              </a>
+            </li> */}
           </nav>
           <h2 className="mb-3 text-xl tracking-widest title-font">
             News Letter

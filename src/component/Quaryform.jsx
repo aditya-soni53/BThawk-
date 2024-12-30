@@ -75,8 +75,8 @@ export default function Quaryform() {
       onSubmit={handleSubmit}
     >
       <p className="text-2xl mb-3">
-        Connect with <span className="text-[#2E30A5] font-semibold">BT</span>
-        <span className="font-semibold text-[#F3771E]">HAWK</span>
+        Connect with <span className="text-[#F3771E] font-semibold">BT</span>
+        <span className="font-semibold text-[#2E30A5] ">HAWK</span>
       </p>
       <div className="form-group relative">
         <label htmlFor="">Name</label> <br />

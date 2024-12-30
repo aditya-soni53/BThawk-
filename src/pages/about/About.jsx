@@ -9,49 +9,49 @@ const features = [
   {
     id: 1,
     title: "B",
-    description: "Bills at anyplace, anytime.",
+    description: "Bills at anyplace, anytime",
     margin_left: true,
   },
   {
     id: 2,
     title: "A",
-    description: "Auto Tax Calculation.",
+    description: "Auto Tax Calculation",
     margin_left: true,
   },
   {
     id: 3,
     title: "M",
-    description: "Mobile App Based E-invoice.",
+    description: "Mobile App Based E-invoice",
     margin_left: true,
   },
   {
     id: 4,
     title: "O",
-    description: "Order Management.",
+    description: "Order Management",
     margin_left: true,
   },
   {
     id: 5,
     title: "I",
-    description: "Inventory Management.",
+    description: "Inventory Management",
     margin_left: false,
   },
   {
     id: 6,
     title: "G",
-    description: "GST Compliance.",
+    description: "GST Compliance",
     margin_left: true,
   },
   {
     id: 7,
     title: "B",
-    description: "Business Reports.",
+    description: "Business Reports",
     margin_left: true,
   },
   {
     id: 8,
     title: "T",
-    description: "Track Salesman Location.",
+    description: "Track Salesman Location",
     margin_left: true,
   },
 ];
@@ -233,7 +233,8 @@ const About = () => {
           <div className="text-center about-features_heading">
             <h2 className="text-3xl">Key Features</h2>
             <p className="mt-2 text-xl md:w-7/12 md:mx-auto">
-              As a team <span className="text-orange-500">BTHAWK</span> that can
+              As a team <b><span className="text-[#E45325]">BT</span>
+              <span className="text-[#22249B]">HAWK</span></b> that can
               provide everything you need to generate awareness, drive traffic,
               connect.
             </p>
