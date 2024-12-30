@@ -14,12 +14,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faClockFour } from "@fortawesome/free-regular-svg-icons/faClockFour";
 import Modals from "../../component/Modals";
+import { Helmet } from "react-helmet";
 
 export default function Careerdetail() {
   const { jobSlug, jobId } = useParams();
   const [jobsData, setJobdata] = useState([]);
   const [spinner, setSpinner] = useState(true);
-
+  const url = window.location.href;
+  
   useEffect(() => {
     const retaledJob = async () => {
       try {
@@ -38,13 +40,25 @@ export default function Careerdetail() {
           throw new Error("job not find");
         }
       } catch (err) {
-        console.log("error");
+        console.log("error", err);
       }
     };
     retaledJob();
   }, [jobSlug]);
   return (
     <>
+      <Helmet>
+        <title>BTHAWK careers </title>
+        <meta
+          name="keywords"
+          content="Jobs, career, billing software, accounting software. "
+        />
+        <meta
+          name="description"
+          content="Finding a career which is right and suitable for you is a hard task. BTHAWK provides you with various career options. Join our family. "
+        />
+        <link rel="canonical" href={url} />
+      </Helmet>
       <Topbanner banner={Blogbanner} />
       {spinner ? (
         <div className="grid w-full h-96 place-content-center">

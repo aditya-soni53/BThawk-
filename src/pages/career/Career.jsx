@@ -4,12 +4,14 @@ import Blogbanner from "../../assets/image/career.jpg";
 import Listicon from "../../assets/image/list-icon.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Career() {
   const [jobs, setJob] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [spinner, setSpinner] = useState(true);
+  const url = window.location.href;
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -45,6 +47,18 @@ export default function Career() {
 
   return (
     <>
+      <Helmet>
+        <title>BTHAWK careers </title>
+        <meta
+          name="keywords"
+          content="Jobs, career, billing software, accounting software. "
+        />
+        <meta
+          name="description"
+          content="Finding a career which is right and suitable for you is a hard task. BTHAWK provides you with various career options. Join our family. "
+        />
+        <link rel="canonical" href={url} />
+      </Helmet>
       <Topbanner banner={Blogbanner} />
       {spinner ? (
         <div className="grid w-full h-96 place-content-center">
