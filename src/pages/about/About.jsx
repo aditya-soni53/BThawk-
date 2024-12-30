@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { mentorsImg } from "../../helper";
 import Hero from "../../component/Hero";
 import { Helmet } from "react-helmet";
-import banner1 from '../../assets/image/contact-us.jpg'
+import banner1 from '../../assets/image/about-banner.webp'
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 
 const features = [
@@ -150,7 +150,7 @@ const mentors = [
   }
 ];
 
-const HeroText = `Bell Technology’s
+const HeroText = ` Bell Technology’s
               BTHAWK ensures a 360-degree focus on your financial and accounting
               needs, just like a hawk watches its surroundings. With BTHAWK, you
               don’t need an accountant or extensive accounting knowledge. We’re
