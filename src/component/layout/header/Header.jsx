@@ -544,11 +544,7 @@ export default function Header() {
                 <li>
                   <a
                     href={baseUrl + "/#pricing"}
-                    className={({ isActive }) =>
-                      `cursor-pointer hover:text-orange-400 ${
-                        isActive ? "text-orange-400" : ""
-                      }`
-                    }
+                    className=""
                   >
                     Price
                   </a>
