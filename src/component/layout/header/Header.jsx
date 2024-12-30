@@ -34,6 +34,8 @@ export default function Header() {
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
   const [isTaxPreparationOpen, setIsTaxPreparationOpen] = useState(false);
   const [isPayrollManagementOpen, setIsPayrollManagementOpen] = useState(false);
+  const [isTaxserviceOpen, setIsTaxserviceOpen] = useState(false);
+  const [isTaxcounsultancyOpen, setIsTaxcounsultancyOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 0);
   const { setIsModalOpen, isModalOpen } = useContext(Context);
   // Update state based on window width
@@ -140,7 +142,7 @@ export default function Header() {
                         }`}
                       >
                         <ul className="flex flex-col gap-1 pb-1 mb-0">
-                          {/* Tax Preparation with Sub-Submenu */}
+                          {/* Accounting solution with Sub-Submenu */}
                           <li
                             className={`relative ${
                               isDesktop ? "" : "block"
@@ -157,24 +159,90 @@ export default function Header() {
                             }
                           >
                             <span
-                              className={`flex justify-between cursor-pointer lg:px-5 lg:pt-2 hover:text-orange-400 ${
+                              className={`flex justify-between cursor-pointer items-center lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${
                                 isTaxPreparationOpen ? "text-orange-400" : ""
                               }`}
                             >
-                              Registration{" "}
-                              <FontAwesomeIcon icon={faChevronRight} />
+                              Accounting Solution{" "}
+                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
                             </span>
                             {(isTaxPreparationOpen || !isDesktop) && (
                               <div
                                 className={`lg:absolute transition ease-in-out delay-150 
                                   ${
                                     isDesktop
-                                      ? "w-max submenu2 bg-white shadow-lg px-5 py-5 rounded left-[100%] top-0"
+                                      ? "w-max submenu2 bg-white shadow-lg px-5 py-4 rounded left-[100%] top-0"
                                       : "relative m-submenu-1 bg-white p-3 mt-2 rounded  "
                                   }`}
                               >
                                 <ul className="flex flex-col gap-3 mb-0">
+                                <li>
+                                    <NavLink
+                                      to="/Service/annual-filing-for-llp"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Annual Form Filing
+                                    </NavLink>
+                                  </li>
                                   <li>
+                                    <NavLink
+                                      to="/Service/accounting"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Accounting Service
+                                    </NavLink>
+                                  </li>
+                                  
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+
+                          {/* Accounting service with Sub-Submenu */}
+                          <li
+                            className={`relative ${
+                              isDesktop ? "" : "block"
+                            } cursor-pointer`}
+                            onMouseEnter={() =>
+                              isDesktop && setIsPayrollManagementOpen(true)
+                            }
+                            onMouseLeave={() =>
+                              isDesktop && setIsPayrollManagementOpen(false)
+                            }
+                            onClick={() =>
+                              !isDesktop &&
+                              setIsPayrollManagementOpen(
+                                !isPayrollManagementOpen
+                              )
+                            }
+                          >
+                            <span
+                              className={`flex justify-around cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 items-center hover:text-orange-400 ${
+                                isPayrollManagementOpen ? "text-orange-400" : ""
+                              }`}
+                            >
+                              Accounting Service{" "}
+                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
+                            </span>
+                            {(isPayrollManagementOpen || !isDesktop) && (
+                              <div
+                                className={`lg:absolute ${
+                                  isDesktop
+                                    ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[100%] top-0"
+                                    : "relative bg-white m-submenu-1 p-3 mt-2 rounded"
+                                }`}
+                              >
+                                <ul className="flex flex-col gap-2 mb-0">
+                               
+                                <li>
                                     <NavLink
                                       to="/Service/msme-udyam-registration"
                                       className={({ isActive }) =>
@@ -196,42 +264,6 @@ export default function Header() {
                                       }
                                     >
                                       BRN Number Registration
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/gst-registration-online"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      GST Registration
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/import-export-code-registration"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Import Export Code Registration
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/fssai-registration"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      FSSAI Registration
                                     </NavLink>
                                   </li>
                                   <li>
@@ -270,38 +302,85 @@ export default function Header() {
                                       Limited Liability Company Registration
                                     </NavLink>
                                   </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/trade-license"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Trade License Online
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/digital-signature-certificate"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Digital Signature Certificate
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/fssai-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      FSSAI Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/import-export-code-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Import Export Code Registration
+                                    </NavLink>
+                                  </li>
+                                  
                                 </ul>
                               </div>
                             )}
                           </li>
-
-                          {/* Payroll Management with Sub-Submenu */}
+                          {/* Tax service with Sub-Submenu */}
                           <li
-                            className={`relative ${
-                              isDesktop ? "" : "block"
+                            className={`relative ${ isDesktop ? "" : "block"
                             } cursor-pointer`}
                             onMouseEnter={() =>
-                              isDesktop && setIsPayrollManagementOpen(true)
+                              isDesktop && setIsTaxserviceOpen(true)
                             }
                             onMouseLeave={() =>
-                              isDesktop && setIsPayrollManagementOpen(false)
+                              isDesktop && setIsTaxserviceOpen(false)
                             }
                             onClick={() =>
                               !isDesktop &&
-                              setIsPayrollManagementOpen(
-                                !isPayrollManagementOpen
+                              setIsTaxserviceOpen(
+                                !isTaxserviceOpen
                               )
                             }
                           >
                             <span
-                              className={`cursor-pointer lg:px-5 lg:mb-2 hover:text-orange-400 ${
-                                isPayrollManagementOpen ? "text-orange-400" : ""
+                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${
+                                isTaxserviceOpen ? "text-orange-400" : ""
                               }`}
                             >
-                              Compliances{" "}
-                              <FontAwesomeIcon icon={faChevronRight} />
+                              Tax Service{" "}
+                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
                             </span>
-                            {(isPayrollManagementOpen || !isDesktop) && (
+                            {(isTaxserviceOpen || !isDesktop) && (
                               <div
                                 className={`lg:absolute ${
                                   isDesktop
@@ -336,18 +415,6 @@ export default function Header() {
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/accounting"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Accounting Service
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
                                       to="/Service/income-tax-return-filing"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
@@ -358,6 +425,29 @@ export default function Header() {
                                       Income Tax Return Filing
                                     </NavLink>
                                   </li>
+
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                          {/* Tax counslatancy with Sub-Submenu */}
+                          <li className={`relative ${ isDesktop ? "" : "block"} cursor-pointer`}
+                            onMouseEnter={() => isDesktop && setIsTaxcounsultancyOpen(true)}
+                            onMouseLeave={() => isDesktop && setIsTaxcounsultancyOpen(false)}
+                            onClick={() =>!isDesktop && setIsTaxcounsultancyOpen( !isTaxcounsultancyOpen )} >
+                            <span className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${ isTaxcounsultancyOpen ? "text-orange-400" : "" }`} >
+                              Tax Consultancy{" "}
+                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
+                            </span>
+                            {(isTaxcounsultancyOpen || !isDesktop) && (
+                              <div
+                                className={`lg:absolute ${
+                                  isDesktop
+                                    ? "w-max submenu2 bg-white lg:shadow-lg p-3 rounded left-[100%] top-0"
+                                    : "relative bg-white m-submenu-1 p-3 mt-2 rounded"
+                                }`}
+                              >
+                                <ul className="flex flex-col gap-2 mb-0">
 
                                   <li>
                                     <NavLink
@@ -373,44 +463,22 @@ export default function Header() {
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/trade-license"
+                                      to="/Service/gst-registration-online"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Trade License Online
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/digital-signature-certificate"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Digital Signature Certificate
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/annual-filing-for-llp"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Annual Form Filing
+                                      GST Registration
                                     </NavLink>
                                   </li>
                                 </ul>
                               </div>
                             )}
                           </li>
+                          
+                          
                         </ul>
                       </div>
                     )}

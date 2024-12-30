@@ -182,7 +182,7 @@ export default function ReviewList() {
       </p>
 
       <div className="my-6">
-        <div className="relative flex items-center w-full p-2 overflow-hidden bg-gray-800">
+        <div className="relative rounded-xl flex items-center w-full p-2 overflow-hidden bg-gray-800">
           {/* Left Arrow */}
           {showLeftArrow && (
             <button
@@ -209,22 +209,6 @@ export default function ReviewList() {
             >
               All
             </button>
-            {/* {[...new Set(reviews.map((review) => review.state))].map(
-              (state) => (
-                <button
-                  key={state}
-                  className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${
-                    selectedState === state
-                      ? "text-black bg-white font-semibold "
-                      : " text-white"
-                  }`}
-                  onClick={() => setChangeState(state)}
-                >
-                  {state}
-                </button>
-              )
-            )} */}
-
             {stateList.map((state) => (
               <button
                 key={state}
@@ -271,8 +255,10 @@ export default function ReviewList() {
                         frameBorder={1}
                       ></iframe>
                     </div>
-                    {/* <h5 className="reviewCardTitle">{review.client_name}</h5> */}
-                    {/* <p>{embedUrl}</p> */}
+                    <div className="text-center my-2 mt-3">
+                    <b className="reviewCardTitle">{review.client_name}</b>
+                    <p className="leading-none">({review.state_en})</p>
+                    </div>
                   </div>
                 );
               })}

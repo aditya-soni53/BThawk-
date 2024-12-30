@@ -79,7 +79,7 @@ export default function Quaryform() {
         <span className="font-semibold text-[#F3771E]">HAWK</span>
       </p>
       <div className="form-group relative">
-        <label htmlFor="">Mobile Number</label> <br />
+        <label htmlFor="">Name</label> <br />
         <input
           type="text"
           className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"

@@ -94,18 +94,39 @@ const mentors = [
   },
   {
     id: 6,
-    name: "Arpit_Tambi",
-    designation: "COO-West Bengal",
+    name: "Padam Yadav",
+    designation: "Technical Head",
     img: mentorsImg[5],
-    link: "https://www.linkedin.com/in/arpit-tambi-207447190/",
+    link: "https://www.linkedin.com/in/padam-yadav/",
   },
   {
     id: 7,
-    name: "Pooja Thareja",
-    designation: "Head HR",
+    name: "Sunil Pareek",
+    designation: "Deputy General Manager",
     img: mentorsImg[6],
-    link: "https://www.linkedin.com/in/pooja-thareja-034391158/",
+    link: "https://www.linkedin.com/in/agmzucol/",
   },
+  {
+    id: 8,
+    name: "Neha Jain",
+    designation: "Assistant General Manager",
+    img: mentorsImg[7],
+    link: "https://www.linkedin.com/in/agm-zucol-neha/",
+  },
+  {
+    id: 9,
+    name: "Priyanka Pal",
+    designation: "Business Assistant Manager",
+    img: mentorsImg[8],
+    link: "https://www.linkedin.com/in/priyanka-pal-22bb99235/",
+  },
+  {
+    id: 10,
+    name: "Ankit Gori",
+    designation: "Business Team Leader",
+    img: mentorsImg[9],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  }
 ];
 
 const HeroText = `Bell Technology’s
