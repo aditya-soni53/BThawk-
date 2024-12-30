@@ -1,9 +1,9 @@
 import React from 'react';
-const Hero = ({text, show, heading}) => {
+const Hero = ({text, show, heading, bg}) => {
 
   const mb_3 = heading === 'Privacy Policy' || heading === 'Terms & Conditions' ? 'mb-0' : 'mb-3';
   return (
-    <section className="about-hero-section">
+    <section className="about-hero-section" style={{backgroundColor: bg}}>
       <div className="about-hero_img" />
       <div className="about-hero_content">
         {/* <img className='w-full' src={bannerimage} alt="hero-img" /> */}

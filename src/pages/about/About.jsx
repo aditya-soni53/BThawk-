@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { mentorsImg } from "../../helper";
 import Hero from "../../component/Hero";
 import { Helmet } from "react-helmet";
-import banner1 from '../../assets/image/contact-us.jpg'
+import banner1 from '../../assets/image/about-banner.webp'
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 
 const features = [
@@ -59,7 +59,7 @@ const features = [
 const mentors = [
   {
     id: 1,
-    name: "Sanjay Khandelwal",
+    name: "Dr. Sanjay Khandelwal",
     designation: "Founder",
     img: mentorsImg[0],
     link: "https://www.linkedin.com/in/dr-sanjay-khandelwal-phd-b3b8078/",
@@ -88,7 +88,7 @@ const mentors = [
   {
     id: 5,
     name: "Abhishek Sharma",
-    designation: "CFO & COO",
+    designation: "CFO",
     img: mentorsImg[4],
     link: "https://www.linkedin.com/in/cfozucol/",
   },
@@ -100,36 +100,57 @@ const mentors = [
     link: "https://www.linkedin.com/in/padam-yadav/",
   },
   {
+    id: 12,
+    name: "Shilpa Khandelwal",
+    designation: "Technical Leader",
+    img: mentorsImg[11],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
     id: 7,
     name: "Sunil Pareek",
-    designation: "Deputy General Manager",
+    designation: "Compliance Leader",
     img: mentorsImg[6],
     link: "https://www.linkedin.com/in/agmzucol/",
   },
   {
     id: 8,
     name: "Neha Jain",
-    designation: "Assistant General Manager",
+    designation: "Compliance Leader",
     img: mentorsImg[7],
     link: "https://www.linkedin.com/in/agm-zucol-neha/",
   },
   {
+    id: 11,
+    name: "Ghanshyam Vyas",
+    designation: "Complince Leader",
+    img: mentorsImg[10],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
+    id: 13,
+    name: "Jeevika Tomer",
+    designation: "Business Head",
+    img: mentorsImg[12],
+    link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
     id: 9,
     name: "Priyanka Pal",
-    designation: "Business Assistant Manager",
+    designation: "Business Leader",
     img: mentorsImg[8],
     link: "https://www.linkedin.com/in/priyanka-pal-22bb99235/",
   },
   {
     id: 10,
     name: "Ankit Gori",
-    designation: "Business Team Leader",
+    designation: "Business Leader",
     img: mentorsImg[9],
     link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
   }
 ];
 
-const HeroText = `Bell Technology’s
+const HeroText = ` Bell Technology’s
               BTHAWK ensures a 360-degree focus on your financial and accounting
               needs, just like a hawk watches its surroundings. With BTHAWK, you
               don’t need an accountant or extensive accounting knowledge. We’re
@@ -172,7 +193,41 @@ const About = () => {
         />
       </Helmet>
       <Topbanner banner={banner1} />
-      <Hero text={HeroText} show={true} />
+      <Hero text={HeroText} show={true} bg={"#22249b"} />
+      <section className="our-mentors bg-[#22249B] py-8">
+        <div className="container mx-auto">
+          <div className="text-center text-white about-features_heading">
+            <h2 className="text-3xl">Our Mentors</h2>
+            <p className="mt-2 text-xl md:w-7/12 md:mx-auto">
+              Start working with <span className="text-orange-500">BTHAWK</span>{" "}
+              that can provide everything you need to generate awareness, drive
+              traffic, connect.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center mt-12 our-mentors_box gap-y-12">
+            {mentors.map((mentor) => (
+              <div
+                key={mentor.id}
+                className="flex flex-col items-center justify-center md:w-3/12"
+              >
+              <Link to={mentor.link} target="_blank"><img src={mentor.img} alt="" width={200} /></Link>
+                <div className="text-center text-white mentors_details">
+                  <Link
+                    to={mentor.link}
+                    target="_blank"
+                    className="font-normal transition-all duration-300 ease-in-out hover:underline hover:text-orange-500"
+                  >
+                    {mentor.name}
+                  </Link>
+                  <p className="text-sm font-extralight">
+                    {mentor.designation}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="mt-10 mb-6 about-features-section">
         <div className="container mx-auto">
           <div className="text-center about-features_heading">
@@ -208,40 +263,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="our-mentors bg-[#22249B] py-8">
-        <div className="container mx-auto">
-          <div className="text-center text-white about-features_heading">
-            <h2 className="text-3xl">Our Mentors</h2>
-            <p className="mt-2 text-xl md:w-7/12 md:mx-auto">
-              Start working with <span className="text-orange-500">BTHAWK</span>{" "}
-              that can provide everything you need to generate awareness, drive
-              traffic, connect.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center mt-12 our-mentors_box gap-y-12">
-            {mentors.map((mentor) => (
-              <div
-                key={mentor.id}
-                className="flex flex-col items-center justify-center md:w-3/12"
-              >
-                <img src={mentor.img} alt="" width={200} />
-                <div className="text-center text-white mentors_details">
-                  <Link
-                    to={mentor.link}
-                    target="_blank"
-                    className="font-normal transition-all duration-300 ease-in-out hover:underline hover:text-orange-500"
-                  >
-                    {mentor.name}
-                  </Link>
-                  <p className="text-sm font-extralight">
-                    {mentor.designation}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </>
   );
 };

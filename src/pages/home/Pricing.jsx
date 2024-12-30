@@ -52,7 +52,6 @@ export default function Pricing() {
       if (res.data.status == 1) {
         setPackageData(res.data.data);
         console.log("Working");
-        
       } else {
         console.error("Something Went Wrong");
       }
@@ -69,7 +68,7 @@ export default function Pricing() {
 
   return (
     <>
-      <div
+      <div id="pricing"
         className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 md:mt-5 mt-14 mb-4 aos-animate overflow-hidden"
         data-aos="fade-up"
         data-aos-duration="600"
@@ -137,8 +136,6 @@ export default function Pricing() {
             </div>
           </div>
         </div>
-        {/* ------------ Plans ------- */}
-
         <div
           className="aos-animate border-2  border-[#6851b1] rounded-lg"
           data-aos="fade-left"
@@ -160,52 +157,52 @@ export default function Pricing() {
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Access upto 5 user.
+                Access upto 5 user
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Financial dashboard for business insights.
+                Financial dashboard for business insights
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Generate and manage E-way bills.
+                Generate and manage E-way bills
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Track raw materials, in-progress goods, and finished goods.
+                Track raw materials, in-progress goods, and finished goods
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                E-invoice generation and GST return filing.
+                E-invoice generation and GST return filing
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Record and monitor company expenses.
+                Record and monitor company expenses
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                100 free credits for E-invoice & E-way bill generation.
+                100 free credits for E-invoice & E-way bill generation
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Reports on payables, receivables, and financial health.
+                Reports on payables, receivables, and financial health
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Barcode-based billing for items and batches.
+                Barcode-based billing for items and batches
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon1} alt="" />
-                Includes a 14-day free trial.
+                Includes a 14-day free trial
               </li>
             </ul>
             <button
@@ -216,7 +213,6 @@ export default function Pricing() {
             </button>
           </div>
         </div>
-
         <div
           className="aos-animate grid align-bottom border-2  border-[#9c4b21] rounded-lg"
           data-aos="fade-left"
@@ -242,42 +238,42 @@ export default function Pricing() {
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Access upto 7 user.
+                Access upto 7 user
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Automate sales quotations, delivery notes, and purchase orders.
+                Automate sales quotations, delivery notes, and purchase orders
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Reconcile bank transactions and adjust bill-to-bill entries.
+                Reconcile bank transactions and adjust bill-to-bill entries
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Manage stock with batch tracking and warehouse transfers.
+                Manage stock with batch tracking and warehouse transfers
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Role-based access control for users.
+                Role-based access control for users
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Customize fields for invoices, items, and forms.
+                Customize fields for invoices, items, and forms
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Detailed reports on batch-wise and party-wise profit/loss.
+                Detailed reports on batch-wise and party-wise profit/loss
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Unlimited E-invoices and E-way bills.
+                Unlimited E-invoices and E-way bills
               </li>
               <li className="mt-2 flex">
                 {" "}
@@ -287,12 +283,12 @@ export default function Pricing() {
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Export data to Tally and other accounting tools.
+                Export data to Tally and other accounting tools
               </li>
               <li className="mt-2 flex">
                 {" "}
                 <img className="mr-2" src={micon2} alt="" />
-                Dedicated support and training for premium users.
+                Dedicated support and training for premium users
               </li>
             </ul>
             <button

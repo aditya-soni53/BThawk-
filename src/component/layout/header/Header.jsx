@@ -77,6 +77,9 @@ export default function Header() {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+
+
   return (
     <>
       <header
@@ -129,8 +132,7 @@ export default function Header() {
                     }
                   >
                     <span className="cursor-pointer hover:text-orange-400 service-h">
-                      Service{" "}
-                      <FontAwesomeIcon icon={faChevronDown} />
+                      Service <FontAwesomeIcon icon={faChevronDown} />
                     </span>
                     {/* Dropdown Menu */}
                     {(isMainDropdownOpen || !isDesktop) && (
@@ -164,7 +166,10 @@ export default function Header() {
                               }`}
                             >
                               Accounting Solution{" "}
-                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
+                              <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="ml-4"
+                              />
                             </span>
                             {(isTaxPreparationOpen || !isDesktop) && (
                               <div
@@ -176,7 +181,7 @@ export default function Header() {
                                   }`}
                               >
                                 <ul className="flex flex-col gap-3 mb-0">
-                                <li>
+                                  <li>
                                     <NavLink
                                       to="/Service/annual-filing-for-llp"
                                       className={({ isActive }) =>
@@ -200,7 +205,6 @@ export default function Header() {
                                       Accounting Service
                                     </NavLink>
                                   </li>
-                                  
                                 </ul>
                               </div>
                             )}
@@ -230,7 +234,10 @@ export default function Header() {
                               }`}
                             >
                               Accounting Service{" "}
-                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
+                              <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="ml-4"
+                              />
                             </span>
                             {(isPayrollManagementOpen || !isDesktop) && (
                               <div
@@ -241,8 +248,7 @@ export default function Header() {
                                 }`}
                               >
                                 <ul className="flex flex-col gap-2 mb-0">
-                               
-                                <li>
+                                  <li>
                                     <NavLink
                                       to="/Service/msme-udyam-registration"
                                       className={({ isActive }) =>
@@ -350,14 +356,14 @@ export default function Header() {
                                       Import Export Code Registration
                                     </NavLink>
                                   </li>
-                                  
                                 </ul>
                               </div>
                             )}
                           </li>
                           {/* Tax service with Sub-Submenu */}
                           <li
-                            className={`relative ${ isDesktop ? "" : "block"
+                            className={`relative ${
+                              isDesktop ? "" : "block"
                             } cursor-pointer`}
                             onMouseEnter={() =>
                               isDesktop && setIsTaxserviceOpen(true)
@@ -367,9 +373,7 @@ export default function Header() {
                             }
                             onClick={() =>
                               !isDesktop &&
-                              setIsTaxserviceOpen(
-                                !isTaxserviceOpen
-                              )
+                              setIsTaxserviceOpen(!isTaxserviceOpen)
                             }
                           >
                             <span
@@ -378,7 +382,10 @@ export default function Header() {
                               }`}
                             >
                               Tax Service{" "}
-                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
+                              <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="ml-4"
+                              />
                             </span>
                             {(isTaxserviceOpen || !isDesktop) && (
                               <div
@@ -425,19 +432,36 @@ export default function Header() {
                                       Income Tax Return Filing
                                     </NavLink>
                                   </li>
-
                                 </ul>
                               </div>
                             )}
                           </li>
                           {/* Tax counslatancy with Sub-Submenu */}
-                          <li className={`relative ${ isDesktop ? "" : "block"} cursor-pointer`}
-                            onMouseEnter={() => isDesktop && setIsTaxcounsultancyOpen(true)}
-                            onMouseLeave={() => isDesktop && setIsTaxcounsultancyOpen(false)}
-                            onClick={() =>!isDesktop && setIsTaxcounsultancyOpen( !isTaxcounsultancyOpen )} >
-                            <span className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${ isTaxcounsultancyOpen ? "text-orange-400" : "" }`} >
+                          <li
+                            className={`relative ${
+                              isDesktop ? "" : "block"
+                            } cursor-pointer`}
+                            onMouseEnter={() =>
+                              isDesktop && setIsTaxcounsultancyOpen(true)
+                            }
+                            onMouseLeave={() =>
+                              isDesktop && setIsTaxcounsultancyOpen(false)
+                            }
+                            onClick={() =>
+                              !isDesktop &&
+                              setIsTaxcounsultancyOpen(!isTaxcounsultancyOpen)
+                            }
+                          >
+                            <span
+                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 hover:text-orange-400 ${
+                                isTaxcounsultancyOpen ? "text-orange-400" : ""
+                              }`}
+                            >
                               Tax Consultancy{" "}
-                              <FontAwesomeIcon icon={faChevronRight} className="ml-4" />
+                              <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="ml-4"
+                              />
                             </span>
                             {(isTaxcounsultancyOpen || !isDesktop) && (
                               <div
@@ -448,7 +472,6 @@ export default function Header() {
                                 }`}
                               >
                                 <ul className="flex flex-col gap-2 mb-0">
-
                                   <li>
                                     <NavLink
                                       to="/Service/scrutiny-assessment"
@@ -477,8 +500,6 @@ export default function Header() {
                               </div>
                             )}
                           </li>
-                          
-                          
                         </ul>
                       </div>
                     )}
@@ -498,7 +519,7 @@ export default function Header() {
                 </li>
                 <li>
                   <NavLink
-                    to="/price"
+                    to="/#pricing"
                     className={({ isActive }) =>
                       `cursor-pointer hover:text-orange-400 ${
                         isActive ? "text-orange-400" : ""
