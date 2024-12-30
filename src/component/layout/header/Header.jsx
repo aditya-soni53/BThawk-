@@ -78,7 +78,31 @@ export default function Header() {
     setIsModalOpen(!isModalOpen);
   };
 
+  // Find Base URL
+  const [baseUrl, setBaseUrl] = useState("");
 
+  useEffect(() => {
+    // window.location.origin will give the base URL (protocol + hostname + port)
+    const base = window.location.origin;
+    setBaseUrl(base);
+  }, []);
+  useEffect(() => {
+    if (window.location.hash === "#pricing") {
+      const pricingSection = document.getElementById("pricing");
+      if (pricingSection) {
+        // Adjust scroll position by offsetting with the height of the fixed header
+        const headerOffset = -1000; // Adjust this value according to your header's height
+        const elementPosition = pricingSection.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [window.location.hash]);
 
   return (
     <>
@@ -518,8 +542,8 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    to="/#pricing"
+                  <a
+                    href={baseUrl + "/#pricing"}
                     className={({ isActive }) =>
                       `cursor-pointer hover:text-orange-400 ${
                         isActive ? "text-orange-400" : ""
@@ -527,7 +551,7 @@ export default function Header() {
                     }
                   >
                     Price
-                  </NavLink>
+                  </a>
                 </li>
                 <li>
                   <NavLink
