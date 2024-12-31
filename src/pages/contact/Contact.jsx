@@ -81,7 +81,7 @@ const Contact = () => {
       newErrors.phone = "Phone Number must be 10 digits";
     }
     if (!formData.subject) newErrors.subject = "Subject is required";
-    console.log("formData.subject", formData.subject);
+    // console.log("formData.subject", formData.subject);
     if (!formData.message) newErrors.message = "Message is required";
 
     setErrors(newErrors);
