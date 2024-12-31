@@ -58,7 +58,7 @@ export default function Appshowcase() {
             <div className="app-icon m-auto">
               <FontAwesomeIcon icon={faUserTie} />
             </div>
-            <b>Businessman App</b>
+            <b>ADMIN APP (ADMINISTRATION APP)</b>
           </button>
 
           <button
@@ -111,14 +111,14 @@ export default function Appshowcase() {
               </div>
               <div className="app-cards">
                 <div className="appcard-1">
-                  <h3 className="text-xl text-center text-[#22249B]">
-                  Businessman App and Dashboard
+                  <h3 className="text-xl text-center mb-4 text-[#22249B]">
+                  ADMIN APP (ADMINISTRATION APP)
                   </h3>
                   <p className="text-center">
                   Businessman App gives you the supremacy to maintain a hawk eye on
                     the activities of your FSEs.
                   </p>
-                  <ul className="mt-2">
+                  <ul className="mt-4">
                     <li className="mt-2 flex">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Prevents stock leakage.

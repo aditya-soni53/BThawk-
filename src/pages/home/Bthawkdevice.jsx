@@ -25,10 +25,10 @@ export default function Bthawkdevice () {
           </div>
         </div>
         <div className="web-device md:p-14 p-6 bg-[#F2F7F7] rounded-md">
-          <p className="text-[#5152B0]">desktop App</p>
+          <p className="text-[#5152B0]">Web App</p>
           <h1 className="text-xl text-[#5152B0]">
             A Simple, Secure standalone <br />
-            Desktop Solution!
+            Web App Solution!
           </h1>
           <img src={webstore} alt="" className="mx-auto my-10" />
         </div>

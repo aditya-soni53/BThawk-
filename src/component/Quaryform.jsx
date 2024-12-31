@@ -31,6 +31,10 @@ export default function Quaryform() {
       return;
     }
 
+    if (name.length < 3) {
+      return;
+    }
+
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
         pincode: pincode,
@@ -71,56 +75,65 @@ export default function Quaryform() {
   return (
     <form
       action=""
-      className="lg:shadow-2xl border-2 p-7 py-8 rounded-xl bg-white"
+      className="py-8 bg-white border-2 lg:shadow-2xl p-7 rounded-xl"
       onSubmit={handleSubmit}
     >
-      <p className="text-2xl mb-3">
+      <p className="mb-3 text-2xl">
         Connect with <span className="text-[#F3771E] font-semibold">BT</span>
         <span className="font-semibold text-[#2E30A5] ">HAWK</span>
       </p>
-      <div className="form-group relative">
-        <label htmlFor="">Name</label> <br />
+      <div className="form-group">
+        <div className="relative ">
+          <label htmlFor="">Name</label> <br />
+          <input
+            type="text"
+            className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
+            maxLength={30}
+            placeholder="Name"
+            value={name}
+            onChange={(e) => {
+              setName(()=> e.target.value.replace(/[^a-zA-Z]/g, ""));
+            }}
+          />
+          <img src={user} className="absolute bottom-3 left-2" alt="user" />
+        </div>
+        {name && name.length < 3 ? (
+          <p className="py-2 pl-1 text-xs text-red-500">
+            Name must be at least 2 characters long
+          </p>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="relative form-group">
+        <label htmlFor="">Mobile Number</label> <br />
         <input
           type="text"
           className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
-          maxLength={12}
-          placeholder="Name"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-        <img src={user} className="absolute bottom-3 left-2" alt="user" />
-      </div>
-      <div className="form-group relative">
-        <label htmlFor="">Mobile Number</label> <br />
-        <input
-          type="number"
-          className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
-          maxLength={12}
+          maxLength={10}
           value={mobileNumber}
           placeholder="Mobile Number"
           onChange={(e) => {
-            setMobileNumber(e.target.value);
+            setMobileNumber(e.target.value.replace(/[^0-9]/g, ""));
           }}
         />
         <img src={user} className="absolute bottom-3 left-2" alt="user" />
       </div>
-      <div className="form-group relative">
+      <div className="relative form-group">
         <label htmlFor="">Pincode</label> <br />
         <input
-          type="number"
+          type="text"
           className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
           maxLength={6}
           placeholder="Pincode"
           value={pincode}
           onChange={(e) => {
-            setPincode(e.target.value);
+            setPincode(e.target.value.replace(/[^0-9]/g, ""));
           }}
         />
         <img src={lock} className="absolute bottom-3 left-2" alt="user" />
       </div>
-      <div className="form-group relative">
+      <div className="relative form-group">
         <button
           className="bg-[#2E30A5] px-5px w-full text-white rounded-xl py-1 mt-4"
           type="submit"
