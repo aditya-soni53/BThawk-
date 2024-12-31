@@ -145,12 +145,15 @@ export default function Pricing() {
           <div className="bg-[#EDEAFF] block p-4 rounded-lg leading-none">
             <h2>Starting from</h2>
             <div className="flex items-baseline my-3">
-              <s>{isYearly ? "4999" : "1999"}</s>
+              <s>{isYearly ? "3999" : "399"}</s>
               <h2 className="text-5xl">₹{isYearly ? "1999" : "199"}/ </h2>
               <p>{isYearly ? "yearly" : "monthly"}</p>
             </div>
             <h2>Business Plan</h2>
             {/* <p className='leading-none'>Small businesses and startups automating their operations.</p> */}
+            <p className="absolute top-0 bg-[#8d7fdc] text-white p-3 right-0 rounded-s-full">
+              50% off
+            </p>
           </div>
           <div className="px-5 mt-5">
             <ul className="mb-3">
@@ -222,7 +225,7 @@ export default function Pricing() {
           <div className="bg-[#FFF7E2]  p-4 rounded-lg leading-none relative">
             <h2>Starting from</h2>
             <div className="flex items-baseline my-3">
-              <s>{isYearly ? "8999" : "3999"}</s>
+              <s>{isYearly ? "5999" : "599"}</s>
               <h2 className="text-5xl">₹{isYearly ? "2999" : "299"}/ </h2>
               <p>{isYearly ? "yearly" : "monthly"}</p>
             </div>
