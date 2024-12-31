@@ -31,7 +31,7 @@ const Modals = ({ jobId }) => {
       return;
     }
 
-    // Name validation 
+    // Name validation
     if (mname.length < 2 || mname.length > 100) {
       Swal.fire({
         title: "Error",
@@ -88,12 +88,11 @@ const Modals = ({ jobId }) => {
     }
 
     const EmptyState = () => {
-      setMname('');
-      setMemail('');
-      setMmobile('');
+      setMname("");
+      setMemail("");
+      setMmobile("");
       setMresume(null);
-
-    }
+    };
 
     try {
       const formData = new FormData();
@@ -104,10 +103,7 @@ const Modals = ({ jobId }) => {
       formData.append("user_doc", mresume);
       formData.append("job_id", jobId);
 
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}`,
-        formData
-      );
+      const res = await axios.post(`https://www.bthawk.com/api/api`, formData);
 
       // console.log(res);
 

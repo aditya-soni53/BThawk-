@@ -17,7 +17,7 @@ export default function Career() {
     const fetchJobs = async () => {
       setSpinner(true);
       try {
-        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
+        const res = await axios.post(`https://www.bthawk.com/api/api`, {
           type: "career",
         });
 

@@ -21,13 +21,13 @@ export default function Careerdetail() {
   const [jobsData, setJobdata] = useState([]);
   const [spinner, setSpinner] = useState(true);
   const url = window.location.href;
-  
+
   useEffect(() => {
     const retaledJob = async () => {
       try {
         // console.log(jobSlug);
 
-        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
+        const res = await axios.post(`https://www.bthawk.com/api/api`, {
           type: "jobDetailFetch",
           title_slug: jobSlug,
         });

@@ -20,7 +20,7 @@ export default function ReviewList() {
 
   // Fetch State
   const fetchState = async () => {
-    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
+    const res = await axios.post(`https://www.bthawk.com/api/api`, {
       type: "getStateList",
     });
 
@@ -95,7 +95,7 @@ export default function ReviewList() {
     // console.log(selectedState);
     SetsmallLoader(true);
 
-    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}`, {
+    const res = await axios.post(`https://www.bthawk.com/api/api`, {
       type: "stateWiseReviewFetch",
       state: selectedState,
     });

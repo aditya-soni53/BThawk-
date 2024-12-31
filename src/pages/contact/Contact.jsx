@@ -11,7 +11,7 @@ import letter_send from "../../assets/image/letter_send 1.png";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import Swal from "sweetalert2";
-import banner1 from '../../assets/image/contact-us.jpg'
+import banner1 from "../../assets/image/contact-us.jpg";
 import Topbanner from "../../component/layout/topBanner/Topbanner";
 const HeroText = "Any question or remarks? Just write us a message !";
 const ContactInfo = [
@@ -44,12 +44,10 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-
   const [errors, setErrors] = useState({}); // To store validation errors
 
   // Validation function
   const validate = () => {
-
     let newErrors = {};
     if (!formData.f_name.trim()) newErrors.f_name = "First Name is required";
     if (!formData.l_name.trim()) newErrors.l_name = "Last Name is required";
@@ -94,19 +92,15 @@ const Contact = () => {
     e.preventDefault();
     if (validate()) {
       setLoading(true);
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}`,
-        {
-          type: "addContact",
-          first_name: formData.f_name,
-          last_name: formData.l_name,
-          email: formData.email,
-          mobile_number: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-        }
-      );
-
+      const res = await axios.post(`https://www.bthawk.com/api/api`, {
+        type: "addContact",
+        first_name: formData.f_name,
+        last_name: formData.l_name,
+        email: formData.email,
+        mobile_number: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      });
 
       if (res.data.status === 1) {
         setLoading(false);
@@ -115,7 +109,7 @@ const Contact = () => {
           text: "Our Team Wil Contact You Soon",
           icon: "success",
           confirmButtonText: "OK",
-        }).then(()=>{
+        }).then(() => {
           setFormData({
             f_name: "",
             l_name: "",
@@ -123,8 +117,8 @@ const Contact = () => {
             phone: "",
             subject: "",
             message: "",
-          })
-        })
+          });
+        });
       } else {
         setLoading(false);
         Swal.fire({
@@ -141,14 +135,23 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title> Contact BTHAWK - GST Billing, Accounting, and Compliance Help </title>
-        <meta name="keywords" content="contact BTHAWK, GST billing support, accounting help, business compliance, BTHAWK support" />
-        <meta name="description" content="Get in touch with BTHAWK for GST billing, accounting, and compliance support. Contact us for expert assistance and streamline your business needs." />
+        <title>
+          {" "}
+          Contact BTHAWK - GST Billing, Accounting, and Compliance Help{" "}
+        </title>
+        <meta
+          name="keywords"
+          content="contact BTHAWK, GST billing support, accounting help, business compliance, BTHAWK support"
+        />
+        <meta
+          name="description"
+          content="Get in touch with BTHAWK for GST billing, accounting, and compliance support. Contact us for expert assistance and streamline your business needs."
+        />
         <link rel="canonical" href={`${basePath}/contact`} />
       </Helmet>
       <section className="contact-section">
-      <Topbanner banner={banner1} />
-        <Hero text={HeroText} show={false} heading="Contact Us"  />
+        <Topbanner banner={banner1} />
+        <Hero text={HeroText} show={false} heading="Contact Us" />
         <div className="w-11/12 mx-auto mt-14 contact_us-details mb-14">
           <div className="container flex flex-col p-2 mx-auto md:flex-row contact_us-container">
             <aside className="p-10 contact_us-details_left md:w-4/12">
@@ -280,7 +283,7 @@ const Contact = () => {
                         type="text"
                         className="w-full py-1 transition-colors border-b border-black custom-input focus:border-b-2 focus:border-blue-700 focus:outline-none peer bg-inherit"
                         value={formData.subject}
-                        onChange={handleChange}
+                        onChange={6}
                       />
                       {/* <select className="w-full py-1 transition-colors border-b border-black custom-input focus:border-b-2 focus:border-blue-700 focus:outline-none peer bg-inherit" name="" id="" value={formData.subject} onChange={handleChange}>
                         <option value="query">Query</option>
@@ -331,7 +334,11 @@ const Contact = () => {
                       <div className="w-full md:w-1/2"></div>
                       <div className="w-full md:w-1/2 text-end">
                         <button className="px-8 py-2 text-sm font-normal text-white transition-all duration-300 ease-in-out bg-blue-700 rounded sm:text-base hover:bg-blue-800 hover:shadow-lg hover:scale-105">
-                          {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : "Send Message"}
+                          {loading ? (
+                            <FontAwesomeIcon icon={faSpinner} spin />
+                          ) : (
+                            "Send Message"
+                          )}
                         </button>
                       </div>
                     </div>

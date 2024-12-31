@@ -10,7 +10,7 @@ export default function Service() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}`, {
+        const response = await fetch(`https://www.bthawk.com/api/api`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ type: "serviceListFetch" }),
