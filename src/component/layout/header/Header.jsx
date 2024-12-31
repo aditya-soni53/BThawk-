@@ -207,28 +207,17 @@ export default function Header() {
                                 <ul className="flex flex-col gap-3 mb-0">
                                   <li>
                                     <NavLink
-                                      to="/Service/annual-filing-for-llp"
+                                      to="https://bthawk.appexperts.net/" target="_blank"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Annual Form Filing
+                                      BTHAWK
                                     </NavLink>
                                   </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/accounting"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Accounting Service
-                                    </NavLink>
-                                  </li>
+                                 
                                 </ul>
                               </div>
                             )}
@@ -272,112 +261,100 @@ export default function Header() {
                                 }`}
                               >
                                 <ul className="flex flex-col gap-2 mb-0">
-                                  <li>
+                                <li>
                                     <NavLink
-                                      to="/Service/msme-udyam-registration"
+                                      to="/Service/accounting"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      MSME Udyam Registration
+                                      Accounting Service
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/business-registration-number"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      BRN Number Registration
+                                      Balance Sheet
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/company-registration-service"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Company Registration
+                                      Profit & Loss
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/private-limited-company-registration"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Private Limited Company Registration
+                                      Capital Account
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/limited-liability-company-registration"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Limited Liability Company Registration
+                                      Inventory Management
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/trade-license"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Trade License Online
+                                      CMA Report
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/digital-signature-certificate"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      Digital Signature Certificate
+                                      Asset Register
                                     </NavLink>
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/Service/fssai-registration"
+                                      to="/Service/scrutiny-assessment"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
                                         }`
                                       }
                                     >
-                                      FSSAI Registration
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
-                                      to="/Service/import-export-code-registration"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Import Export Code Registration
+                                      Scrutiny Assessment
                                     </NavLink>
                                   </li>
                                 </ul>
@@ -456,6 +433,18 @@ export default function Header() {
                                       Income Tax Return Filing
                                     </NavLink>
                                   </li>
+                                  <li>
+                                    <NavLink
+                                      to="/coomingsoon"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Financial Prepration
+                                    </NavLink>
+                                  </li>
                                 </ul>
                               </div>
                             )}
@@ -498,18 +487,6 @@ export default function Header() {
                                 <ul className="flex flex-col gap-2 mb-0">
                                   <li>
                                     <NavLink
-                                      to="/Service/scrutiny-assessment"
-                                      className={({ isActive }) =>
-                                        `cursor-pointer hover:text-orange-400 ${
-                                          isActive ? "text-orange-400" : ""
-                                        }`
-                                      }
-                                    >
-                                      Scrutiny Assessment
-                                    </NavLink>
-                                  </li>
-                                  <li>
-                                    <NavLink
                                       to="/Service/gst-registration-online"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
@@ -518,6 +495,138 @@ export default function Header() {
                                       }
                                     >
                                       GST Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/msme-udyam-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      MSME Udyam Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/business-registration-number"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      BRN Number Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/company-registration-service"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Company Registration
+                                    </NavLink>
+                                  </li>
+                                  {/* <li>
+                                    <NavLink
+                                      to="/Service/private-limited-company-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Private Limited Company Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/limited-liability-company-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Limited Liability Company Registration
+                                    </NavLink>
+                                  </li> */}
+                                  <li>
+                                    <NavLink
+                                      to="/Service/trade-license"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Trade License Online
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/digital-signature-certificate"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Digital Signature Certificate
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/fssai-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      FSSAI Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/Service/import-export-code-registration"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Import Export Code Registration
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/coomingsoon"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Virtual CFO
+                                    </NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink
+                                      to="/coomingsoon"
+                                      className={({ isActive }) =>
+                                        `cursor-pointer hover:text-orange-400 ${
+                                          isActive ? "text-orange-400" : ""
+                                        }`
+                                      }
+                                    >
+                                      Virtual Accounting
                                     </NavLink>
                                   </li>
                                 </ul>

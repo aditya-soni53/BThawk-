@@ -40,7 +40,10 @@ export default function Banner() {
         </Slider>
         </div>
         <div className="about-bthawk md:w-7/12 overflow-hidden" data-aos="fade-up" data-aos-duration="300" data-aos-delay="100">
-            <p><b className='primary-color'>BTHAWK:</b> Where the word BT stands for Bell Technology and there is a reason that we have used the term HAWK because, Just a way a Hawk keeps a <b className='primary-color'>360 degree </b> eye on every single thing similarly, We keep a <b className='primary-color'>360 degree </b> eye on every financial and <b className='primary-color'>accounting complications of the businessmen </b> and the channel partners who are the backbone of a company.</p>
+            <p><b className='primary-color'>BTHAWK:</b>A Name with Meaning and Purpose </p>
+            <p>The "BT" in BTHAWK stands for Bell Technology, reflecting our commitment to cutting-edge innovation. The term "HAWK" is deliberate, symbolizing vigilance and precision.</p>
+            <p>Just as a hawk keeps a 360-degree watch over its surroundings, BTHAWK ensures comprehensive oversight of every financial and accounting detail for businesses and their channel partners — the true backbone of any organization.</p>
+            <p>BTHAWK is not just a solution but a trusted partner dedicated to simplifying your financial complexities and enhancing Business Growth.</p>
         </div>
         </>
       );
