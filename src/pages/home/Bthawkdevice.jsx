@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import mobile from "../../assets/image/mobile-device.svg";
 import playstore from "../../assets/image/play-store.svg";
 import appstore from "../../assets/image/app-store.svg";
-import webstore from "../../assets/image/web-screen.webp";
+import webstore from "../../assets/image/web-screen.png";
 import Aos from "aos";
 export default function Bthawkdevice () {
 

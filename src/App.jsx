@@ -19,6 +19,7 @@ import Aos from "aos";
 import Faq from "./pages/Faq";
 import Career from "./pages/career/Career";
 import Careerdetail from "./pages/career/Careerdetail";
+import ComingSoon from "./pages/comingSoon/ComingSoon";
 
 function App() {
   
@@ -41,6 +42,7 @@ return (
           <Route path="/faq" element={<Faq />} />        
           <Route path="/career" element={<Career />} />      
           <Route path="/career/:jobSlug/:jobId" element={<Careerdetail />} />  
+          <Route path="/comingsoon" element = {<ComingSoon/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

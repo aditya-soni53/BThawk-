@@ -1,9 +1,10 @@
 import React from 'react'
+import ComingSoonImage from "../../assets/image/comingSoon.png"
 
 function ComingSoon() {
   return (
-    <div>
-        
+    <div className=''>
+        <img className='img-fluid' src={ComingSoonImage} alt="" srcset="" />
     </div>
   )
 }
