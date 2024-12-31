@@ -50,17 +50,11 @@ export default function Feature() {
           data-aos-duration="200"
           data-aos-delay="200"
         >
-          <div className="sticky top-[120px]">
-            <h1 className="w-full border-b-2 Feature-heading border-b-zinc-950">
-              Top Features
-            </h1>
-            <p className="pt-2 text-gray-600">
-              Start Working with Finest GST Billing Solution and stay ahead from
-              your competitors with more focus on core Business. With advanced
-              technology,<b className="text-black"> BTHAWK </b>provide you
-              complete accounting solutions for your growing business.
-            </p>
-          </div>
+          <div className='sticky top-[120px]'>
+                        <h1 className='w-full border-b-2 Feature-heading border-b-zinc-950'>Top Features</h1>
+                        <p className='pt-2 text-gray-600'><b className='primary-color'>Start Working with the Finest GST Billing Solution!</b>
+                        <b className='primary-color'>Stay ahead of your competitors and focus more on your core business.</b>With advanced technology, BTHAWK delivers comprehensive accounting solutions tailored for your growing business needs. Empower your operations, simplify compliance, and take the leap toward excellence today</p>
+                    </div>
         </div>
         <div className="grid col-span-2 gap-4 p-2 mt-3 mb-4 ml-auto overflow-hidden sm:grid-cols-2 lg:w-9/12">
           <div

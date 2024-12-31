@@ -54,7 +54,7 @@ export default function Home() {
         <meta property="twitter:type" content="BTHAWK" />
         <link rel="canonical" href={`${basePath}/`} />
       </Helmet>
-      <Banner />
+      <Banner /> 
        <Feature />
      <Howcan />
        <Appshowcase />

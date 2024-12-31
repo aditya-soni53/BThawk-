@@ -17,7 +17,7 @@ export default function Ourblog() {
             View All
           </Link>
         </div>
-        <div className="grid grid-cols-1 py-8 md:py-14 md:grid-cols-2">
+        <div className="grid grid-cols-1 py-8 md:py-14 md:grid-cols-2 gap-1">
           {data.slice(0, 8).map((item, index) => (
             <Link to={`/Blogs/${item.title_slug}`} key={index}>
               <div className="grid w-full grid-cols-4 gap-4 mb-5 review">

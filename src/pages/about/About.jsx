@@ -10,49 +10,49 @@ const features = [
     id: 1,
     title: "B",
     description: "Bills at anyplace, anytime",
-    margin_left: true,
+    // margin_left: true,
   },
   {
     id: 2,
     title: "A",
     description: "Auto Tax Calculation",
-    margin_left: true,
+    // margin_left: true,
   },
   {
     id: 3,
     title: "M",
     description: "Mobile App Based E-invoice",
-    margin_left: true,
+    // margin_left: true,
   },
   {
     id: 4,
     title: "O",
     description: "Order Management",
-    margin_left: true,
+    // margin_left: true,
   },
   {
     id: 5,
     title: "I",
     description: "Inventory Management",
-    margin_left: false,
+    // margin_left: false,
   },
   {
     id: 6,
     title: "G",
     description: "GST Compliance",
-    margin_left: true,
+    // margin_left: true,
   },
   {
     id: 7,
     title: "B",
     description: "Business Reports",
-    margin_left: true,
+    // margin_left: true,
   },
   {
     id: 8,
     title: "T",
     description: "Track Salesman Location",
-    margin_left: true,
+    // margin_left: true,
   },
 ];
 
@@ -147,6 +147,34 @@ const mentors = [
     designation: "Business Leader",
     img: mentorsImg[9],
     link: "https://www.linkedin.com/in/ankit-gori-00b16a23a/",
+  },
+  {
+    id: 14,
+    name: "Mohit Chauhan",
+    designation: "Complince Leader",
+    img: mentorsImg[13],
+    link: "https://www.linkedin.com/in/mohitchauhanzucol1072/",
+  },
+  {
+    id: 15,
+    name: "Ankita Arya",
+    designation: "Complince Leader",
+    img: mentorsImg[14],
+    link: "https://www.linkedin.com/in/ankita-arya-a293321aa/",
+  },
+  {
+    id: 16,
+    name: "Azim Ahmed",
+    designation: "Complince Leader",
+    img: mentorsImg[15],
+    link: "https://www.linkedin.com/in/azim-ahmed-qureshi-7176a5222/",
+  },
+  {
+    id: 17,
+    name: "Pooja Kumari",
+    designation: "Complince Leader",
+    img: mentorsImg[16],
+    link: "https://www.linkedin.com/in/pooja-poonia-am-zucol/",
   }
 ];
 
@@ -245,15 +273,15 @@ const About = () => {
                 key={feature.id}
                 className="flex justify-center w-full md:w-1/2 features_box"
               >
-                <div className="flex items-center w-8/12 features-details_wrapper">
+                <div className="flex items-center w-8/12 features-details_wrapper relative">
                   <div className="features_box_icon text-9xl">
                     <span className="font-[750]">{feature.title}</span>
                   </div>
                   <div
                     className={`${
                       feature.margin_left ? "-ml-14" : ""
-                    } features_box_text w-80`}
-                  >
+                    } features_box_text lg:w-80 w-max absolute top-1/3 border rounded-lg left-10`}
+                  > 
                     <span className="py-1 pl-3 pr-6 text-[10px] sm:text-base md:text-lg text-[#252424] font-semibold">
                       {feature.description}
                     </span>

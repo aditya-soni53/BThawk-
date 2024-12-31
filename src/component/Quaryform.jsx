@@ -57,6 +57,10 @@ export default function QueryForm() {
       return; // Stop submission if form is invalid
     }
 
+    if (name.length < 3) {
+      return;
+    }
+
     try {
       const res = await axios.post("https://www.bthawk.com/api/api", {
         pincode: pincode,
@@ -93,17 +97,16 @@ export default function QueryForm() {
 
   return (
     <form
-      className="lg:shadow-2xl border-2 p-7 py-8 rounded-xl bg-white"
+      action=""
+      className="py-8 bg-white border-2 lg:shadow-2xl p-7 rounded-xl"
       onSubmit={handleSubmit}
     >
-      <p className="text-2xl mb-3">
+      <p className="mb-3 text-2xl">
         Connect with <span className="text-[#F3771E] font-semibold">BT</span>
         <span className="font-semibold text-[#2E30A5] ">HAWK</span>
       </p>
-
-      {/* Name Field */}
-      <div className="form-group mt-2">
-        <div className="relative">
+      <div className="form-group">
+        <div className="relative ">
           <label htmlFor="">Name</label> <br />
           <input
             type="text"
@@ -111,57 +114,49 @@ export default function QueryForm() {
             maxLength={30}
             placeholder="Name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <img src={user} className="absolute bottom-3 left-2" alt="user" />
-        </div>
-        {errors.name && <p className="pt-1 text-sm text-red-600">{errors.name}</p>}
-      </div>
-
-      {/* Mobile Number Field */}
-      <div className="form-group relative mt-2">
-        <div className="relative">
-          <label htmlFor="">Mobile Number</label> <br />
-          <input
-            type="text" // Use text type and validate manually
-            className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
-            maxLength={10} // Max length of 10 for mobile number
-            value={mobileNumber}
-            placeholder="Mobile Number"
             onChange={(e) => {
-              const value = e.target.value.replace(/\D/g, ""); // Allow only digits
-              setMobileNumber(value);
+              setName(() => e.target.value.replace(/[^a-zA-Z]/g, ""));
             }}
           />
           <img src={user} className="absolute bottom-3 left-2" alt="user" />
         </div>
-        {errors.mobileNumber && (
-          <p className="pt-1 text-sm text-red-600">{errors.mobileNumber}</p>
+        {name && name.length < 3 ? (
+          <p className="py-2 pl-1 text-xs text-red-500">
+            Name must be at least 2 characters long
+          </p>
+        ) : (
+          ""
         )}
       </div>
-
-      {/* Pincode Field */}
-      <div className="form-group mt-2">
-        <div className="relative">
-          <label htmlFor="">Pincode</label> <br />
-          <input
-            type="text" // Use text type and validate manually
-            className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
-            maxLength={6} // Max length of 6 for pincode
-            placeholder="Pincode"
-            value={pincode}
-            onChange={(e) => {
-              const value = e.target.value.replace(/\D/g, ""); // Allow only digits
-              setPincode(value);
-            }}
-          />
-          <img src={lock} className="absolute bottom-3 left-2" alt="lock" />
-        </div>
-        {errors.pincode && <p className="pt-1 text-sm text-red-600">{errors.pincode}</p>}
+      <div className="relative form-group">
+        <label htmlFor="">Mobile Number</label> <br />
+        <input
+          type="text"
+          className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
+          maxLength={10}
+          value={mobileNumber}
+          placeholder="Mobile Number"
+          onChange={(e) => {
+            setMobileNumber(e.target.value.replace(/[^0-9]/g, ""));
+          }}
+        />
+        <img src={user} className="absolute bottom-3 left-2" alt="user" />
       </div>
-
-      {/* Submit Button */}
-      <div className="form-group relative">
+      <div className="relative form-group">
+        <label htmlFor="">Pincode</label> <br />
+        <input
+          type="text"
+          className="bg-[#F4F4F4] w-full my-1 p-1 pl-10 rounded-xl"
+          maxLength={6}
+          placeholder="Pincode"
+          value={pincode}
+          onChange={(e) => {
+            setPincode(e.target.value.replace(/[^0-9]/g, ""));
+          }}
+        />
+        <img src={lock} className="absolute bottom-3 left-2" alt="user" />
+      </div>
+      <div className="relative form-group">
         <button
           className="bg-[#2E30A5] px-5 w-full text-white rounded-xl py-1 mt-4"
           type="submit"

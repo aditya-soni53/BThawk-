@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import app1 from "../../assets/image/app-1.svg";
+import app2 from "../../assets/image/app-2.svg";
+import app3 from "../../assets/image/app-3.svg";
 import Listicon from "../../assets/image/list-icon.svg";
 import Aos from "aos";
 import { Context } from "../../Context";
@@ -147,7 +149,7 @@ export default function Appshowcase() {
                 data-aos-duration="600"
                 data-aos-delay="300"
               >
-                <img src={app1} alt="home-img" className="mx-auto app-img" />
+                <img src={app2} alt="home-img" className="mx-auto app-img" />
               </div>
               <div className="app-cards">
                 <div className="appcard-1 aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
@@ -185,7 +187,7 @@ export default function Appshowcase() {
               aria-labelledby="admin-tab"
             >
               <div className="app-img text-center">
-                <img src={app1} alt="home-img" className="mx-auto app-img" />
+                <img src={app3} alt="home-img" className="mx-auto app-img" />
               </div>
               <div className="app-cards">
                 <div className="appcard-1">
