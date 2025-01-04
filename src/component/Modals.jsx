@@ -8,62 +8,47 @@ const Modals = ({ jobId }) => {
   const [memail, setMemail] = useState("");
   const [mmobile, setMmobile] = useState("");
   const [mresume, setMresume] = useState(null);
+  const [validationErrors, setValidationErrors] = useState({});
+
+  const EmptyState = () => {
+    setMname("");
+    setMemail("");
+    setMmobile("");
+    setMresume(null);
+  };
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+    setValidationErrors({});
+    EmptyState();
   };
 
   const handleFileChange = (e) => {
-    setMresume(e.target.files[0]);
+    if (e.target.files && e.target.files.length > 0) {
+      setMresume(e.target.files[0]);
+      setValidationErrors({ ...validationErrors, resume: "" });
+    }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Basic field validation
-    if (!mname || !memail || !mmobile || !mresume) {
-      Swal.fire({
-        title: "Error",
-        text: "Please fill in all the fields",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
-    }
-
+  const validate = () => {
+    const newErrors = {};
     // Name validation
-    if (mname.length < 2 || mname.length > 100) {
-      Swal.fire({
-        title: "Error",
-        text: "Name should be between 2 and 100 characters",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
+    if (!mname) {
+      newErrors.name = "Name is required";
+    } else if (mname.length < 2 || mname.length > 50) {
+      newErrors.name = "Name must be between 2 and 100 characters long";
     }
 
     // Email validation (simple regex for email format)
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailRegex.test(memail)) {
-      Swal.fire({
-        title: "Error",
-        text: "Please enter a valid email address",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
+      newErrors.email = "Please enter a valid email address";
     }
 
     // Phone number validation (only digits and length check)
     const phoneRegex = /^[0-9]{10}$/; // Simple 10-digit phone number format
     if (!phoneRegex.test(mmobile)) {
-      Swal.fire({
-        title: "Error",
-        text: "Please enter a valid 10-digit phone number",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
+      newErrors.phone = "Please enter a valid 10-digit phone number";
     }
 
     // File validation (only allow PDF or DOCX files and check file size)
@@ -74,65 +59,66 @@ const Modals = ({ jobId }) => {
     ];
     const maxFileSize = 5 * 1024 * 1024; // Max file size of 5MB
 
-    if (
-      mresume &&
-      (!validFileTypes.includes(mresume.type) || mresume.size > maxFileSize)
-    ) {
-      Swal.fire({
-        title: "Error",
-        text: "Please upload a valid resume (PDF or DOCX, max size: 5MB)",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
+    if (!mresume) {
+      newErrors.resume = "Resume is required";
+    } else if (!validFileTypes.includes(mresume.type)) {
+      newErrors.resume = "Please upload a PDF or DOCX file";
+    } else if (mresume.size > maxFileSize) {
+      newErrors.resume = "File size should not exceed 5MB";
     }
 
-    const EmptyState = () => {
-      setMname("");
-      setMemail("");
-      setMmobile("");
-      setMresume(null);
-    };
+    setValidationErrors(newErrors);
 
-    try {
-      const formData = new FormData();
-      formData.append("type", "jobQuery");
-      formData.append("applicant_name", mname);
-      formData.append("applicant_email", memail);
-      formData.append("applicant_mobile_number", mmobile);
-      formData.append("user_doc", mresume);
-      formData.append("job_id", jobId);
+    return Object.keys(newErrors).length === 0;
+  }
 
-      const res = await axios.post(`https://www.bthawk.com/api/api`, formData);
+  console.log('validationErrors', validationErrors);
 
-      // console.log(res);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      if (res.data.status === 1) {
-        Swal.fire({
-          title: "Success",
-          text: "Our team will contact you soon",
-          icon: "success",
-          confirmButtonText: "OK",
-        }).then(() => {
-          setIsModalOpen(false);
-          EmptyState();
-        });
-      } else {
+    // Basic field validation
+    if (validate()) {
+      try {
+        const formData = new FormData();
+        formData.append("type", "jobQuery");
+        formData.append("applicant_name", mname);
+        formData.append("applicant_email", memail);
+        formData.append("applicant_mobile_number", mmobile);
+        formData.append("user_doc", mresume);
+        formData.append("job_id", jobId);
+
+        const res = await axios.post(`https://www.bthawk.com/api/api`, formData);
+
+        // console.log(res);
+
+        if (res.data.status === 1) {
+          Swal.fire({
+            title: "Success",
+            text: "Our team will contact you soon",
+            icon: "success",
+            confirmButtonText: "OK",
+          }).then(() => {
+            setIsModalOpen(false);
+            EmptyState();
+          });
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: "There is some error",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      } catch (error) {
+        console.error("Error in submitting form:", error);
         Swal.fire({
           title: "Error",
-          text: "There is some error",
+          text: "Something went wrong, please try again later",
           icon: "error",
           confirmButtonText: "OK",
         });
       }
-    } catch (error) {
-      console.error("Error in submitting form:", error);
-      Swal.fire({
-        title: "Error",
-        text: "Something went wrong, please try again later",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
     }
   };
 
@@ -168,35 +154,56 @@ const Modals = ({ jobId }) => {
             >
               {/* Modal Content */}
               <div className="px-4 pt-5 pb-2 bg-white sm:p-6 sm:pb-4">
-                <label className="font-medium text-gray-800">Name</label>
-                <input
-                  type="text"
-                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
-                  value={mname}
-                  onChange={(e) => setMname(e.target.value)}
-                />
-                <label className="font-medium text-gray-800">Email</label>
-                <input
-                  type="email"
-                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
-                  value={memail}
-                  onChange={(e) => setMemail(e.target.value)}
-                />
-                <label className="font-medium text-gray-800">Phone no.</label>
-                <input
-                  type="number"
-                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
-                  value={mmobile}
-                  onChange={(e) => setMmobile(e.target.value)}
-                />
-                <label className="font-medium text-gray-800">
-                  Upload Your CV / Resume
-                </label>
-                <input
-                  type="file"
-                  className="w-full p-2 mt-2 mb-3 bg-gray-100 rounded outline-none"
-                  onChange={handleFileChange}
-                />
+                <div className="name-input">
+                  <label className="font-medium text-gray-800 required">Name</label>
+                  <input
+                    type="text"
+                    className="w-full p-1 px-2 m-0 mb-1 bg-gray-100 rounded outline-none required"
+                    value={mname}
+                    onChange={(e) => { setMname(e.target.value.slice(0, 50)); setValidationErrors({ ...validationErrors, name: "" }) }}
+                  />
+                  {validationErrors.name && (
+                    <p className="text-red-500">{validationErrors.name}</p>
+                  )}
+                </div>
+                <div className="email-input">
+                  <label className="font-medium text-gray-800 required">Email</label>
+                  <input
+                    type="email"
+                    className="w-full p-1 px-2 m-0 mb-1 bg-gray-100 rounded outline-none"
+                    value={memail}
+                    onChange={(e) => { setMemail(e.target.value); setValidationErrors({ ...validationErrors, email: "" }) }}
+                  />
+                  {validationErrors.email && (
+                    <p className="text-red-500">{validationErrors.email}</p>
+                  )}
+                </div>
+                <div className="phone-input">
+                  <label className="font-medium text-gray-800 required">Phone no.</label>
+                  <input
+                    type="text"
+                    className="w-full p-1 px-2 m-0 mb-1 bg-gray-100 rounded outline-none"
+                    value={mmobile}
+                    onChange={(e) => { setMmobile(e.target.value.replace(/\D/g, "").slice(0, 10)); setValidationErrors({ ...validationErrors, phone: "" }) }}
+                  />
+                  {validationErrors.phone && (
+                    <p className="text-red-500">{validationErrors.phone}</p>
+                  )}
+                </div>
+                <div className="resume-input">
+                  <label className="font-medium text-gray-800 required">
+                    Upload Your CV / Resume
+                  </label>
+                  <input
+                    type="file"
+                    className="w-full p-1 px-2 m-0 mb-1 bg-gray-100 rounded outline-none"
+                    accept=".pdf,.doc,.docx"
+                    onChange={handleFileChange}
+                  />
+                  {validationErrors.resume && (
+                    <p className="text-red-500">{validationErrors.resume}</p>
+                  )}
+                </div>
               </div>
               <div className="px-4 py-3 text-right bg-gray-200">
                 <button

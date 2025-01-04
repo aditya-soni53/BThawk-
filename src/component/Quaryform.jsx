@@ -63,7 +63,7 @@ export default function Quaryform() {
       setName(sanitizedValue);
     }
   };
-
+  
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -53,7 +53,7 @@ export default function Blogdetail() {
         if (!response.ok) throw new Error("Failed to fetch blog details");
         const result = await response.json();
         if (result.status === 1) {
-          // console.log(response);
+          console.log('result',result.data);
           setBlog(result.data);
 
           // Extract H2 headings from blog content
@@ -173,7 +173,7 @@ export default function Blogdetail() {
                     e.target.src = "/path-to-fallback-image.jpg";
                   }}
                 />
-                <div className="p-8 blog-main-img">
+                <div className="md:p-8 blog-main-img">
                   <h1 className="text-2xl">{blog.title}</h1>
                   <div className="flex blog-card-footer">
                     <div className="flex p-2">

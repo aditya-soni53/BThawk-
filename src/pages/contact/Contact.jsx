@@ -186,9 +186,8 @@ const Contact = () => {
                 {ContactInfo.map((info) => (
                   <div key={info.id} className="flex items-center gap-3 mb-6">
                     <FontAwesomeIcon
-                      className={`${
-                        info.id === 3 ? "self-start mt-3" : ""
-                      } text-white`}
+                      className={`${info.id === 3 ? "self-start mt-3" : ""
+                        } text-white`}
                       icon={info.icon}
                     />
                     <span className="text-base text-white">{info.text}</span>
@@ -212,11 +211,10 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="f_name"
-                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.f_name ? "text-xs -top-5 text-blue-700" : ""
-                        }`}
+                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${formData.f_name ? "text-xs -top-5 text-blue-700" : ""
+                          }`}
                       >
-                        First Name <span className="text-md text-red-600">*</span>
+                        First Name <span className="text-red-600 text-md">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.f_name}
@@ -236,11 +234,10 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="l_name"
-                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.l_name ? "text-xs -top-5 text-blue-700" : ""
-                        }`}
+                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${formData.l_name ? "text-xs -top-5 text-blue-700" : ""
+                          }`}
                       >
-                        Last Name <span className="text-md text-red-600">*</span> 
+                        Last Name <span className="text-red-600 text-md">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.l_name}
@@ -260,11 +257,10 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="email"
-                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.email ? "text-xs -top-5 text-blue-700" : ""
-                        }`}
+                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${formData.email ? "text-xs -top-5 text-blue-700" : ""
+                          }`}
                       >
-                        Email <span className="text-md text-red-600">*</span>
+                        Email <span className="text-red-600 text-md">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.email}
@@ -284,11 +280,10 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="phone"
-                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.phone ? "text-xs -top-5 text-blue-700" : ""
-                        }`}
+                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${formData.phone ? "text-xs -top-5 text-blue-700" : ""
+                          }`}
                       >
-                        Phone Number <span className="text-md text-red-600">*</span>
+                        Phone Number <span className="text-red-600 text-md">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.phone}
@@ -298,6 +293,7 @@ const Contact = () => {
                   {/* Select (Subject) */}
                   <div className="flex items-center justify-center w-full md:w-5/12">
                     <div className="relative w-full">
+                      {!formData.subject && <span className="absolute text-red-600 left-28 bottom-4 text-md">*</span>}
                       <select
                         id="subject"
                         name="subject"
@@ -326,11 +322,11 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="message"
-                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${
-                          formData.message ? "text-xs -top-5 text-blue-700" : ""
-                        }`}
+                        className={`absolute text-[#8D8D8D] left-0 transition-all cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-blue-700 ${formData.message ? "text-xs -top-5 text-blue-700" : ""
+                          }`}
                       >
                         Message
+                        <span className="text-red-600 text-md">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.message}

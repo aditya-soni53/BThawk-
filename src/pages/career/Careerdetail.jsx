@@ -65,7 +65,7 @@ export default function Careerdetail() {
           <span className="loader"></span>
         </div>
       ) : (
-        <div className="grid w-11/12 grid-cols-4 mx-auto my-8">
+        <div className="grid w-11/12 mx-auto my-8 md:grid-cols-4">
           <div className="p-3 border-2 rounded-xl">
             <h3 className="text-xl text-[#22249B] border-b-2 py-3">
               Job Information
@@ -134,7 +134,7 @@ export default function Careerdetail() {
               </div>
             </div>
           </div>
-          <div className="col-span-3 p-4">
+          <div className="p-4 md:col-span-3">
             <div>
               <p dangerouslySetInnerHTML={{ __html: jobsData.description }} />
               {/* {} */}
