@@ -94,14 +94,14 @@ export default function Servicedata(propes) {
           )}
         </div>
       </div>
-      <div className="w-full lg:p-4 mb-10">
+      <div className="w-full mb-10 lg:p-4">
         <Quaryform />
         <div className="rating grid grid-cols-3 my-4 border-2 border-[#22249B] p-3">
           <div>
             <img src={google} alt="google" />
           </div>
           <div className="col-span-2">
-            <p className="text-xl text-gray-500 font-semibold">Google Rating</p>
+            <p className="text-xl font-semibold text-gray-500">Google Rating</p>
             <p>
               {[...Array(filledStars)].map((_, index) => (
                 <FontAwesomeIcon
@@ -128,7 +128,7 @@ export default function Servicedata(propes) {
                 />
               ))}
             </p>
-            <p className="text-gray-500 text-sm">See all our reviews</p>
+            <p className="text-sm text-gray-500">See all our reviews</p>
           </div>
         </div>
         <div className="table-of-contents sticky top-[100px]">

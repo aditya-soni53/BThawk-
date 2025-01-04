@@ -6,7 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-export default function Career() {
+export default function   Career() {
   const [jobs, setJob] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -69,7 +69,7 @@ export default function Career() {
           <div className="w-11/12 mx-auto mt-10">
             <h1 className="text-2xl">All Job</h1>
           </div>
-          <div className="grid items-start w-11/12 grid-cols-4 gap-8 mx-auto mt-2 mb-10">
+          <div className="grid items-start w-11/12 gap-8 mx-auto mt-2 mb-10 md:grid-cols-4">
             {
               jobs.map((item, index) => (
                 <div className="app-cards" key={index}>

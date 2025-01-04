@@ -365,6 +365,11 @@ header {
   width: 180px;
 }
 
+.required::after {
+  content: "*";
+  color: red;
+}
+
 @media (max-width: 991px) {
   .logo-main {
     width: 150px;
@@ -446,7 +451,7 @@ header {
     width: 11rem;
   }
   .banner-img img {
-    height: 230px;
+    /* height: 230px; */
     object-fit: cover;
   }
 }
@@ -813,5 +818,4 @@ ul {
   .about-bthawk{
     bottom: -100px;
   } */
-
 }

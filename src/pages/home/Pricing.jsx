@@ -155,7 +155,7 @@ export default function Pricing() {
               50% off
             </p>
           </div>
-          <div className="px-5 mt-5">
+          <div className="px-5 mt-5 mb-3">
             <ul className="mb-3">
               <li className="flex mt-2">
                 {" "}

@@ -151,7 +151,7 @@ export default function Quaryform() {
       </p>
       <div className="form-group">
         <div className="relative">
-          <label htmlFor="name">Name</label> <br />
+          <label htmlFor="name" className="required">Name</label> <br />
           <input
             type="text"
             name="name"
@@ -170,7 +170,7 @@ export default function Quaryform() {
       </div>
       <div className="form-group">
         <div className="relative">
-          <label htmlFor="mobileNumber">Mobile Number</label> <br />
+          <label htmlFor="mobileNumber" className="required">Mobile Number</label> <br />
           <input
             type="text"
             name="mobileNumber"
@@ -190,7 +190,7 @@ export default function Quaryform() {
       </div>
       <div className="form-group">
         <div className="relative">
-          <label htmlFor="pincode">Pincode</label> <br />
+          <label htmlFor="pincode" className="required">Pincode</label> <br />
           <input
             type="text"
             name="pincode"

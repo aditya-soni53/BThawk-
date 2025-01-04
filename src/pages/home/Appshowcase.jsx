@@ -22,12 +22,12 @@ export default function Appshowcase() {
   return (
     <div className="overflow-hidden">
       <div
-        className="lg:w-8/12 w-11/12 mx-auto text-center md:p-10 p-2 mt-8 aos-animate"
+        className="w-11/12 p-2 mx-auto mt-8 text-center lg:w-8/12 md:p-10 aos-animate"
         data-aos="fade-down"
         data-aos-duration="600"
         data-aos-delay="300"
       >
-        <h1 className="text-3xl pb-3">
+        <h1 className="pb-3 text-3xl">
           <span className="text-[#F3771E]">BT</span>
           <span className="text-[#22249B]">HAWK</span> App Showcase
         </h1>
@@ -36,9 +36,9 @@ export default function Appshowcase() {
           3 applications{" "}
         </p>
       </div>
-      <div className="w-11/12 mx-auto grid lg:grid-cols-3 mt-4">
+      <div className="grid w-11/12 mx-auto mt-4 lg:grid-cols-3">
         <div
-          className="grid lg:grid-cols-2 grid-cols-3  apps gap-4 place-content-center aos-animate"
+          className="grid grid-cols-3 gap-4 lg:grid-cols-2 apps place-content-center aos-animate"
           data-aos="fade-right"
           data-aos-duration="600"
           data-aos-delay="300"
@@ -55,10 +55,10 @@ export default function Appshowcase() {
             aria-controls="admin"
             aria-selected={activeTab === "admin"}
           >
-            <div className="app-icon m-auto">
+            <div className="m-auto app-icon">
               <FontAwesomeIcon icon={faUserTie} />
             </div>
-            <b>ADMIN APP (ADMINISTRATION APP)</b>
+            <b className="text-[.7rem] mt-1 md:text-base leading-5">ADMIN APP (ADMINISTRATION APP)</b>
           </button>
 
           <button
@@ -73,10 +73,10 @@ export default function Appshowcase() {
             aria-controls="fse"
             aria-selected={activeTab === "fse"}
           >
-            <div className="app-icon m-auto">
+            <div className="m-auto app-icon">
               <FontAwesomeIcon icon={faUserTie} />
             </div>
-            <b>FSE App</b>
+            <b className="text-[.7rem] mt-1 md:text-base leading-5">FSE App</b>
           </button>
           <button
             className={`app-1 p-4 border-b-2 rounded-t-lg ${
@@ -88,21 +88,21 @@ export default function Appshowcase() {
             aria-controls="retailer"
             aria-selected={activeTab === "retailer"}
           >
-            <div className="app-icon m-auto">
+            <div className="m-auto app-icon">
               <FontAwesomeIcon icon={faUserTie} />
             </div>
-            <b className="app-btn-1">RETAILER APP</b>
+            <b className="text-[.7rem] mt-1 md:text-base leading-5 app-btn-1 mt">RETAILER APP</b>
           </button>
         </div>
         <div className="lg:col-span-2">
           {activeTab === "admin" && (
             <div
-              className="grid md:grid-cols-2 md:w-11/12 mx-auto"
+              className="grid mx-auto md:grid-cols-2 md:w-11/12"
               role="tabpanel"
               aria-labelledby="admin-tab"
             >
               <div
-                className="app-img text-center aos-animate"
+                className="text-center app-img aos-animate"
                 data-aos="fade-up"
                 data-aos-duration="600"
                 data-aos-delay="300"
@@ -119,32 +119,32 @@ export default function Appshowcase() {
                     the activities of your FSEs.
                   </p>
                   <ul className="mt-4">
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Prevents stock leakage.
                     </li>
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Correct tracking of sales.
                     </li>
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       More focus on core business instead of compliance
                     </li>
                   </ul>
-                  <button className="primary-btn mt-3" onClick={toggleModal}>Schedule a Demo</button>
+                  <button className="mt-3 primary-btn" onClick={toggleModal}>Schedule a Demo</button>
                 </div>
               </div>
             </div>
           )}
           {activeTab === "fse" && (
             <div
-              className="grid md:grid-cols-2 md:w-11/12 mx-auto aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400"
+              className="grid mx-auto md:grid-cols-2 md:w-11/12 aos-animate" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400"
               role="tabpanel"
               aria-labelledby="admin-tab"
             >
               <div
-                className="app-img text-center aos-animate"
+                className="text-center app-img aos-animate"
                 data-aos="fade-up"
                 data-aos-duration="600"
                 data-aos-delay="300"
@@ -161,20 +161,20 @@ export default function Appshowcase() {
                     tasks and provides them hastle free work.
                   </p>
                   <ul className="mt-2">
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Invoice Generation
                     </li>
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       DSR Management
                     </li>
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Collection Management
                     </li>
                   </ul>
-                  <button className="primary-btn mt-3" onClick={toggleModal}>Schedule a Demo</button>
+                  <button className="mt-3 primary-btn" onClick={toggleModal}>Schedule a Demo</button>
                 </div>
               </div>
             </div>
@@ -182,11 +182,11 @@ export default function Appshowcase() {
 
           {activeTab === "retailer" && (
             <div
-              className="grid md:grid-cols-2 md:w-11/12 mx-auto"
+              className="grid mx-auto md:grid-cols-2 md:w-11/12"
               role="tabpanel"
               aria-labelledby="admin-tab"
             >
-              <div className="app-img text-center">
+              <div className="text-center app-img">
                 <img src={app3} alt="home-img" className="mx-auto app-img" />
               </div>
               <div className="app-cards">
@@ -199,20 +199,20 @@ export default function Appshowcase() {
                     making everything being done automated.
                   </p>
                   <ul className="mt-2">
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Forecasting of business plans.
                     </li>
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Get complete details of credit bills of the customers.
                     </li>
-                    <li className="mt-2 flex">
+                    <li className="flex mt-2">
                       <img className="mr-2" src={Listicon} alt="home-img" />
                       Works as mini CRM for the retailers.
                     </li>
                   </ul>
-                  <button className="primary-btn mt-3" onClick={toggleModal}>Schedule a Demo</button>
+                  <button className="mt-3 primary-btn" onClick={toggleModal}>Schedule a Demo</button>
                 </div>
               </div>
             </div>

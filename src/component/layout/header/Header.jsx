@@ -37,10 +37,17 @@ export default function Header() {
   const [isTaxserviceOpen, setIsTaxserviceOpen] = useState(false);
   const [isTaxcounsultancyOpen, setIsTaxcounsultancyOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 0);
-  const { setIsModalOpen, isModalOpen } = useContext(Context);
+  const {setIsModalOpen, isModalOpen } = useContext(Context);
+  const [mobileClick, setMobileClick] = useState(true);
+
   // Update state based on window width
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth > 0);
+    if (window.innerWidth > 990) {
+      setMobileClick(false)
+    }
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 0)
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -128,7 +135,7 @@ export default function Header() {
             />
           </Link>
           <div className={`navbar-mobile  ${isNavbarOpen ? "flex" : "none"}`}>
-            <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 ">
+            <nav className="lg:mr-auto lg:ml-4 lg:py-1 lg:pl-4 lg:gap-5 w-full md:w-[unset]">
               <ul className="flex flex-wrap items-center justify-center gap-1 mb-0 text-base lg:gap-3 md:gap-2 nav-links">
                 <li>
                   <NavLink
@@ -142,28 +149,24 @@ export default function Header() {
                     Home
                   </NavLink>
                 </li>
-                <li>
-                  <div
-                    className={`relative ${isDesktop ? "" : "block"}`}
+                <li className="w-full md:w-[unset]">
+                  <div className={`relative ${isDesktop ? "" : "block"}`}
                     onMouseEnter={() =>
-                      isDesktop && setIsMainDropdownOpen(true)
+                      !mobileClick && setIsMainDropdownOpen(true)
                     }
                     onMouseLeave={() =>
-                      isDesktop && setIsMainDropdownOpen(false)
-                    }
-                    onClick={() =>
-                      !isDesktop && setIsMainDropdownOpen(!isMainDropdownOpen)
+                      !mobileClick && setIsMainDropdownOpen(false)
                     }
                   >
-                    <span className="cursor-pointer hover:text-orange-400 service-h">
+                    <span className="cursor-pointer hover:text-orange-400 service-h" onClick={() => mobileClick && setIsMainDropdownOpen(!isMainDropdownOpen)}>
                       Service <FontAwesomeIcon icon={faChevronDown} />
                     </span>
                     {/* Dropdown Menu */}
                     {(isMainDropdownOpen || !isDesktop) && (
                       <div
-                        className={`lg:absolute ${
+                        className={`lg:absolute w-11/12 ${
                           isDesktop
-                            ? "w-max submenu1 text-black bg-white lg:shadow-lg px-0 py-1 rounded top-full left-0"
+                            ? "md:w-max submenu1 text-black bg-white lg:shadow-lg px-0 py-1 rounded top-full left-0"
                             : "relative m-submenu bg-white p-3 lg:mt-2 rounded"
                         }`}
                       >
@@ -174,13 +177,13 @@ export default function Header() {
                               isDesktop ? "" : "block"
                             }cursor-pointer`}
                             onMouseEnter={() =>
-                              isDesktop && setIsTaxPreparationOpen(true)
+                              !mobileClick && setIsTaxPreparationOpen(true)
                             }
                             onMouseLeave={() =>
-                              isDesktop && setIsTaxPreparationOpen(false)
+                              !mobileClick && setIsTaxPreparationOpen(false)
                             }
                             onClick={() =>
-                              !isDesktop &&
+                              mobileClick &&
                               setIsTaxPreparationOpen(!isTaxPreparationOpen)
                             }
                           >
@@ -198,11 +201,7 @@ export default function Header() {
                             {(isTaxPreparationOpen || !isDesktop) && (
                               <div
                                 className={`lg:absolute transition ease-in-out delay-150 
-                                  ${
-                                    isDesktop
-                                      ? "w-max submenu2 bg-white shadow-lg px-5 py-4 rounded left-[100%] top-0"
-                                      : "relative m-submenu-1 bg-white p-3 mt-2 rounded  "
-                                  }`}
+                                  ${ isDesktop ? "w-max submenu2 bg-white md:shadow-lg p-3 rounded left-[100%] top-0" : ""}`}
                               >
                                 <ul className="flex flex-col gap-3 mb-0">
                                   <li>
@@ -217,7 +216,6 @@ export default function Header() {
                                       BTHAWK
                                     </NavLink>
                                   </li>
-                                 
                                 </ul>
                               </div>
                             )}
@@ -229,20 +227,20 @@ export default function Header() {
                               isDesktop ? "" : "block"
                             } cursor-pointer`}
                             onMouseEnter={() =>
-                              isDesktop && setIsPayrollManagementOpen(true)
+                              !mobileClick && setIsPayrollManagementOpen(true)
                             }
                             onMouseLeave={() =>
-                              isDesktop && setIsPayrollManagementOpen(false)
+                              !mobileClick && setIsPayrollManagementOpen(false)
                             }
                             onClick={() =>
-                              !isDesktop &&
+                              mobileClick &&
                               setIsPayrollManagementOpen(
                                 !isPayrollManagementOpen
                               )
                             }
                           >
                             <span
-                              className={`flex justify-around cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 items-center hover:text-orange-400 ${
+                              className={`flex justify-between cursor-pointer lg:pl-3 lg:pr-2 lg:pt-2 items-center hover:text-orange-400 ${
                                 isPayrollManagementOpen ? "text-orange-400" : ""
                               }`}
                             >
@@ -330,7 +328,7 @@ export default function Header() {
                                         }`
                                       }
                                     >
-                                      CMA Report
+                                      CMA Report
                                     </NavLink>
                                   </li>
                                   <li>
@@ -367,13 +365,13 @@ export default function Header() {
                               isDesktop ? "" : "block"
                             } cursor-pointer`}
                             onMouseEnter={() =>
-                              isDesktop && setIsTaxserviceOpen(true)
+                              !mobileClick && setIsTaxserviceOpen(true)
                             }
                             onMouseLeave={() =>
-                              isDesktop && setIsTaxserviceOpen(false)
+                              !mobileClick && setIsTaxserviceOpen(false)
                             }
                             onClick={() =>
-                              !isDesktop &&
+                              mobileClick &&
                               setIsTaxserviceOpen(!isTaxserviceOpen)
                             }
                           >
@@ -435,7 +433,7 @@ export default function Header() {
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/coomingsoon"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
@@ -455,13 +453,13 @@ export default function Header() {
                               isDesktop ? "" : "block"
                             } cursor-pointer`}
                             onMouseEnter={() =>
-                              isDesktop && setIsTaxcounsultancyOpen(true)
+                              !mobileClick && setIsTaxcounsultancyOpen(true)
                             }
                             onMouseLeave={() =>
-                              isDesktop && setIsTaxcounsultancyOpen(false)
+                              !mobileClick && setIsTaxcounsultancyOpen(false)
                             }
                             onClick={() =>
-                              !isDesktop &&
+                              mobileClick &&
                               setIsTaxcounsultancyOpen(!isTaxcounsultancyOpen)
                             }
                           >
@@ -653,7 +651,7 @@ export default function Header() {
                 <li>
                   <a
                     href={baseUrl + "/#pricing"}
-                    className=""
+                    className="cursor-pointer hover:text-orange-400"
                   >
                     Price
                   </a>

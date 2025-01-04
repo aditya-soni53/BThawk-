@@ -69,6 +69,9 @@ export default function ReviewList() {
     }
   };
 
+  console.log("selectedState", selectedState);
+
+
   const locationToggle = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -183,7 +186,7 @@ export default function ReviewList() {
       </p>
 
       <div className="my-6">
-        <div className="relative rounded-xl flex items-center w-full p-2 overflow-hidden bg-gray-800">
+        <div className="relative flex items-center w-full p-2 overflow-hidden bg-gray-800 rounded-xl">
           {/* Left Arrow */}
           {showLeftArrow && (
             <button
@@ -197,7 +200,7 @@ export default function ReviewList() {
           {/* Scrollable Buttons */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto hide-scrollbar scroll-smooth"
+            className="flex overflow-x-auto md:gap-4 hide-scrollbar scroll-smooth"
             onScroll={updateArrows}
           >
             <button
@@ -211,9 +214,9 @@ export default function ReviewList() {
               All
             </button>
             {stateList.map((state) => (
-              <button key={state} className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap 
-                ${selectedState === state ? "text-black bg-white font-semibold " : " text-white"}`}
-                onClick={() => {setSelectedState(state);}}>
+              <button key={state} className={`px-2 md:px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap 
+                ${selectedState === state[0] ? "text-black bg-white font-semibold " : " text-white"}`}
+                onClick={() => {setSelectedState(state[0]);}}>
                 {state[0]} ({state[1]})
               </button>
             ))}
@@ -248,7 +251,7 @@ export default function ReviewList() {
                         frameBorder={1}
                       ></iframe>
                     </div>
-                    <div className="text-center my-2 mt-3">
+                    <div className="my-2 mt-3 text-center">
                       <b className="reviewCardTitle">{review.client_name}</b>
                       <p className="leading-none">({review.state_en})</p>
                     </div>
