@@ -211,18 +211,10 @@ export default function ReviewList() {
               All
             </button>
             {stateList.map((state) => (
-              <button
-                key={state}
-                className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${
-                  selectedState === state
-                    ? "text-black bg-white font-semibold "
-                    : " text-white"
-                }`}
-                onClick={() => {
-                  setSelectedState(state);
-                }}
-              >
-                {state}
+              <button key={state} className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap 
+                ${selectedState === state ? "text-black bg-white font-semibold " : " text-white"}`}
+                onClick={() => {setSelectedState(state);}}>
+                {state[0]} ({state[1]})
               </button>
             ))}
           </div>

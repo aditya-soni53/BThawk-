@@ -216,7 +216,7 @@ const Contact = () => {
                           formData.f_name ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
-                        First Name
+                        First Name <span className="text-md text-red-600">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.f_name}
@@ -240,7 +240,7 @@ const Contact = () => {
                           formData.l_name ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
-                        Last Name
+                        Last Name <span className="text-md text-red-600">*</span> 
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.l_name}
@@ -264,7 +264,7 @@ const Contact = () => {
                           formData.email ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
-                        Email
+                        Email <span className="text-md text-red-600">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.email}
@@ -288,7 +288,7 @@ const Contact = () => {
                           formData.phone ? "text-xs -top-5 text-blue-700" : ""
                         }`}
                       >
-                        Phone Number
+                        Phone Number <span className="text-md text-red-600">*</span>
                       </label>
                       <p className="pt-1 text-sm text-red-600">
                         {errors.phone}
@@ -310,9 +310,7 @@ const Contact = () => {
                         <option value="question">Question</option>
                         <option value="other">Other</option>
                       </select>
-                      <p className="pt-1 text-sm text-red-600">
-                        {errors.subject}
-                      </p>
+                      <p className="pt-1 text-sm text-red-600">{errors.subject}</p>
                     </div>
                   </div>
                   {/* Message */}
