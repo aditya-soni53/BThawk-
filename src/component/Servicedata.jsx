@@ -89,7 +89,7 @@ export default function Servicedata(propes) {
           <div
             dangerouslySetInnerHTML={{ __html: propes.servicedata.description }}
           />
-          {propes.servicedata.faqs == [] && (
+          {propes.servicedata.faqs.length == 0 && (
             <Faqdetail faq={propes.servicedata.faqs} />
           )}
         </div>
