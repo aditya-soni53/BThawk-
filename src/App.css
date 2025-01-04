@@ -200,10 +200,10 @@ header {
   background: #fff;
   color: var(--primary-color2);
 }
-.app-cards {
+/* .app-cards {
   display: flex;
   align-items: center;
-}
+} */
 .appcard-1 {
   border: 1px solid #22249b;
   padding: 25px;
@@ -702,6 +702,10 @@ ul {
   .submenu1 {
     border-top: 1px solid;
     border-radius: 0px;
+  }
+  .blog-main-img {
+    position: static;
+    height: unset;
   }
 }
 

@@ -605,7 +605,7 @@ export default function Header() {
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/coomingsoon"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""
@@ -617,7 +617,7 @@ export default function Header() {
                                   </li>
                                   <li>
                                     <NavLink
-                                      to="/coomingsoon"
+                                      to="/comingsoon"
                                       className={({ isActive }) =>
                                         `cursor-pointer hover:text-orange-400 ${
                                           isActive ? "text-orange-400" : ""

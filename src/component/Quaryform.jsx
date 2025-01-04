@@ -63,39 +63,7 @@ export default function Quaryform() {
       setName(sanitizedValue);
     }
   };
-
-  const validateForm = () => {
-    let formErrors = { name: "", mobileNumber: "", pincode: "" };
-    let valid = true;
-
-    if (!name) {
-      formErrors.name = "Please enter your name";
-      valid = false;
-    } else if (name.length < 2 || name.length > 50) {
-      formErrors.name = "Name should be between 2 and 50 characters";
-      valid = false;
-    }
-
-    if (!mobileNumber) {
-      formErrors.mobileNumber = "Please enter your mobile number";
-      valid = false;
-    } else if (mobileNumber.length !== 10) {
-      formErrors.mobileNumber = "Mobile number should be exactly 10 digits";
-      valid = false;
-    }
-
-    if (!pincode) {
-      formErrors.pincode = "Please enter your pincode";
-      valid = false;
-    } else if (pincode.length < 6) {
-      formErrors.pincode = "Pincode should be 6 digits";
-      valid = false;
-    }
-
-    setErrors(formErrors); // Update the error state
-    return valid;
-  };
-
+  
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
