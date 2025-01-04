@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Quaryform from "./Quaryform";
 
 export default function Servicedata(propes) {
-  console.log(propes.servicedata.faqs);
+  console.log(propes);
   const rating = 3.5;
   const totalStars = 5;
   const filledStars = Math.floor(rating);
@@ -89,7 +89,7 @@ export default function Servicedata(propes) {
           <div
             dangerouslySetInnerHTML={{ __html: propes.servicedata.description }}
           />
-          {propes.servicedata.faqs.length == 0 && (
+          {propes.servicedata.faqs && (
             <Faqdetail faq={propes.servicedata.faqs} />
           )}
         </div>
