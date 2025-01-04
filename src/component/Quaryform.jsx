@@ -64,38 +64,6 @@ export default function Quaryform() {
     }
   };
 
-  const validateForm = () => {
-    let formErrors = { name: "", mobileNumber: "", pincode: "" };
-    let valid = true;
-
-    if (!name) {
-      formErrors.name = "Please enter your name";
-      valid = false;
-    } else if (name.length < 2 || name.length > 50) {
-      formErrors.name = "Name should be between 2 and 50 characters";
-      valid = false;
-    }
-
-    if (!mobileNumber) {
-      formErrors.mobileNumber = "Please enter your mobile number";
-      valid = false;
-    } else if (mobileNumber.length !== 10) {
-      formErrors.mobileNumber = "Mobile number should be exactly 10 digits";
-      valid = false;
-    }
-
-    if (!pincode) {
-      formErrors.pincode = "Please enter your pincode";
-      valid = false;
-    } else if (pincode.length < 6) {
-      formErrors.pincode = "Pincode should be 6 digits";
-      valid = false;
-    }
-
-    setErrors(formErrors); // Update the error state
-    return valid;
-  };
-
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -130,7 +98,7 @@ export default function Quaryform() {
           });
         }
       } catch (error) {
-        console.error("Error in submitting bank details:", error);
+        console.error("Error:", error);
       } finally {
         setName("");
         setMobileNumber("");
@@ -151,7 +119,10 @@ export default function Quaryform() {
       </p>
       <div className="form-group">
         <div className="relative">
-          <label htmlFor="name" className="required">Name</label> <br />
+          <label htmlFor="name" className="required">
+            Name
+          </label>{" "}
+          <br />
           <input
             type="text"
             name="name"
@@ -166,11 +137,13 @@ export default function Quaryform() {
         {errors.name && (
           <p className="py-2 pl-1 text-xs text-red-500">{errors.name}</p>
         )}
-        
       </div>
       <div className="form-group">
         <div className="relative">
-          <label htmlFor="mobileNumber" className="required">Mobile Number</label> <br />
+          <label htmlFor="mobileNumber" className="required">
+            Mobile Number
+          </label>{" "}
+          <br />
           <input
             type="text"
             name="mobileNumber"
@@ -190,7 +163,10 @@ export default function Quaryform() {
       </div>
       <div className="form-group">
         <div className="relative">
-          <label htmlFor="pincode" className="required">Pincode</label> <br />
+          <label htmlFor="pincode" className="required">
+            Pincode
+          </label>{" "}
+          <br />
           <input
             type="text"
             name="pincode"
