@@ -198,17 +198,10 @@ export default function ReviewList() {
           )}
 
           {/* Scrollable Buttons */}
-          <div
-            ref={scrollContainerRef}
-            className="flex overflow-x-auto md:gap-4 hide-scrollbar scroll-smooth"
-            onScroll={updateArrows}
-          >
-            <button
-              className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap ${
-                selectedState === "All"
-                  ? "text-black bg-white font-semibold "
-                  : " text-white"
-              }`}
+          <div ref={scrollContainerRef} className="flex overflow-x-auto md:gap-4 hide-scrollbar scroll-smooth"
+            onScroll={updateArrows} >
+            <button className={`px-4 py-2 rounded-full border border-gray-400  w-full whitespace-nowrap 
+            ${selectedState === "All" ? "text-black bg-white font-semibold " : " text-white" }`}
               onClick={() => setSelectedState("All")}
             >
               All
@@ -224,10 +217,7 @@ export default function ReviewList() {
 
           {/* Right Arrow */}
           {showRightArrow && (
-            <button
-              className="absolute z-10 p-2 text-white bg-gray-700 rounded-full right-2 hover:bg-gray-600"
-              onClick={scrollRight}
-            >
+            <button className="absolute z-10 p-2 text-white bg-gray-700 rounded-full right-2 hover:bg-gray-600" onClick={scrollRight}>
               &#8250;
             </button>
           )}
