@@ -692,6 +692,11 @@ ul {
   box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.15);
 }
 
+.break-all {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 @media (max-width: 991px) {
   .submenu1::before,
   .submenu2::before {

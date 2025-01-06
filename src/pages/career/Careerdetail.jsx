@@ -109,7 +109,7 @@ export default function Careerdetail() {
                 />
                 <div className="overflow-hidden d-block">
                   <h4 className="">Skill:</h4>
-                  <p className="text-green-500">{jobsData.skill}</p>
+                  <p className="text-green-500 break-all">{jobsData.skill}</p>
                 </div>
               </div>
               <div className="widget">
