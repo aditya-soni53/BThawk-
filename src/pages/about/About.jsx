@@ -123,7 +123,7 @@ const mentors = [
   {
     id: 11,
     name: "Ghanshyam Vyas",
-    designation: "Complince Leader",
+    designation: "Compliance Leader",
     img: mentorsImg[10],
     link: "https://www.linkedin.com/in/cmno1zucol/",
   },
@@ -151,28 +151,28 @@ const mentors = [
   {
     id: 14,
     name: "Mohit Chauhan",
-    designation: "Complince Leader",
+    designation: "Compliance Leader",
     img: mentorsImg[13],
     link: "https://www.linkedin.com/in/mohitchauhanzucol1072/",
   },
   {
     id: 15,
     name: "Ankita Arya",
-    designation: "Complince Leader",
+    designation: "Compliance Leader",
     img: mentorsImg[14],
     link: "https://www.linkedin.com/in/ankita-arya-a293321aa/",
   },
   {
     id: 16,
     name: "Azim Ahmed",
-    designation: "Complince Leader",
+    designation: "Compliance Leader",
     img: mentorsImg[15],
     link: "https://www.linkedin.com/in/azim-ahmed-qureshi-7176a5222/",
   },
   {
     id: 17,
     name: "Pooja Kumari",
-    designation: "Complince Leader",
+    designation: "Compliance Leader",
     img: mentorsImg[16],
     link: "https://www.linkedin.com/in/pooja-poonia-am-zucol/",
   }
@@ -273,7 +273,7 @@ const About = () => {
                 key={feature.id}
                 className="flex justify-center w-full md:w-1/2 features_box"
               >
-                <div className="flex items-center w-8/12 features-details_wrapper relative">
+                <div className="relative flex items-center w-8/12 features-details_wrapper">
                   <div className="features_box_icon text-9xl">
                     <span className="font-[750]">{feature.title}</span>
                   </div>
