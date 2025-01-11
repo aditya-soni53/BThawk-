@@ -51,107 +51,119 @@ export default function Feature() {
           data-aos-delay="200"
         >
           <div className='sticky top-[120px]'>
-                        <h1 className='w-full border-b-2 Feature-heading border-b-zinc-950'>Top Features</h1>
-                        <p className='pt-2 text-gray-600'><b className='primary-color'>Start Working with the Finest GST Billing Solution!</b>
-                        <b className='primary-color'>Stay ahead of your competitors and focus more on your core business.</b>With advanced technology, BTHAWK delivers comprehensive accounting solutions tailored for your growing business needs. Empower your operations, simplify compliance, and take the leap toward excellence today</p>
-                    </div>
+            <h1 className='w-full border-b-2 Feature-heading border-b-zinc-950'>Top Features</h1>
+            <p className='pt-2 text-gray-600'><b className='primary-color'>Start Working with the Finest GST Billing Solution!</b>
+              <b className='primary-color'>Stay ahead of your competitors and focus more on your core business.</b>With advanced technology, BTHAWK delivers comprehensive accounting solutions tailored for your growing business needs. Empower your operations, simplify compliance, and take the leap toward excellence today</p>
+          </div>
         </div>
         <div className="grid col-span-2 gap-4 p-2 mt-3 mb-4 ml-auto overflow-hidden sm:grid-cols-2 lg:w-9/12">
           <div
-            className="feature-card aos-animate"
+            className="flex flex-col justify-between feature-card aos-animate"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="300"
           >
-            <h1 className="px-[25px] text-xl text-center">GST Compliance</h1>
-            <p className="px-[25px] text-center">
-              Simplify your GST compliance with BTHAWK! Our robust solution
-              ensures your business remains fully compliant with GST
-              regulations. Effortlessly manage your filings and stay ahead with
-              accurate, timely solutions.
-            </p>
+            <div className="">
+              <h1 className="px-[25px] text-xl text-center">GST Compliance</h1>
+              <p className="px-[25px] text-center">
+                Simplify your GST compliance with BTHAWK! Our robust solution
+                ensures your business remains fully compliant with GST
+                regulations. Effortlessly manage your filings and stay ahead with
+                accurate, timely solutions.
+              </p>
+            </div>
             <div className="card-footer mt-7">
               <img className="ml-auto" src={featureimg1} alt="" />
             </div>
           </div>
           <div
-            className="feature-card aos-animate"
+            className="flex flex-col justify-between feature-card aos-animate"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="300"
           >
-            <h1 className="px-[25px] text-xl text-center">
-              Instant Invoice Of New India
-            </h1>
-            <p className="px-[25px] text-center">
-              Be digital with digitalized India. No need to use paper base
-              invoice system. Share invoices in one go via WhatsApp, Email etc.
-              in PDF format.
-            </p>
+            <div className="">
+              <h1 className="px-[25px] text-xl text-center">
+                Instant Invoice Of New India
+              </h1>
+              <p className="px-[25px] text-center">
+                Be digital with digitalized India. No need to use paper base
+                invoice system. Share invoices in one go via WhatsApp, Email etc.
+                in PDF format.
+              </p>
+            </div>
             <div className="card-footer mt-7">
               <img className="ml-auto" src={featureimg2} alt="" />
             </div>
           </div>
           <div
-            className="feature-card aos-animate"
+            className="flex flex-col justify-between feature-card aos-animate"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="300"
           >
-            <h1 className="px-[25px] text-xl text-center">Stock Management</h1>
-            <p className="px-[25px] text-center">
-              We know the intricacies of Stock Management and the importance of
-              effective stock control
-            </p>
+            <div className="">
+              <h1 className="px-[25px] text-xl text-center">Stock Management</h1>
+              <p className="px-[25px] text-center">
+                We know the intricacies of Stock Management and the importance of
+                effective stock control
+              </p>
+            </div>
             <div className="card-footer mt-7">
               <img className="ml-auto" src={featureimg3} alt="" />
             </div>
           </div>
           <div
-            className="feature-card aos-animate"
+            className="flex flex-col justify-between feature-card aos-animate"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="300"
           >
-            <h1 className="px-[25px] text-xl text-center">Sales Tracking</h1>
-            <p className="px-[25px] text-center">
-              BTHAWK gives you complete freedom to track your entire sales and
-              go through various dimensions during sales process.
-            </p>
+            <div className="">
+              <h1 className="px-[25px] text-xl text-center">Sales Tracking</h1>
+              <p className="px-[25px] text-center">
+                BTHAWK gives you complete freedom to track your entire sales and
+                go through various dimensions during sales process.
+              </p>
+            </div>
             <div className="card-footer mt-7">
               <img className="ml-auto" src={featureimg4} alt="" />
             </div>
           </div>
           <div
-            className="feature-card aos-animate"
+            className="flex flex-col justify-between feature-card aos-animate"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="300"
           >
-            <h1 className="px-[25px] text-xl text-center">DSR Management</h1>
-            <p className="px-[25px] text-center">
-              Gone are the days of pen and paper, it's time to adapt
-              digitalization for being safer. BTHAWK gives you automated DSR
-              maintenance.
-            </p>
+            <div className="">
+              <h1 className="px-[25px] text-xl text-center">DSR Management</h1>
+              <p className="px-[25px] text-center">
+                Gone are the days of pen and paper, it's time to adapt
+                digitalization for being safer. BTHAWK gives you automated DSR
+                maintenance.
+              </p>
+            </div>
             <div className="card-footer mt-7">
               <img className="ml-auto" src={featureimg5} alt="" />
             </div>
           </div>
 
           <div
-            className="feature-card aos-animate"
+            className="flex flex-col justify-between feature-card aos-animate"
             data-aos="fade-left"
             data-aos-duration="600"
             data-aos-delay="300"
           >
-            <h1 className="px-[25px] text-xl text-center">
-              Collection Management
-            </h1>
-            <p className="px-[25px] text-center">
-              2 hours job brevatised in 2 minutes job. Just enter the
-              denomination and you are good to go with your entire collection.
-            </p>
+            <div className="">
+              <h1 className="px-[25px] text-xl text-center">
+                Compliance Management
+              </h1>
+              <p className="px-[25px] text-center">
+                2 hours job brevatised in 2 minutes job. Just enter the
+                denomination and you are good to go with your entire collection.
+              </p>
+            </div>
             <div
               className="card-footer mt-7 aos-animate"
               data-aos="fade-left"
